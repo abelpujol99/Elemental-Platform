@@ -1,0 +1,680 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe70aba2e7074048aca5de573b64a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleSelectedItems:
+    m_Keys:
+    - .collabignore
+    - Assets/Animations.meta
+    - Assets/Animations/Background Animation.meta
+    - Assets/Animations/Background Animation/Background.anim
+    - Assets/Animations/Background Animation/Background.anim.meta
+    - Assets/Animations/Background Animation/Background.controller
+    - Assets/Animations/Background Animation/Background.controller.meta
+    - Assets/Animations/CheckPoint Animation.meta
+    - Assets/Animations/CheckPoint Animation/Checkpoint.controller
+    - Assets/Animations/CheckPoint Animation/Checkpoint.controller.meta
+    - Assets/Animations/CheckPoint Animation/FlagIdle.anim
+    - Assets/Animations/CheckPoint Animation/FlagIdle.anim.meta
+    - Assets/Animations/CheckPoint Animation/FlagOut.anim
+    - Assets/Animations/CheckPoint Animation/FlagOut.anim.meta
+    - Assets/Animations/Frog Animation.meta
+    - Assets/Animations/Frog Animation/Fall.anim
+    - Assets/Animations/Frog Animation/Fall.anim.meta
+    - Assets/Animations/Frog Animation/Frog Animation.controller
+    - Assets/Animations/Frog Animation/Frog Animation.controller.meta
+    - Assets/Animations/Frog Animation/Idle.anim
+    - Assets/Animations/Frog Animation/Idle.anim.meta
+    - Assets/Animations/Frog Animation/Jump.anim
+    - Assets/Animations/Frog Animation/Jump.anim.meta
+    - Assets/Animations/Frog Animation/Run.anim
+    - Assets/Animations/Frog Animation/Run.anim.meta
+    - Assets/Animations/Spike Animation.meta
+    - Assets/Animations/Spike Animation/Spike Enemy.controller
+    - Assets/Animations/Spike Animation/Spike Enemy.controller.meta
+    - Assets/Animations/Spike Animation/SpikeEnemy.anim
+    - Assets/Animations/Spike Animation/SpikeEnemy.anim.meta
+    - Assets/Materials.meta
+    - Assets/Materials/New Physics Material 2D.physicsMaterial2D
+    - Assets/Materials/New Physics Material 2D.physicsMaterial2D.meta
+    - Assets/Pixel Adventure 1.meta
+    - Assets/Pixel Adventure 1/Assets.meta
+    - Assets/Pixel Adventure 1/Assets/Background.meta
+    - Assets/Pixel Adventure 1/Assets/Background/Blue.png
+    - Assets/Pixel Adventure 1/Assets/Background/Blue.png.meta
+    - Assets/Pixel Adventure 1/Assets/Background/Brown.png
+    - Assets/Pixel Adventure 1/Assets/Background/Brown.png.meta
+    - Assets/Pixel Adventure 1/Assets/Background/Gray.png
+    - Assets/Pixel Adventure 1/Assets/Background/Gray.png.meta
+    - Assets/Pixel Adventure 1/Assets/Background/Green.png
+    - Assets/Pixel Adventure 1/Assets/Background/Green.png.meta
+    - Assets/Pixel Adventure 1/Assets/Background/Pink.png
+    - Assets/Pixel Adventure 1/Assets/Background/Pink.png.meta
+    - Assets/Pixel Adventure 1/Assets/Background/Purple.png
+    - Assets/Pixel Adventure 1/Assets/Background/Purple.png.meta
+    - Assets/Pixel Adventure 1/Assets/Background/Yellow.png
+    - Assets/Pixel Adventure 1/Assets/Background/Yellow.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box1.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box1/Break (28x24).png
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box1/Break (28x24).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box1/Hit (28x24).png
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box1/Hit (28x24).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box1/Idle.png
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box1/Idle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box2.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box2/Break (28x24).png
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box2/Break (28x24).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box2/Hit (28x24).png
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box2/Hit (28x24).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box2/Idle.png
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box2/Idle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box3.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box3/Break (28x24).png
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box3/Break (28x24).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box3/Hit (28x24).png
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box3/Hit (28x24).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box3/Idle.png
+    - Assets/Pixel Adventure 1/Assets/Items/Boxes/Box3/Idle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Checkpoint.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Checkpoint/Checkpoint (Flag
+      Idle)(64x64).png
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Checkpoint/Checkpoint (Flag
+      Idle)(64x64).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Checkpoint/Checkpoint (Flag
+      Out) (64x64).png
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Checkpoint/Checkpoint (Flag
+      Out) (64x64).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Checkpoint/Checkpoint (No
+      Flag).png
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Checkpoint/Checkpoint (No
+      Flag).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/End.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/End/End (Idle).png
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/End/End (Idle).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/End/End (Pressed) (64x64).png
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/End/End (Pressed) (64x64).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Start.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Start/Start (Idle).png
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Start/Start (Idle).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Start/Start (Moving) (64x64).png
+    - Assets/Pixel Adventure 1/Assets/Items/Checkpoints/Start/Start (Moving) (64x64).png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Apple Animation.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Apple Animation/Apple Animation.anim
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Apple Animation/Apple Animation.anim.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Apple Animation/Apple_0.controller
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Apple Animation/Apple_0.controller.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Apple Animation/Collected.anim
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Apple Animation/Collected.anim.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Apple Animation/Collected_0.controller
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Apple Animation/Collected_0.controller.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Apple.png
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Apple.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Bananas.png
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Bananas.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Cherries.png
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Cherries.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Collected.png
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Collected.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Kiwi.png
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Kiwi.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Melon.png
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Melon.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Orange.png
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Orange.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Pineapple.png
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Pineapple.png.meta
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Strawberry.png
+    - Assets/Pixel Adventure 1/Assets/Items/Fruits/Strawberry.png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Appearing (96x96).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Appearing (96x96).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Desappearing (96x96).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Desappearing (96x96).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Double Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Double Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Fall (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Fall (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Hit (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Hit (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Idle (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Idle (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Run (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Run (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Wall Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Wall Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Double Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Double Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Fall (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Fall (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Hit (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Hit (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Idle (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Idle (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Run (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Run (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Wall Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Wall Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Double Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Double Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Fall (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Fall (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Hit (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Hit (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Idle (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Idle (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Run (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Run (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Wall Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Pink Man/Wall Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Double Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Double Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Fall (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Fall (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Hit (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Hit (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Idle (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Idle (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Run (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Run (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Wall Jump (32x32).png
+    - Assets/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Wall Jump (32x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Other.meta
+    - Assets/Pixel Adventure 1/Assets/Other/Confetti (16x16).png
+    - Assets/Pixel Adventure 1/Assets/Other/Confetti (16x16).png.meta
+    - Assets/Pixel Adventure 1/Assets/Other/Dust Particle.png
+    - Assets/Pixel Adventure 1/Assets/Other/Dust Particle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Other/Shadow.png
+    - Assets/Pixel Adventure 1/Assets/Other/Shadow.png.meta
+    - Assets/Pixel Adventure 1/Assets/Other/Transition.png
+    - Assets/Pixel Adventure 1/Assets/Other/Transition.png.meta
+    - Assets/Pixel Adventure 1/Assets/Terrain.meta
+    - Assets/Pixel Adventure 1/Assets/Terrain/Terrain (16x16) 1.png
+    - Assets/Pixel Adventure 1/Assets/Terrain/Terrain (16x16) 1.png.meta
+    - Assets/Pixel Adventure 1/Assets/Terrain/Terrain Sliced (16x16).png
+    - Assets/Pixel Adventure 1/Assets/Terrain/Terrain Sliced (16x16).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Arrow.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Arrow/Hit (18x18).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Arrow/Hit (18x18).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Arrow/Idle (18x18).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Arrow/Idle (18x18).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Blocks.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Blocks/HitSide (22x22).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Blocks/HitSide (22x22).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Blocks/HitTop (22x22).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Blocks/HitTop (22x22).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Blocks/Idle.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Blocks/Idle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Blocks/Part 1 (22x22).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Blocks/Part 1 (22x22).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Blocks/Part 2 (22x22).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Blocks/Part 2 (22x22).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Falling Platforms.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Falling Platforms/Off.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Falling Platforms/Off.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Falling Platforms/On (32x10).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Falling Platforms/On (32x10).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Fan.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Fan/Off.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Fan/Off.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Fan/On (24x8).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Fan/On (24x8).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Fire.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Fire/Hit (16x32).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Fire/Hit (16x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Fire/Off.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Fire/Off.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Fire/On (16x32).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Fire/On (16x32).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Platforms.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Platforms/Brown Off.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Platforms/Brown Off.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Platforms/Brown On (32x8).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Platforms/Brown On (32x8).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Platforms/Chain.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Platforms/Chain.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Platforms/Grey Off.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Platforms/Grey Off.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Platforms/Grey On (32x8).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Platforms/Grey On (32x8).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Blink (42x42).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Blink (42x42).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Bottom Hit (42x42).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Bottom Hit (42x42).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Idle.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Idle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Left Hit (42x42).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Left Hit (42x42).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Right Hit (42x42).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Right Hit (42x42).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Top Hit (42x42).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Rock Head/Top Hit (42x42).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Sand Mud Ice.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Sand Mud Ice/Ice Particle.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Sand Mud Ice/Ice Particle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Sand Mud Ice/Mud Particle.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Sand Mud Ice/Mud Particle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Sand Mud Ice/Sand Mud Ice (16x6) 1.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Sand Mud Ice/Sand Mud Ice (16x6) 1.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Sand Mud Ice/Sand Mud Ice Sliced (16x6).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Sand Mud Ice/Sand Mud Ice Sliced (16x6).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Sand Mud Ice/Sand Particle.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Sand Mud Ice/Sand Particle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Saw.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Saw/Chain.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Saw/Chain.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Saw/Off.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Saw/Off.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Saw/On (38x38).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Saw/On (38x38).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Blink (54x52).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Blink (54x52).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Bottom Hit (54x52).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Bottom Hit (54x52).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Idle.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Idle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Left Hit (54x52).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Left Hit (54x52).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Right Hit (54x52).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Right Hit (54x52).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Top Hit (54x52).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Spike Head/Top Hit (54x52).png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spiked Ball.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spiked Ball/Chain.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Spiked Ball/Chain.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spiked Ball/Spiked Ball.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Spiked Ball/Spiked Ball.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spikes.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Spikes/Idle.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Spikes/Idle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Trampoline.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Trampoline/Idle.png
+    - Assets/Pixel Adventure 1/Assets/Traps/Trampoline/Idle.png.meta
+    - Assets/Pixel Adventure 1/Assets/Traps/Trampoline/Jump (28x28).png
+    - Assets/Pixel Adventure 1/Assets/Traps/Trampoline/Jump (28x28).png.meta
+    - Assets/Pixel Adventure 1/Palette.meta
+    - Assets/Pixel Adventure 1/Palette/Palette.prefab
+    - Assets/Pixel Adventure 1/Palette/Palette.prefab.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_0.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_0.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_1.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_1.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_10.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_10.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_100.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_100.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_101.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_101.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_102.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_102.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_103.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_103.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_104.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_104.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_105.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_105.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_106.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_106.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_107.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_107.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_108.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_108.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_109.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_109.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_11.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_11.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_110.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_110.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_111.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_111.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_112.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_112.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_113.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_113.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_114.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_114.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_115.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_115.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_116.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_116.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_117.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_117.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_118.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_118.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_119.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_119.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_12.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_12.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_120.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_120.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_121.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_121.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_122.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_122.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_123.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_123.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_124.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_124.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_125.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_125.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_126.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_126.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_127.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_127.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_128.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_128.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_129.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_129.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_13.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_13.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_130.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_130.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_131.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_131.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_132.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_132.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_133.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_133.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_134.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_134.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_135.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_135.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_136.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_136.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_137.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_137.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_138.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_138.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_139.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_139.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_14.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_14.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_140.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_140.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_141.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_141.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_142.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_142.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_143.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_143.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_15.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_15.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_16.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_16.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_17.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_17.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_18.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_18.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_19.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_19.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_2.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_2.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_20.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_20.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_21.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_21.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_22.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_22.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_23.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_23.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_24.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_24.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_25.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_25.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_26.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_26.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_27.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_27.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_28.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_28.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_29.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_29.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_3.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_3.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_30.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_30.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_31.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_31.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_32.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_32.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_33.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_33.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_34.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_34.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_35.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_35.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_36.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_36.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_37.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_37.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_38.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_38.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_39.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_39.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_4.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_4.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_40.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_40.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_41.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_41.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_42.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_42.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_43.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_43.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_44.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_44.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_45.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_45.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_46.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_46.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_47.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_47.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_48.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_48.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_49.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_49.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_5.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_5.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_50.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_50.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_51.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_51.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_52.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_52.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_53.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_53.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_54.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_54.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_55.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_55.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_56.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_56.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_57.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_57.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_58.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_58.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_59.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_59.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_6.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_6.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_60.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_60.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_61.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_61.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_62.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_62.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_63.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_63.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_64.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_64.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_65.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_65.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_66.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_66.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_67.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_67.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_68.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_68.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_69.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_69.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_7.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_7.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_70.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_70.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_71.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_71.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_72.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_72.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_73.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_73.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_74.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_74.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_75.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_75.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_76.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_76.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_77.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_77.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_78.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_78.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_79.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_79.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_8.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_8.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_80.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_80.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_81.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_81.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_82.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_82.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_83.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_83.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_84.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_84.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_85.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_85.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_86.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_86.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_87.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_87.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_88.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_88.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_89.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_89.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_9.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_9.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_90.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_90.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_91.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_91.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_92.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_92.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_93.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_93.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_94.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_94.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_95.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_95.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_96.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_96.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_97.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_97.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_98.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_98.asset.meta
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_99.asset
+    - Assets/Pixel Adventure 1/Palette/Terrain (16x16)_99.asset.meta
+    - Assets/Pixel Adventure 1/Scenes.meta
+    - Assets/Pixel Adventure 1/Scenes/Demo.unity
+    - Assets/Pixel Adventure 1/Scenes/Demo.unity.meta
+    - Assets/Prefabs.meta
+    - Assets/Prefabs/Character.meta
+    - Assets/Prefabs/Character/Character.prefab
+    - Assets/Prefabs/Character/Character.prefab.meta
+    - Assets/Prefabs/CheckPoint.meta
+    - Assets/Prefabs/CheckPoint/Checkpoint.prefab
+    - Assets/Prefabs/CheckPoint/Checkpoint.prefab.meta
+    - Assets/Prefabs/Enemies.meta
+    - Assets/Prefabs/Enemies/Spike.prefab
+    - Assets/Prefabs/Enemies/Spike.prefab.meta
+    - Assets/Prefabs/Fruits.meta
+    - Assets/Prefabs/Fruits/Apple_0.prefab
+    - Assets/Prefabs/Fruits/Apple_0.prefab.meta
+    - Assets/Scenes.meta
+    - Assets/Scenes/Level1.unity
+    - Assets/Scenes/Level1.unity.meta
+    - Assets/Scenes/Level2.unity
+    - Assets/Scenes/Level2.unity.meta
+    - Assets/Scenes/Level3.unity
+    - Assets/Scenes/Level3.unity.meta
+    - Assets/Scripts.meta
+    - Assets/Scripts/CharacterScript.cs
+    - Assets/Scripts/CharacterScript.cs.meta
+    - Assets/Scripts/CheckGround.cs
+    - Assets/Scripts/CheckGround.cs.meta
+    - Assets/Scripts/CheckPoint.cs
+    - Assets/Scripts/CheckPoint.cs.meta
+    - Assets/Scripts/DamageObject.cs
+    - Assets/Scripts/DamageObject.cs.meta
+    - Assets/Scripts/EnemySpike.cs
+    - Assets/Scripts/EnemySpike.cs.meta
+    - Assets/Scripts/FruitCollected.cs
+    - Assets/Scripts/FruitCollected.cs.meta
+    - Assets/Scripts/LevelComplete.cs
+    - Assets/Scripts/LevelComplete.cs.meta
+    - Assets/Scripts/PlayerRespawn.cs
+    - Assets/Scripts/PlayerRespawn.cs.meta
+    - Packages/manifest.json
+    - Packages/packages-lock.json
+    - ProjectSettings/AudioManager.asset
+    - ProjectSettings/ClusterInputManager.asset
+    - ProjectSettings/DynamicsManager.asset
+    - ProjectSettings/EditorBuildSettings.asset
+    - ProjectSettings/EditorSettings.asset
+    - ProjectSettings/GraphicsSettings.asset
+    - ProjectSettings/InputManager.asset
+    - ProjectSettings/NavMeshAreas.asset
+    - ProjectSettings/Physics2DSettings.asset
+    - ProjectSettings/PresetManager.asset
+    - ProjectSettings/ProjectSettings.asset
+    - ProjectSettings/ProjectVersion.txt
+    - ProjectSettings/QualitySettings.asset
+    - ProjectSettings/TagManager.asset
+    - ProjectSettings/TimeManager.asset
+    - ProjectSettings/UnityConnectSettings.asset
+    - ProjectSettings/VFXManager.asset
+    - ProjectSettings/VersionControlSettings.asset
+    - 
+    m_Values: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  RevisionSummary: 
+  ChangesSearchValue: 
+  SelectedHistoryRevision: 
+  HistoryPageNumber: 0
+  TabIndex: 0
