@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5AD15A0B-6C2E-B049-1C93-C14D9463D3B3}</ProjectGuid>
+    <ProjectGuid>{80D5E212-5ADF-9998-1766-609F922315B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,14 +56,17 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CheckPoint.cs" />
     <Compile Include="Assets\Scripts\CharacterScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerRespawn.cs" />
     <Compile Include="Assets\Scripts\FruitCollected.cs" />
     <Compile Include="Assets\Scripts\DamageObject.cs" />
     <Compile Include="Assets\Scripts\LevelComplete.cs" />
     <Compile Include="Assets\Scripts\CheckGround.cs" />
     <Compile Include="Assets\Scripts\EnemySpike.cs" />
-    <Compile Include="Assets\Scripts\CheckPoint.cs" />
-    <Compile Include="Assets\Scripts\PlayerRespawn.cs" />
+    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\CheckPlayer.cs" />
+    <Compile Include="Assets\Scripts\FireDamage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
