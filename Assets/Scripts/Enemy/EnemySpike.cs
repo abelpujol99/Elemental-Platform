@@ -9,6 +9,7 @@ public class EnemySpike : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
+            collision.transform.GetComponent<PlayerRespawn>().playerDamage();
         }
     }
 }

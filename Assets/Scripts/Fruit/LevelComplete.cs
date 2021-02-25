@@ -8,6 +8,8 @@ public class LevelComplete : MonoBehaviour
 {
 
     public Text levelComplete;
+
+    public GameObject transition;
     public void Update()
     {
         allFruitsCollected();       
@@ -18,6 +20,7 @@ public class LevelComplete : MonoBehaviour
         {
             levelComplete.gameObject.SetActive(true);
             Invoke("ChangeScene", 2);
+            transition.SetActive(true);
         }
     }
 

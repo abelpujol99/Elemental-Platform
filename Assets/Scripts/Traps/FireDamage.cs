@@ -16,5 +16,6 @@ public class FireDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(0.35f);
         Destroy(collision.gameObject);
+        collision.transform.GetComponent<PlayerRespawn>().playerDamage();
     }
 }

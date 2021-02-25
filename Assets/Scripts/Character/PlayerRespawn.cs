@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerRespawn : MonoBehaviour
 {
 
-    private float checkPointPositionX, checkPointPositionY;    
+    private float checkPointPositionX, checkPointPositionY;
+
+    public Animator animator;
 
     void Start()
     {
@@ -20,5 +23,12 @@ public class PlayerRespawn : MonoBehaviour
     {
         PlayerPrefs.SetFloat("checkPointPositionX", x);
         PlayerPrefs.SetFloat("checkPointPositionY", y);
+    }
+
+    public void playerDamage()
+    {
+        animator.Play("Hit");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 }

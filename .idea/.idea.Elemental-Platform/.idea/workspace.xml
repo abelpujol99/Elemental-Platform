@@ -2,41 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63bc1448-dff3-43ec-982d-cc439b9bf61e" name="Default Changelist" comment="Fire with kill">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterScript.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CheckGround.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CheckGround.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CheckGround.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CheckGround.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Elemental-Platform.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Elemental-Platform.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Elemental-Platform/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Elemental-Platform/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Frog Animation/Frog Animation.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Frog Animation/Frog Animation.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerRespawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerRespawn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpike.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fruit/LevelComplete.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fruit/LevelComplete.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps/DamageObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/DamageObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps/FireDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/FireDamage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/1d/1d83c7ffa0c16d3f254766f40d388984" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/20/20514d74e75c3739e8ee78f9b99fa424" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/23/23a1bde6c9e43098103691ede197373b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/28/28413655c627b2e778c04f9ba21afd7a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/33/33cd6f95d3b30738397001004fa742f9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/4e/4e08a510af597e7f232a1fecdd9af542" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/79/793adfdeb0e6192a2e7a5b9ab108214b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/85/8550452d734e55ece2c21870acf3c975" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/90/9096bf43cafe6275bed6c113b82cf559" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a0/a0a65cccbf0f6b0933b754a3281d309b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c8/c8186f79a7e34d9cd9bc64fc8e7da2f2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/cb/cbecb74fdad20b3cac89e172e06a0492" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/dc/dc0c90f870bebd540409cfe81f95423e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/dd/ddf7f009d29f1bd8a8aa5a795562914d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/df/df085e0fd7065cf04eda327c282d0cdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/Collab/CollabSnapshot_0a825765-b2ef-4fb8-8e50-f39b29a26fe5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/Collab/CollabSnapshot_0a825765-b2ef-4fb8-8e50-f39b29a26fe5.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PackageManager/ProjectCache" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PackageManager/ProjectCache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PackageManager/ProjectCache.md5" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PackageManager/ProjectCache.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/dc/dce362a5b6eef1663409ea0ed8ad4d3a.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/dc/dce362a5b6eef1663409ea0ed8ad4d3a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/90/9035d1e257948022e8266364e6002212.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/90/9035d1e257948022e8266364e6002212.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +47,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CheckGround.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CharacterScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Trap/Check Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpike.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Traps/DamageObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Traps/FireDamage.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/PlayerRespawn.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Fruit/LevelComplete.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ot86w0elpn1ezOGsdC11AqxwZ8" />
@@ -112,7 +101,7 @@
       <workItem from="1614098766024" duration="1355000" />
       <workItem from="1614102046875" duration="3701000" />
       <workItem from="1614112713957" duration="12000" />
-      <workItem from="1614242662420" duration="1338000" />
+      <workItem from="1614242662420" duration="4425000" />
     </task>
     <task id="LOCAL-00001" summary="Fire with kill">
       <created>1614095592755</created>
