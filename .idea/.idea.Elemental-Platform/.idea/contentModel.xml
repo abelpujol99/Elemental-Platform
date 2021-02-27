@@ -13,17 +13,55 @@
           <e p="CheckPoint" t="Include">
             <e p="CheckPoint.cs" t="Include" />
           </e>
+          <e p="Door" t="Include">
+            <e p="KeyCollected.cs" t="Include" />
+            <e p="LevelComplete.cs" t="Include" />
+          </e>
           <e p="Enemy" t="Include">
             <e p="EnemySpike.cs" t="Include" />
           </e>
-          <e p="Fruit" t="Include">
-            <e p="FruitCollected.cs" t="Include" />
-            <e p="LevelComplete.cs" t="Include" />
+          <e p="Platform" t="Include">
+            <e p="Platform.cs" t="Include" />
           </e>
           <e p="Traps" t="Include">
             <e p="CheckPlayer.cs" t="Include" />
             <e p="DamageObject.cs" t="Include" />
             <e p="FireDamage.cs" t="Include" />
+          </e>
+          <e p="TutorialManager.cs" t="Include" />
+          <e p="Upgrade" t="Include">
+            <e p="TakeUpgrade.cs" t="Include" />
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+            <e p="TMP_Bitmap.shader" t="Include" />
+            <e p="TMP_SDF Overlay.shader" t="Include" />
+            <e p="TMP_SDF SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface.shader" t="Include" />
+            <e p="TMP_SDF.shader" t="Include" />
+            <e p="TMP_Sprite.shader" t="Include" />
+            <e p="TMPro.cginc" t="Include" />
+            <e p="TMPro_Mobile.cginc" t="Include" />
+            <e p="TMPro_Properties.cginc" t="Include" />
+            <e p="TMPro_Surface.cginc" t="Include" />
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
       </e>

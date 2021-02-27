@@ -8,7 +8,7 @@ public class PlayerRespawn : MonoBehaviour
 
     private float checkPointPositionX, checkPointPositionY;
 
-    public Animator animator;
+    [SerializeField] private Animator animator;
 
     void Start()
     {
@@ -18,7 +18,6 @@ public class PlayerRespawn : MonoBehaviour
         }
     }
     
-
     public void reachedCheckpoint(float x, float y)
     {
         PlayerPrefs.SetFloat("checkPointPositionX", x);
@@ -29,6 +28,5 @@ public class PlayerRespawn : MonoBehaviour
     {
         animator.Play("Hit");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
     }
 }

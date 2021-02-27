@@ -17,10 +17,16 @@ MonoBehaviour:
     - .collabignore
     - Assets/Animations.meta
     - Assets/Animations/Background Animation.meta
+    - Assets/Animations/Background Animation/BackGround 1.controller
+    - Assets/Animations/Background Animation/BackGround 1.controller.meta
     - Assets/Animations/Background Animation/Background.anim
     - Assets/Animations/Background Animation/Background.anim.meta
     - Assets/Animations/Background Animation/Background.controller
     - Assets/Animations/Background Animation/Background.controller.meta
+    - Assets/Animations/Background Animation/Background1.anim
+    - Assets/Animations/Background Animation/Background1.anim.meta
+    - Assets/Animations/Background Animation/Brown.controller
+    - Assets/Animations/Background Animation/Brown.controller.meta
     - Assets/Animations/CheckPoint Animation.meta
     - Assets/Animations/CheckPoint Animation/Checkpoint.controller
     - Assets/Animations/CheckPoint Animation/Checkpoint.controller.meta
@@ -28,22 +34,54 @@ MonoBehaviour:
     - Assets/Animations/CheckPoint Animation/FlagIdle.anim.meta
     - Assets/Animations/CheckPoint Animation/FlagOut.anim
     - Assets/Animations/CheckPoint Animation/FlagOut.anim.meta
+    - Assets/Animations/Fire Animation.meta
+    - Assets/Animations/Fire Animation/Fire Off.anim
+    - Assets/Animations/Fire Animation/Fire Off.anim.meta
+    - Assets/Animations/Fire Animation/Fire On.anim
+    - Assets/Animations/Fire Animation/Fire On.anim.meta
+    - Assets/Animations/Fire Animation/Fire Toggle.anim
+    - Assets/Animations/Fire Animation/Fire Toggle.anim.meta
+    - Assets/Animations/Fire Animation/Off.controller
+    - Assets/Animations/Fire Animation/Off.controller.meta
     - Assets/Animations/Frog Animation.meta
+    - Assets/Animations/Frog Animation/DoubleJump.anim
+    - Assets/Animations/Frog Animation/DoubleJump.anim.meta
     - Assets/Animations/Frog Animation/Fall.anim
     - Assets/Animations/Frog Animation/Fall.anim.meta
     - Assets/Animations/Frog Animation/Frog Animation.controller
     - Assets/Animations/Frog Animation/Frog Animation.controller.meta
+    - Assets/Animations/Frog Animation/Hit.anim
+    - Assets/Animations/Frog Animation/Hit.anim.meta
     - Assets/Animations/Frog Animation/Idle.anim
     - Assets/Animations/Frog Animation/Idle.anim.meta
     - Assets/Animations/Frog Animation/Jump.anim
     - Assets/Animations/Frog Animation/Jump.anim.meta
     - Assets/Animations/Frog Animation/Run.anim
     - Assets/Animations/Frog Animation/Run.anim.meta
+    - Assets/Animations/Platforms Animation.meta
+    - Assets/Animations/Platforms Animation/Brown On (32x8)_0.controller
+    - Assets/Animations/Platforms Animation/Brown On (32x8)_0.controller.meta
+    - Assets/Animations/Platforms Animation/BrownPlatform.anim
+    - Assets/Animations/Platforms Animation/BrownPlatform.anim.meta
     - Assets/Animations/Spike Animation.meta
     - Assets/Animations/Spike Animation/Spike Enemy.controller
     - Assets/Animations/Spike Animation/Spike Enemy.controller.meta
     - Assets/Animations/Spike Animation/SpikeEnemy.anim
     - Assets/Animations/Spike Animation/SpikeEnemy.anim.meta
+    - Assets/Animations/Transition Animation.meta
+    - Assets/Animations/Transition Animation/CloseTransition.anim
+    - Assets/Animations/Transition Animation/CloseTransition.anim.meta
+    - Assets/Animations/Transition Animation/CloseTransition.controller
+    - Assets/Animations/Transition Animation/CloseTransition.controller.meta
+    - Assets/Animations/Transition Animation/OpenTransition.anim
+    - Assets/Animations/Transition Animation/OpenTransition.anim.meta
+    - Assets/Animations/Transition Animation/OpenTransition.controller
+    - Assets/Animations/Transition Animation/OpenTransition.controller.meta
+    - Assets/Animations/Upgrade Animation.meta
+    - Assets/Animations/Upgrade Animation/Effect.controller
+    - Assets/Animations/Upgrade Animation/Effect.controller.meta
+    - Assets/Animations/Upgrade Animation/Upgrade Effect.anim
+    - Assets/Animations/Upgrade Animation/Upgrade Effect.anim.meta
     - Assets/Materials.meta
     - Assets/Materials/New Physics Material 2D.physicsMaterial2D
     - Assets/Materials/New Physics Material 2D.physicsMaterial2D.meta
@@ -614,6 +652,226 @@ MonoBehaviour:
     - Assets/Pixel Adventure 1/Scenes.meta
     - Assets/Pixel Adventure 1/Scenes/Demo.unity
     - Assets/Pixel Adventure 1/Scenes/Demo.unity.meta
+    - Assets/Pixel Adventure 2.meta
+    - Assets/Pixel Adventure 2/Assets.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/AngryPig.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/AngryPig/Hit 1 (36x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/AngryPig/Hit 1 (36x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/AngryPig/Hit 2 (36x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/AngryPig/Hit 2 (36x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/AngryPig/Idle (36x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/AngryPig/Idle (36x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/AngryPig/Run (36x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/AngryPig/Run (36x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/AngryPig/Walk (36x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/AngryPig/Walk (36x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bat.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bat/Ceiling In (46x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bat/Ceiling In (46x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bat/Ceiling Out (46x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bat/Ceiling Out (46x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bat/Flying (46x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bat/Flying (46x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bat/Hit (46x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bat/Hit (46x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bat/Idle (46x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bat/Idle (46x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bee.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bee/Attack (36x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bee/Attack (36x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bee/Bullet Pieces (16x16).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bee/Bullet Pieces (16x16).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bee/Bullet.png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bee/Bullet.png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bee/Hit (36x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bee/Hit (36x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bee/Idle (36x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bee/Idle (36x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/BlueBird.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/BlueBird/Flying (32x32).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/BlueBird/Flying (32x32).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/BlueBird/Hit (32x32).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/BlueBird/Hit (32x32).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bunny.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bunny/Fall.png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bunny/Fall.png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bunny/Hit (34x44).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bunny/Hit (34x44).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bunny/Idle (34x44).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bunny/Idle (34x44).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bunny/Jump.png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bunny/Jump.png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bunny/Run (34x44).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Bunny/Run (34x44).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chameleon.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chameleon/Attack (84x38).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chameleon/Attack (84x38).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chameleon/Hit (84x38).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chameleon/Hit (84x38).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chameleon/Idle (84x38).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chameleon/Idle (84x38).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chameleon/Run (84x38).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chameleon/Run (84x38).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chicken.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chicken/Hit (32x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chicken/Hit (32x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chicken/Idle (32x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chicken/Idle (32x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chicken/Run (32x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Chicken/Run (32x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Duck.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Duck/Fall (36x36).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Duck/Fall (36x36).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Duck/Hit (36x36).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Duck/Hit (36x36).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Duck/Idle (36x36).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Duck/Idle (36x36).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Duck/Jump (36x36).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Duck/Jump (36x36).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Duck/Jump Anticipation (36x36).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Duck/Jump Anticipation (36x36).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/FatBird.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/FatBird/Fall (40x48).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/FatBird/Fall (40x48).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/FatBird/Ground (40x48).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/FatBird/Ground (40x48).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/FatBird/Hit (40x48).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/FatBird/Hit (40x48).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/FatBird/Idle (40x48).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/FatBird/Idle (40x48).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Ghost.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Ghost/Appear (44x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Ghost/Appear (44x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Ghost/Desappear (44x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Ghost/Desappear (44x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Ghost/Gost Particles (16x16).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Ghost/Gost Particles (16x16).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Ghost/Hit (44x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Ghost/Hit (44x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Ghost/Idle (44x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Ghost/Idle (44x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Mushroom.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Mushroom/Hit (32x32).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Mushroom/Hit (32x32).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Mushroom/Idle (32x32).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Mushroom/Idle (32x32).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Mushroom/Run (32x32).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Mushroom/Run (32x32).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Plant.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Plant/Attack (44x42).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Plant/Attack (44x42).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Plant/Bullet Pieces (16x16).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Plant/Bullet Pieces (16x16).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Plant/Bullet.png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Plant/Bullet.png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Plant/Hit (44x42).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Plant/Hit (44x42).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Plant/Idle (44x42).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Plant/Idle (44x42).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Radish.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Radish/Hit (30x38).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Radish/Hit (30x38).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Radish/Idle 1 (30x38).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Radish/Idle 1 (30x38).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Radish/Idle 2 (30x38).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Radish/Idle 2 (30x38).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Radish/Leafs (16x16).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Radish/Leafs (16x16).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Radish/Run (30x38).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Radish/Run (30x38).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rino.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rino/Hit (52x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rino/Hit (52x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rino/Hit Wall (52x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rino/Hit Wall (52x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rino/Idle (52x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rino/Idle (52x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rino/Run (52x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rino/Run (52x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock1_Hit.png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock1_Hit.png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock1_Idle (38x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock1_Idle (38x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock1_Run (38x34).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock1_Run (38x34).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock2_Hit (32x28).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock2_Hit (32x28).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock2_Idle (32x28).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock2_Idle (32x28).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock2_Run (32x28).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock2_Run (32x28).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock3_Hit (22x18).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock3_Hit (22x18).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock3_Idle (22x18).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock3_Idle (22x18).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock3_Run (22x18).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Rocks/Rock3_Run (22x18).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Hit (52x54).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Hit (52x54).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Hit Wall 1 (52x54).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Hit Wall 1 (52x54).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Hit Wall 2 (52x54).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Hit Wall 2 (52x54).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Idle 1 (52x54).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Idle 1 (52x54).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Idle 2 (52x54).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Idle 2 (52x54).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Orange Particle.png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Orange Particle.png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Red Particle.png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Skull/Red Particle.png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Slime.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Slime/Hit (44x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Slime/Hit (44x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Slime/Idle-Run (44x30).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Slime/Idle-Run (44x30).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Slime/Particles (16x16).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Slime/Particles (16x16).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Hit (38x24).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Hit (38x24).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Idle (38x24).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Idle (38x24).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Shell Idle (38x24).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Shell Idle (38x24).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Shell Top Hit (38x24).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Shell Top Hit (38x24).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Shell Wall Hit (38x24).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Shell Wall Hit (38x24).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Snail without shell.png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Snail without shell.png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Walk (38x24).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Snail/Walk (38x24).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Attack (64x32).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Attack (64x32).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Bullet Pieces (16x16).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Bullet Pieces (16x16).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Bullet.png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Bullet.png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Hit (64x32).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Hit (64x32).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Idle (64x32).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Idle (64x32).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Run (64x32).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Trunk/Run (64x32).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Turtle.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Turtle/Hit (44x26).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Turtle/Hit (44x26).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Turtle/Idle 1 (44x26).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Turtle/Idle 1 (44x26).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Turtle/Idle 2 (44x26).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Turtle/Idle 2 (44x26).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Turtle/Spikes in (44x26).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Turtle/Spikes in (44x26).png.meta
+    - Assets/Pixel Adventure 2/Assets/Enemies/Turtle/Spikes out (44x26).png
+    - Assets/Pixel Adventure 2/Assets/Enemies/Turtle/Spikes out (44x26).png.meta
+    - Assets/Pixel Adventure 2/Scenes.meta
+    - Assets/Pixel Adventure 2/Scenes/Demo.unity
+    - Assets/Pixel Adventure 2/Scenes/Demo.unity.meta
     - Assets/Prefabs.meta
     - Assets/Prefabs/Character.meta
     - Assets/Prefabs/Character/Character.prefab
@@ -621,36 +879,149 @@ MonoBehaviour:
     - Assets/Prefabs/CheckPoint.meta
     - Assets/Prefabs/CheckPoint/Checkpoint.prefab
     - Assets/Prefabs/CheckPoint/Checkpoint.prefab.meta
+    - Assets/Prefabs/Door.meta
+    - Assets/Prefabs/Door/Door.prefab
+    - Assets/Prefabs/Door/Door.prefab.meta
     - Assets/Prefabs/Enemies.meta
-    - Assets/Prefabs/Enemies/Spike.prefab
-    - Assets/Prefabs/Enemies/Spike.prefab.meta
+    - Assets/Prefabs/Enemies/Spike Enemy.prefab
+    - Assets/Prefabs/Enemies/Spike Enemy.prefab.meta
     - Assets/Prefabs/Fruits.meta
     - Assets/Prefabs/Fruits/Apple_0.prefab
     - Assets/Prefabs/Fruits/Apple_0.prefab.meta
+    - Assets/Prefabs/Platform.meta
+    - Assets/Prefabs/Platform/BrownPlatform.prefab
+    - Assets/Prefabs/Platform/BrownPlatform.prefab.meta
+    - Assets/Prefabs/Transition.meta
+    - Assets/Prefabs/Transition/CloseTransition.prefab
+    - Assets/Prefabs/Transition/CloseTransition.prefab.meta
+    - Assets/Prefabs/Transition/OpenTransition.prefab
+    - Assets/Prefabs/Transition/OpenTransition.prefab.meta
+    - Assets/Prefabs/Traps.meta
+    - Assets/Prefabs/Traps/Fire.prefab
+    - Assets/Prefabs/Traps/Fire.prefab.meta
+    - Assets/Prefabs/Traps/Spike.prefab
+    - Assets/Prefabs/Traps/Spike.prefab.meta
+    - Assets/Prefabs/Upgrade.meta
+    - Assets/Prefabs/Upgrade/Upgrade.prefab
+    - Assets/Prefabs/Upgrade/Upgrade.prefab.meta
     - Assets/Scenes.meta
-    - Assets/Scenes/Level1.unity
-    - Assets/Scenes/Level1.unity.meta
-    - Assets/Scenes/Level2.unity
-    - Assets/Scenes/Level2.unity.meta
+    - Assets/Scenes/Level 1.unity
+    - Assets/Scenes/Level 1.unity.meta
+    - Assets/Scenes/Level 2.unity
+    - Assets/Scenes/Level 2.unity.meta
     - Assets/Scenes/Level3.unity
     - Assets/Scenes/Level3.unity.meta
+    - Assets/Scenes/Level4.unity
+    - Assets/Scenes/Level4.unity.meta
+    - Assets/Scenes/Level9.unity
+    - Assets/Scenes/Level9.unity.meta
     - Assets/Scripts.meta
-    - Assets/Scripts/CharacterScript.cs
-    - Assets/Scripts/CharacterScript.cs.meta
-    - Assets/Scripts/CheckGround.cs
-    - Assets/Scripts/CheckGround.cs.meta
-    - Assets/Scripts/CheckPoint.cs
-    - Assets/Scripts/CheckPoint.cs.meta
-    - Assets/Scripts/DamageObject.cs
-    - Assets/Scripts/DamageObject.cs.meta
-    - Assets/Scripts/EnemySpike.cs
-    - Assets/Scripts/EnemySpike.cs.meta
-    - Assets/Scripts/FruitCollected.cs
-    - Assets/Scripts/FruitCollected.cs.meta
-    - Assets/Scripts/LevelComplete.cs
-    - Assets/Scripts/LevelComplete.cs.meta
-    - Assets/Scripts/PlayerRespawn.cs
-    - Assets/Scripts/PlayerRespawn.cs.meta
+    - Assets/Scripts/Character.meta
+    - Assets/Scripts/Character/CharacterScript.cs
+    - Assets/Scripts/Character/CharacterScript.cs.meta
+    - Assets/Scripts/Character/CheckGround.cs
+    - Assets/Scripts/Character/CheckGround.cs.meta
+    - Assets/Scripts/Character/PlayerRespawn.cs
+    - Assets/Scripts/Character/PlayerRespawn.cs.meta
+    - Assets/Scripts/CheckPoint.meta
+    - Assets/Scripts/CheckPoint/CheckPoint.cs
+    - Assets/Scripts/CheckPoint/CheckPoint.cs.meta
+    - Assets/Scripts/Door.meta
+    - Assets/Scripts/Door/KeyCollected.cs
+    - Assets/Scripts/Door/KeyCollected.cs.meta
+    - Assets/Scripts/Door/LevelComplete.cs
+    - Assets/Scripts/Door/LevelComplete.cs.meta
+    - Assets/Scripts/Enemy.meta
+    - Assets/Scripts/Enemy/EnemySpike.cs
+    - Assets/Scripts/Enemy/EnemySpike.cs.meta
+    - Assets/Scripts/Platform.meta
+    - Assets/Scripts/Platform/Platform.cs
+    - Assets/Scripts/Platform/Platform.cs.meta
+    - Assets/Scripts/Traps.meta
+    - Assets/Scripts/Traps/CheckPlayer.cs
+    - Assets/Scripts/Traps/CheckPlayer.cs.meta
+    - Assets/Scripts/Traps/DamageObject.cs
+    - Assets/Scripts/Traps/DamageObject.cs.meta
+    - Assets/Scripts/Traps/FireDamage.cs
+    - Assets/Scripts/Traps/FireDamage.cs.meta
+    - Assets/Scripts/TutorialManager.cs
+    - Assets/Scripts/TutorialManager.cs.meta
+    - Assets/Scripts/Upgrade.meta
+    - Assets/Scripts/Upgrade/TakeUpgrade.cs
+    - Assets/Scripts/Upgrade/TakeUpgrade.cs.meta
+    - Assets/TextMesh Pro.meta
+    - Assets/TextMesh Pro/Documentation.meta
+    - Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf
+    - Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta
+    - Assets/TextMesh Pro/Fonts.meta
+    - Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt
+    - Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta
+    - Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+    - Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta
+    - Assets/TextMesh Pro/Resources.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset.meta
+    - Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt
+    - Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta
+    - Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt
+    - Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta
+    - Assets/TextMesh Pro/Resources/Sprite Assets.meta
+    - Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset
+    - Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta
+    - Assets/TextMesh Pro/Resources/Style Sheets.meta
+    - Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset
+    - Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta
+    - Assets/TextMesh Pro/Resources/TMP Settings.asset
+    - Assets/TextMesh Pro/Resources/TMP Settings.asset.meta
+    - Assets/TextMesh Pro/Shaders.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Sprite.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMPro.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro.cginc.meta
+    - Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta
+    - Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta
+    - Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta
+    - Assets/TextMesh Pro/Sprites.meta
+    - Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt
+    - Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta
+    - Assets/TextMesh Pro/Sprites/EmojiOne.json
+    - Assets/TextMesh Pro/Sprites/EmojiOne.json.meta
+    - Assets/TextMesh Pro/Sprites/EmojiOne.png
+    - Assets/TextMesh Pro/Sprites/EmojiOne.png.meta
     - Packages/manifest.json
     - Packages/packages-lock.json
     - ProjectSettings/AudioManager.asset
@@ -672,7 +1043,7 @@ MonoBehaviour:
     - ProjectSettings/VFXManager.asset
     - ProjectSettings/VersionControlSettings.asset
     - 
-    m_Values: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

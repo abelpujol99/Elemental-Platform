@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class FireDamage : MonoBehaviour
 {
-    public void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] private Animator animator;
+    private bool active;
+    public void OnTriggerEnter2D(Collider2D trigger)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (trigger.transform.CompareTag("Player"))
         {
-            StartCoroutine(destroyPlayer(collision));
+            StartCoroutine(destroyPlayer(trigger));
         }
     }
 
-    private IEnumerator destroyPlayer(Collider2D collision)
+    private IEnumerator destroyPlayer(Collider2D trigger)
     {
         yield return new WaitForSeconds(0.35f);
-        Destroy(collision.gameObject);
-        collision.transform.GetComponent<PlayerRespawn>().playerDamage();
+        trigger.transform.GetComponent<PlayerRespawn>().playerDamage();
     }
 }
