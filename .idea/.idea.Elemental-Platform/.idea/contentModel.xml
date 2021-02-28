@@ -23,12 +23,17 @@
           <e p="Platform" t="Include">
             <e p="Platform.cs" t="Include" />
           </e>
+          <e p="Tilemap" t="Include">
+            <e p="TilemapGround.cs" t="Include" />
+          </e>
           <e p="Traps" t="Include">
             <e p="CheckPlayer.cs" t="Include" />
             <e p="DamageObject.cs" t="Include" />
             <e p="FireDamage.cs" t="Include" />
           </e>
-          <e p="TutorialManager.cs" t="Include" />
+          <e p="Tutorial" t="Include">
+            <e p="TutorialManager.cs" t="Include" />
+          </e>
           <e p="Upgrade" t="Include">
             <e p="TakeUpgrade.cs" t="Include" />
           </e>

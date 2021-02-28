@@ -56,13 +56,14 @@
      <Compile Include="Assets\Scripts\Character\PlayerRespawn.cs" />
      <Compile Include="Assets\Scripts\Door\KeyCollected.cs" />
      <Compile Include="Assets\Scripts\Platform\Platform.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\TutorialManager.cs" />
      <Compile Include="Assets\Scripts\Traps\DamageObject.cs" />
      <Compile Include="Assets\Scripts\Door\LevelComplete.cs" />
      <Compile Include="Assets\Scripts\Traps\CheckPlayer.cs" />
      <Compile Include="Assets\Scripts\Character\CheckGround.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemySpike.cs" />
      <Compile Include="Assets\Scripts\Upgrade\TakeUpgrade.cs" />
-     <Compile Include="Assets\Scripts\TutorialManager.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemySpike.cs" />
+     <Compile Include="Assets\Scripts\Tilemap\TilemapGround.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

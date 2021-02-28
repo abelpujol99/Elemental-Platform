@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FireDamage : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
     private bool active;
     public void OnTriggerEnter2D(Collider2D trigger)
     {

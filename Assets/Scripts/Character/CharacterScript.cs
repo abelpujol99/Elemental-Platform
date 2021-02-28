@@ -1,21 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterScript : MonoBehaviour
 {
-    public static bool jumpUpgrade;
-    public static bool doubleJumpUpgrade = false;
+    public static bool jumpUpgrade = true;
+    public static bool doubleJumpUpgrade;
     
-    [SerializeField] private float moveSpeed = 2;
-    [SerializeField] private float jumpSpeed = 3;
-    [SerializeField] private float doubleJumpSpeed = 2.5f;
-    [SerializeField] private float fallMultiplier = 0.5f;
-    [SerializeField] private float lowJumpMultiplier = 1f;
-    [SerializeField] private bool run;
-    [SerializeField] private bool jump;
-    [SerializeField] private bool fall;
-    [SerializeField] private bool doubleJump;
+    private float moveSpeed = 2;
+    private float jumpSpeed = 3;
+    private float doubleJumpSpeed = 2.5f;
+    private float fallMultiplier = 0.5f;
+    private float lowJumpMultiplier = 1f;
+    private bool run;
+    private bool jump;
+    private bool fall;
+    private bool doubleJump;
+    private bool canDoubleJump;
 
     Rigidbody2D rb2D;
 
@@ -29,15 +31,90 @@ public class CharacterScript : MonoBehaviour
 
     void Update()
     {
+        
+        Jump();
+        
+    }
+
+    void FixedUpdate()
+    {
+        
+        LeftRightMove();
+        
+        LowHighJump();
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D trigger)
+    {
+        if (trigger.CompareTag("Platform"))
+        {
+            CheckGround.isGrounded = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D trigger)
+    {
+        if (trigger.CompareTag("Platform"))
+        {
+            CheckGround.isGrounded = false;
+        }
+    }
+
+    private void DoubleJumpWithOutJumpBefore()
+    {
+        if (rb2D.velocity.y < 0 && canDoubleJump &&(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)))
+        {
+            rb2D.velocity = new Vector2(rb2D.velocity.x, doubleJumpSpeed);
+            animator.SetBool("DoubleJump", canDoubleJump);
+            canDoubleJump = false;
+        }
+        else if (CheckGround.isGrounded && !canDoubleJump)
+        {
+            canDoubleJump = true;
+        }
+    }
+
+    private void LeftRightMove()
+    {
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            spriteRenderer.flipX = false;
+            rb2D.velocity = new Vector2(moveSpeed, rb2D.velocity.y);
+            run = true;
+            animator.SetBool("Run", run);
+        } 
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            spriteRenderer.flipX = true;
+            rb2D.velocity = new Vector2(-moveSpeed, rb2D.velocity.y);
+            run = true;
+            animator.SetBool("Run", run);
+        }
+        else
+        {
+            rb2D.velocity = new Vector2(0, rb2D.velocity.y);
+            run = false;
+            animator.SetBool("Run", run);
+        }
+    }
+
+    private void Jump()
+    {
         if (jumpUpgrade)
         {
+            if (doubleJumpUpgrade)
+            {
+                DoubleJumpWithOutJumpBefore();
+            }
+            
             if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
                 if (CheckGround.isGrounded)
                 {
                     rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
                 }
-                else if (doubleJumpUpgrade && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)))
+                else if (doubleJumpUpgrade && canDoubleJump && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)))
                 {
                     if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
                     {
@@ -45,6 +122,7 @@ public class CharacterScript : MonoBehaviour
                         animator.SetBool("DoubleJump", doubleJump);
                         rb2D.velocity = new Vector2(rb2D.velocity.x, doubleJumpSpeed);
                         doubleJump = false;
+                        canDoubleJump = false;
                     }
                 }
             }
@@ -78,34 +156,10 @@ public class CharacterScript : MonoBehaviour
             }
             
         }
-        
     }
 
-    void FixedUpdate()
+    private void LowHighJump()
     {
-        //Move Rifht and Left
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            spriteRenderer.flipX = false;
-            rb2D.velocity = new Vector2(moveSpeed, rb2D.velocity.y);
-            run = true;
-            animator.SetBool("Run", run);
-        } 
-        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            spriteRenderer.flipX = true;
-            rb2D.velocity = new Vector2(-moveSpeed, rb2D.velocity.y);
-            run = true;
-            animator.SetBool("Run", run);
-        }
-        else
-        {
-            rb2D.velocity = new Vector2(0, rb2D.velocity.y);
-            run = false;
-            animator.SetBool("Run", run);
-        }
-        
-        //Lower and Higher Jump
         if (rb2D.velocity.y < 0)
         {
             rb2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier) * Time.deltaTime;
