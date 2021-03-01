@@ -10,7 +10,7 @@ public class LevelComplete : MonoBehaviour
 {
 
     [SerializeField] private GameObject transition;
-    [SerializeField] private Canvas canvas;
+    //[SerializeField] private Canvas canvas;
     [SerializeField] private int neededKeys;
     [SerializeField] public bool inDoor;
     private bool doorUnlock;
@@ -25,8 +25,12 @@ public class LevelComplete : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D trigger)
     {
-        inDoor = false;
+        if (trigger.CompareTag("Player"))
+        {
+            inDoor = false;
+        }
     }
+    
 
     private void Start()
     {
@@ -34,16 +38,20 @@ public class LevelComplete : MonoBehaviour
         {
             doorUnlock = true;
         }
+        else
+        {
+            doorUnlock = false;
+        }
     }
 
     private void Update()
     {
-        Debug.Log(inDoor + "indoor");
-        Debug.Log(Input.GetKey(KeyCode.E) + "E");
-        Debug.Log(doorUnlock + "unlock");
+        Debug.Log(doorUnlock + " unlock");
+        Debug.Log(inDoor + " inDoor");
+        Debug.Log(Input.GetKey(KeyCode.E) + " E");
         if (inDoor && Input.GetKey(KeyCode.E) && doorUnlock)
         {
-            canvas.enabled = false;
+            //canvas.enabled = false;
             transition.SetActive(true);
             StartCoroutine(ChangeScene());
         }
@@ -54,13 +62,7 @@ public class LevelComplete : MonoBehaviour
         neededKeys -= 1;
         if (neededKeys == 0)
         {
-            Debug.Log("fuck you");
             doorUnlock = true;
-        }
-        else
-        {
-            Debug.Log("holiiii");
-            doorUnlock = false;
         }
 
     }
