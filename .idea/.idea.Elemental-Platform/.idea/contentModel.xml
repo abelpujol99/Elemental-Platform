@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Professor\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Professor\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Elemental-Platform.2027569520.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Professor\Desktop\Elemental-Platform" t="IncludeRecursive">
+    <e p="C:\REPOSITORI\Elemental-Platform" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
@@ -34,7 +32,17 @@
             <e p="FireDamage.cs" t="Include" />
           </e>
           <e p="Tutorial" t="Include">
-            <e p="TutorialManager.cs" t="Include" />
+            <e p="Level1" t="Include">
+              <e p="TutorialManagerLevel1.cs" t="Include" />
+            </e>
+            <e p="Level2" t="Include">
+              <e p="TutorialManagerLevel2.cs" t="Include" />
+            </e>
+            <e p="Level3" t="Include">
+              <e p="AppearText1.cs" t="Include" />
+              <e p="DissapearText1.cs" t="Include" />
+              <e p="Text2.cs" t="Include" />
+            </e>
           </e>
           <e p="Upgrade" t="Include">
             <e p="TakeUpgrade.cs" t="Include" />
@@ -77,5 +85,7 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\Abel Pujol\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Abel Pujol\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Elemental-Platform.1118278643.00" t="ExcludeRecursive" />
   </component>
 </project>

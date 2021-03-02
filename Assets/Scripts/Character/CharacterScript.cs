@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CharacterScript : MonoBehaviour
 {
-    public static bool jumpUpgrade = true;
+    public static bool jumpUpgrade;
     public static bool doubleJumpUpgrade;
     
     private float moveSpeed = 2;
@@ -27,11 +27,13 @@ public class CharacterScript : MonoBehaviour
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        /*jumpUpgrade = true;
+        doubleJumpUpgrade = true;*/
     }
 
     void Update()
     {
-        
+
         Jump();
         
     }
@@ -58,20 +60,6 @@ public class CharacterScript : MonoBehaviour
         if (trigger.CompareTag("Platform"))
         {
             CheckGround.isGrounded = false;
-        }
-    }
-
-    private void DoubleJumpWithOutJumpBefore()
-    {
-        if (rb2D.velocity.y < 0 && canDoubleJump &&(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)))
-        {
-            rb2D.velocity = new Vector2(rb2D.velocity.x, doubleJumpSpeed);
-            animator.SetBool("DoubleJump", canDoubleJump);
-            canDoubleJump = false;
-        }
-        else if (CheckGround.isGrounded && !canDoubleJump)
-        {
-            canDoubleJump = true;
         }
     }
 
@@ -103,9 +91,10 @@ public class CharacterScript : MonoBehaviour
     {
         if (jumpUpgrade)
         {
-            if (doubleJumpUpgrade)
+
+            if (CheckGround.isGrounded && !canDoubleJump)
             {
-                DoubleJumpWithOutJumpBefore();
+                canDoubleJump = true;
             }
             
             if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
@@ -116,13 +105,20 @@ public class CharacterScript : MonoBehaviour
                 }
                 else if (doubleJumpUpgrade && canDoubleJump && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)))
                 {
-                    if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+                    if (rb2D.velocity.y < 0)
+                    {
+                        rb2D.velocity = new Vector2(rb2D.velocity.x, doubleJumpSpeed);
+                        animator.SetBool("DoubleJump", canDoubleJump);
+                        canDoubleJump = false;
+                    }
+                    else
                     {
                         doubleJump = true;
                         animator.SetBool("DoubleJump", doubleJump);
                         rb2D.velocity = new Vector2(rb2D.velocity.x, doubleJumpSpeed);
                         doubleJump = false;
                         canDoubleJump = false;
+
                     }
                 }
             }

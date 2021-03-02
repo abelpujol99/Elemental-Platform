@@ -4,13 +4,11 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class LevelComplete : MonoBehaviour
 {
 
     [SerializeField] private GameObject transition;
-    //[SerializeField] private Canvas canvas;
     [SerializeField] private int neededKeys;
     [SerializeField] public bool inDoor;
     private bool doorUnlock;
@@ -46,12 +44,9 @@ public class LevelComplete : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(doorUnlock + " unlock");
-        Debug.Log(inDoor + " inDoor");
-        Debug.Log(Input.GetKey(KeyCode.E) + " E");
+        
         if (inDoor && Input.GetKey(KeyCode.E) && doorUnlock)
         {
-            //canvas.enabled = false;
             transition.SetActive(true);
             StartCoroutine(ChangeScene());
         }
