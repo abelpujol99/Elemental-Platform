@@ -10,7 +10,7 @@ public class LevelComplete : MonoBehaviour
 
     [SerializeField] private GameObject transition;
     [SerializeField] private int neededKeys;
-    [SerializeField] public bool inDoor;
+    public bool inDoor;
     private bool doorUnlock;
     
     private void OnTriggerEnter2D(Collider2D trigger)
@@ -44,7 +44,6 @@ public class LevelComplete : MonoBehaviour
 
     private void Update()
     {
-        
         if (inDoor && Input.GetKey(KeyCode.E) && doorUnlock)
         {
             transition.SetActive(true);

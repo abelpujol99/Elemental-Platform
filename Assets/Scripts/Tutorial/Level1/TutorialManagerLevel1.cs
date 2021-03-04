@@ -43,6 +43,8 @@ public class TutorialManagerLevel1 : MonoBehaviour
             pressedE();
             if (E)
             {
+                text.gameObject.SetActive(false);
+                backGround.gameObject.SetActive(false);
                 controls[4].GetComponent<SpriteRenderer>().enabled = false;
                 controls[5].GetComponent<SpriteRenderer>().enabled = false;
                 controls[6].GetComponent<SpriteRenderer>().enabled = false;

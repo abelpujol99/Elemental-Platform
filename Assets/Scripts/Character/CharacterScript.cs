@@ -27,8 +27,8 @@ public class CharacterScript : MonoBehaviour
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        /*jumpUpgrade = true;
-        doubleJumpUpgrade = true;*/
+        //jumpUpgrade = true;
+        //doubleJumpUpgrade = true;
     }
 
     void Update()

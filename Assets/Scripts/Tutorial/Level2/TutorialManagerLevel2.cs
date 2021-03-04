@@ -11,11 +11,12 @@ public class TutorialManagerLevel2 : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private Image backGround;
     [SerializeField] private KeyCollected key;
-    private bool collected;
-    
+    [SerializeField] private KeyCollected collected;
+
+
     void Update()
     {
-        if (frontOfTheDoor() && !collected)
+        if (frontOfTheDoor())
         {
             text.text = "Take all     to open the door";
             backGround.gameObject.SetActive(true);
@@ -27,23 +28,15 @@ public class TutorialManagerLevel2 : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D trigger)
-    {
-        if (trigger.CompareTag("Player"))
-        {
-            collected = true;
-        }
-    }
-
     private bool frontOfTheDoor()
     {
-        if (overTheDoor.inDoor && !collected)
+        if (overTheDoor.inDoor && key)
         {
-            key.gameObject.SetActive(true);
+            collected.gameObject.SetActive(true);
             return true;
         }
 
-        key.gameObject.SetActive(false);
+        collected.gameObject.SetActive(false);
         return false;
     }
 }

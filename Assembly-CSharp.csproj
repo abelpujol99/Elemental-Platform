@@ -66,8 +66,10 @@
      <Compile Include="Assets\Scripts\Tutorial\Level3\Text2.cs" />
      <Compile Include="Assets\Scripts\Character\CheckGround.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\DissapearText1.cs" />
-     <Compile Include="Assets\Scripts\Upgrade\TakeUpgrade.cs" />
+     <Compile Include="Assets\Scripts\Upgrade\TakeJumpUpgrade.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemySpike.cs" />
+     <Compile Include="Assets\Scripts\Upgrade\TakeDoubleJumpUpgrade.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\Level4\TutorialManagerLevel4.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
