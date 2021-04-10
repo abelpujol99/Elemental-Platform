@@ -5,66 +5,71 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelComplete : MonoBehaviour
+namespace Door
 {
-
-    [SerializeField] private GameObject transition;
-    [SerializeField] private int neededKeys;
-    public bool inDoor;
-    private bool doorUnlock;
+    public class LevelComplete : MonoBehaviour
+    {
     
-    private void OnTriggerEnter2D(Collider2D trigger)
-    {
-        if (trigger.CompareTag("Player"))
+        [SerializeField] private GameObject transition;
+        [SerializeField] private int neededKeys;
+        public bool inDoor;
+        private bool doorUnlock;
+        
+        private void OnTriggerEnter2D(Collider2D trigger)
         {
-            inDoor = true;
+            if (trigger.CompareTag("Player"))
+            {
+                inDoor = true;
+            }
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D trigger)
-    {
-        if (trigger.CompareTag("Player"))
-        {
-            inDoor = false;
-        }
-    }
     
-
-    private void Start()
-    {
-        if (neededKeys == 0)
+        private void OnTriggerExit2D(Collider2D trigger)
         {
-            doorUnlock = true;
+            if (trigger.CompareTag("Player"))
+            {
+                inDoor = false;
+            }
         }
-        else
+        
+    
+        private void Start()
         {
-            doorUnlock = false;
+            if (neededKeys == 0)
+            {
+                doorUnlock = true;
+            }
+            else
+            {
+                doorUnlock = false;
+            }
         }
-    }
-
-    private void Update()
-    {
-        if (inDoor && Input.GetKey(KeyCode.E) && doorUnlock)
+    
+        private void Update()
         {
-            transition.SetActive(true);
-            StartCoroutine(ChangeScene());
+            if (inDoor && Input.GetKey(KeyCode.E) && doorUnlock)
+            {
+                transition.SetActive(true);
+                StartCoroutine(ChangeScene());
+            }
         }
-    }
-
-    public void countKeys()
-    {
-        neededKeys -= 1;
-        if (neededKeys == 0)
+    
+        public void countKeys()
         {
-            doorUnlock = true;
+            neededKeys -= 1;
+            if (neededKeys == 0)
+            {
+                doorUnlock = true;
+            }
+    
         }
-
+    
+        public IEnumerator ChangeScene()
+        {
+            yield return new WaitForSeconds(0.85f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    
     }
-
-    public IEnumerator ChangeScene()
-    {
-        yield return new WaitForSeconds(0.85f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
 }
+
+

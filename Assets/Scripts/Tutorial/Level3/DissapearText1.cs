@@ -1,24 +1,29 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Platform;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DissapearText1 : MonoBehaviour
+namespace Tutorial.Level3
 {
-    
-    [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private Image backGround;
-    [SerializeField] private Platform platform;
-
-    private void OnTriggerEnter2D(Collider2D trigger)
+    public class DissapearText1 : MonoBehaviour
     {
-        if (trigger.CompareTag("Player"))
+    
+        [SerializeField] private TextMeshProUGUI text;
+        [SerializeField] private Image backGround;
+        [SerializeField] private PlatformUpDown platform;
+
+        private void OnTriggerEnter2D(Collider2D trigger)
         {
-            text.text = "";
-            platform.gameObject.SetActive(false);
-            backGround.gameObject.SetActive(false);
+            if (trigger.CompareTag("Player"))
+            {
+                text.text = "";
+                platform.gameObject.SetActive(false);
+                backGround.gameObject.SetActive(false);
+            }
         }
     }
+
 }

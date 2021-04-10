@@ -197,6 +197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4053e513b91fd7341a9e8fa7f0319f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rock: {fileID: 6995859749326785915, guid: 171a53fcdb7d2944aabce12fbfd13fec, type: 3}
+  water: {fileID: 0}
+  fire: {fileID: 0}
+  wind: {fileID: 0}
+  lightning: {fileID: 0}
   spriteRenderer: {fileID: 2213920681987148942}
   animator: {fileID: 2213920681987148929}
 --- !u!114 &7605101560815944243

@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Character;
 using UnityEngine;
 
-public class EnemySpike : MonoBehaviour
+namespace Enemy
 {
-    public void OnCollisionEnter2D(Collision2D collision)
+    public class EnemySpike : MonoBehaviour
     {
-        if (collision.transform.CompareTag("Player"))
+        public void OnCollisionEnter2D(Collision2D collision)
         {
-            collision.transform.GetComponent<PlayerRespawn>().playerDamage();
+            if (collision.transform.CompareTag("Player"))
+            {
+                collision.transform.GetComponent<PlayerRespawn>().playerDamage();
+            }
         }
     }
 }
+

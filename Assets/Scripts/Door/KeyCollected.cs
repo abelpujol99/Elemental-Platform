@@ -3,20 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyCollected : MonoBehaviour
+namespace Door
 {
-
-    [SerializeField] private LevelComplete door;
-    private bool collected = false;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class KeyCollected : MonoBehaviour
     {
-        if (collision.CompareTag("Player") && !collected)
+
+        [SerializeField] private LevelComplete door;
+        private bool collected = false;
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            collected = true;
-            GetComponent<SpriteRenderer>().enabled = false;
-            gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            Destroy(gameObject, 0.5f);
-            door.countKeys();
+            if (collision.CompareTag("Player") && !collected)
+            {
+                collected = true;
+                GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                Destroy(gameObject, 0.5f);
+                door.countKeys();
+            }
         }
     }
 }
+

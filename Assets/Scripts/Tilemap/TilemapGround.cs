@@ -1,23 +1,28 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Character;
 using UnityEngine;
 
-public class TilemapGround : MonoBehaviour
+namespace Tilemap
 {
-    private void OnTriggerEnter2D(Collider2D trigger)
+    public class TilemapGround : MonoBehaviour
     {
-        if (trigger.transform.CompareTag("CheckGround"))
+        private void OnTriggerEnter2D(Collider2D trigger)
         {
-            CheckGround.isGrounded = true;
+            if (trigger.transform.CompareTag("CheckGround"))
+            {
+                CheckGround.isGrounded = true;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D trigger)
+        {
+            if (trigger.transform.CompareTag("CheckGround"))
+            {
+                CheckGround.isGrounded = false;
+            }
         }
     }
 
-    private void OnTriggerExit2D(Collider2D trigger)
-    {
-        if (trigger.transform.CompareTag("CheckGround"))
-        {
-            CheckGround.isGrounded = false;
-        }
-    }
 }

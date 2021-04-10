@@ -1,42 +1,47 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Door;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialManagerLevel2 : MonoBehaviour
+namespace Tutorial.Level2
 {
-    [SerializeField] private LevelComplete overTheDoor;
-    [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private Image backGround;
-    [SerializeField] private KeyCollected key;
-    [SerializeField] private KeyCollected collected;
-
-
-    void Update()
+    public class TutorialManagerLevel2 : MonoBehaviour
     {
-        if (frontOfTheDoor())
+        [SerializeField] private LevelComplete overTheDoor;
+        [SerializeField] private TextMeshProUGUI text;
+        [SerializeField] private Image backGround;
+        [SerializeField] private KeyCollected key;
+        [SerializeField] private KeyCollected collected;
+
+
+        void Update()
         {
-            text.text = "Take all     to open the door";
-            backGround.gameObject.SetActive(true);
+            if (frontOfTheDoor())
+            {
+                text.text = "Take all     to open the door";
+                backGround.gameObject.SetActive(true);
+            }
+            else
+            {
+                text.text = "";
+                backGround.gameObject.SetActive(false);
+            }
         }
-        else
+
+        private bool frontOfTheDoor()
         {
-            text.text = "";
-            backGround.gameObject.SetActive(false);
+            if (overTheDoor.inDoor && key)
+            {
+                collected.gameObject.SetActive(true);
+                return true;
+            }
+
+            collected.gameObject.SetActive(false);
+            return false;
         }
     }
 
-    private bool frontOfTheDoor()
-    {
-        if (overTheDoor.inDoor && key)
-        {
-            collected.gameObject.SetActive(true);
-            return true;
-        }
-
-        collected.gameObject.SetActive(false);
-        return false;
-    }
 }

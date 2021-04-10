@@ -3,30 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerRespawn : MonoBehaviour
+namespace Character
 {
-
-    private float checkPointPositionX, checkPointPositionY;
-
-    [SerializeField] private Animator animator;
-
-    void Start()
+    public class PlayerRespawn : MonoBehaviour
     {
-        if (PlayerPrefs.GetFloat("checkPointPositionX") != 0)
+
+        private float checkPointPositionX, checkPointPositionY;
+
+        [SerializeField] private Animator animator;
+
+        void Start()
         {
-            transform.position = (new Vector2(PlayerPrefs.GetFloat("checkPointPositionX"), PlayerPrefs.GetFloat("checkPointPositionY")));
+            if (PlayerPrefs.GetFloat("checkPointPositionX") != 0)
+            {
+                transform.position = (new Vector2(PlayerPrefs.GetFloat("checkPointPositionX"), PlayerPrefs.GetFloat("checkPointPositionY")));
+            }
+        }
+
+        public void playerDamage()
+        {
+            animator.Play("Hit");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-    
-    public void reachedCheckpoint(float x, float y)
-    {
-        PlayerPrefs.SetFloat("checkPointPositionX", x);
-        PlayerPrefs.SetFloat("checkPointPositionY", y);
-    }
 
-    public void playerDamage()
-    {
-        animator.Play("Hit");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }
+

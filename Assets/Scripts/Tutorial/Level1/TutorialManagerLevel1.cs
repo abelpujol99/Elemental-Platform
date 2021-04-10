@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Character;
+using Door;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialManagerLevel1 : MonoBehaviour
+namespace Tutorial.Level1
+{
+    public class TutorialManagerLevel1 : MonoBehaviour
 {
     [SerializeField] private CharacterScript character;
     [SerializeField] private LevelComplete overTheDoor;
@@ -18,7 +22,6 @@ public class TutorialManagerLevel1 : MonoBehaviour
     void Start()
     {
         StartCoroutine(WaitUntilTransitionEnd());
-        controls = gameObject.GetComponents<GameObject>();
     }
 
     void Update()
@@ -104,3 +107,6 @@ public class TutorialManagerLevel1 : MonoBehaviour
         }
     }
 }
+
+}
+

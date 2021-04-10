@@ -50,26 +50,25 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Traps\FireDamage.cs" />
-     <Compile Include="Assets\Scripts\CheckPoint\CheckPoint.cs" />
+     <Compile Include="Assets\Scripts\Trap\FireDamage.cs" />
+     <Compile Include="Assets\Scripts\Upgrade\TakeUpgrade.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level2\TutorialManagerLevel2.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterScript.cs" />
      <Compile Include="Assets\Scripts\Character\PlayerRespawn.cs" />
      <Compile Include="Assets\Scripts\Door\KeyCollected.cs" />
-     <Compile Include="Assets\Scripts\Platform\Platform.cs" />
+     <Compile Include="Assets\Scripts\Platform\PlatformUpDown.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level1\TutorialManagerLevel1.cs" />
-     <Compile Include="Assets\Scripts\Traps\DamageObject.cs" />
+     <Compile Include="Assets\Scripts\Trap\DamageObject.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\Level4\TutorialManagerLevel4.cs" />
      <Compile Include="Assets\Scripts\Door\LevelComplete.cs" />
-     <Compile Include="Assets\Scripts\Traps\CheckPlayer.cs" />
+     <Compile Include="Assets\Scripts\Trap\CheckPlayer.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\AppearText1.cs" />
      <Compile Include="Assets\Scripts\Tilemap\TilemapGround.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\Text2.cs" />
      <Compile Include="Assets\Scripts\Character\CheckGround.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\DissapearText1.cs" />
-     <Compile Include="Assets\Scripts\Upgrade\TakeJumpUpgrade.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemySpike.cs" />
-     <Compile Include="Assets\Scripts\Upgrade\TakeDoubleJumpUpgrade.cs" />
-     <Compile Include="Assets\Scripts\Tutorial\Level4\TutorialManagerLevel4.cs" />
+     <Compile Include="Assets\Scripts\CameraController\CameraMoves.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
