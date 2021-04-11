@@ -5945,6 +5945,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5595039397204498081, guid: db6492b60389a634f9237f835948de8f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595039397204498083, guid: db6492b60389a634f9237f835948de8f, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5595039397204498083, guid: db6492b60389a634f9237f835948de8f, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
       value: 2

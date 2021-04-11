@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using CameraController;
 using UnityEngine;
 
@@ -12,13 +13,16 @@ namespace Character
             private string tag;
             private GameObject ability;
             private int size;
+            private float timer;
 
-            public Ability(string tag, GameObject ability, int size)
+            public Ability(string tag, GameObject ability, int size, float timer)
             {
                 this.tag = tag;
                 this.ability = ability;
                 this.size = size;
+                this.timer = timer;
             }
+
 
             public string getTag()
             {
@@ -35,9 +39,19 @@ namespace Character
                 return size;
             }
 
+            public float getTimer()
+            {
+                return timer;
+            }
+
             public void setSize(int size)
             {
                 this.size = size;
+            }
+
+            public void setTimer(float timer)
+            {
+                this.timer = timer;
             }
         }
         
@@ -88,7 +102,8 @@ namespace Character
         private bool _doubleJump;
         private bool _canDoubleJump;
         
-        private int _powerNum = 1;
+        private int _powerNum;
+        private int _maxPowers;
         private int _rockCapacity = 2;
         private int _waterCapacity = 1;
         private int _fireCapacity = 1;
@@ -102,6 +117,7 @@ namespace Character
             _maximumZoomOut = Camera.main.orthographicSize;
             _posCamera = Camera.main.transform.position;
             _rb2D = GetComponent<Rigidbody2D>();
+            _rockUpgrade = false;
             SetPowers();
             jumpUpgrade = true;
             //doubleJumpUpgrade = true;
@@ -109,6 +125,8 @@ namespace Character
 
         void Update()
         {
+            
+            Debug.Log(doubleJumpUpgrade);
 
             Jump();
             
@@ -118,9 +136,9 @@ namespace Character
             }
             else
             {
-                _powerNum = ChoosePower(_powerNum);
+                _powerNum = ChoosePower(_powerNum, _maxPowers);
                 
-                if (Input.GetMouseButtonUp(0))
+                if (Input.GetMouseButtonUp(0) && _maxPowers > 0)
                 {
                     UsePower(_powerNum);
                 }
@@ -258,72 +276,80 @@ namespace Character
 
         private void SetPowers()
         {
-            if (true)
+            if (_rockUpgrade)
             {
                 _abilities = new List<Ability>();
                 
-                _rocksList = new Ability("Rock", rock, _rockCapacity);
+                _rocksList = new Ability("Rock", rock, _rockCapacity, 0f);
                 _abilities.Add(_rocksList);
+                _maxPowers += 1;
 
                 if (_waterUpgrade)
                 {
-                    _waterList = new Ability("Water", water, _waterCapacity);
+                    _waterList = new Ability("Water", water, _waterCapacity, 1f);
                     _abilities.Add(_waterList);
+                    _maxPowers += 1;
 
                     if (_fireUpgrade)
                     {
-                        _fireList = new Ability("Fire", fire, _fireCapacity);
+                        _fireList = new Ability("Fire", fire, _fireCapacity, 2f);
                         _abilities.Add(_fireList);
+                        _maxPowers += 1;
 
                         if (_windUpgrade)
                         {
-                            _windList = new Ability("Wind", wind, _windCapacity);
+                            _windList = new Ability("Wind", wind, _windCapacity, 3f);
                             _abilities.Add(_windList);
+                            _maxPowers += 1;
 
                             if (_lightningUpgrade)
                             {
-                                _lightningList = new Ability("Lightning", lightning, _lightningCapacity);
+                                _lightningList = new Ability("Lightning", lightning, _lightningCapacity, 0.5f);
                                 _abilities.Add(_lightningList);
+                                _maxPowers += 1;
                             }
                         }
                     }
                 }
-            }
-            
-            abilityDictionary = new Dictionary<string, Queue<GameObject>>();
-            
-            foreach (Ability ability in _abilities)
-            {
-                Queue<GameObject> abilityPool = new Queue<GameObject>();
-
-                for (int i = 0; i < ability.getSize(); i++)
-                {
-                    GameObject obj = Instantiate(ability.getAbility());
-                    obj.SetActive(false);
-                    abilityPool.Enqueue(obj);
-                }
                 
-                abilityDictionary.Add(ability.getTag(), abilityPool);
+                abilityDictionary = new Dictionary<string, Queue<GameObject>>();
+            
+                foreach (Ability ability in _abilities)
+                {
+                    Queue<GameObject> abilityPool = new Queue<GameObject>();
+
+                    for (int i = 0; i < ability.getSize(); i++)
+                    {
+                        GameObject obj = Instantiate(ability.getAbility());
+                        obj.SetActive(false);
+                        abilityPool.Enqueue(obj);
+                    }
+                
+                    abilityDictionary.Add(ability.getTag(), abilityPool);
+                }
             }
         }
 
-        private int ChoosePower(int powerNum)
+        private int ChoosePower(int powerNum, int maxPowers)
         {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+            if (maxPowers != 0)
             {
-                powerNum += 1;
-                if (powerNum == 6)
+                if (Input.GetAxis("Mouse ScrollWheel") > 0f)
                 {
-                    powerNum = 1;
+                    powerNum += 1;
+                    if (powerNum == maxPowers)
+                    {
+                        powerNum = 0;
+                    }
                 }
-            }
 
-            if (Input.GetAxis("Mouse ScrollWheel") < 0f)
-            {
-                powerNum -= 1;
-                if (powerNum == 0)
+                if (Input.GetAxis("Mouse ScrollWheel") < 0f)
                 {
-                    powerNum = 5;
+                    powerNum -= 1;
+                    if (powerNum == -1)
+                    {
+                        powerNum = maxPowers - 1;
+                    }
                 }
             }
 
@@ -333,29 +359,29 @@ namespace Character
         private void UsePower(int powerNum)
         {
             string tag = "";
+            
             GameObject abilityToSpawn;
-            
-            
+
             switch (powerNum)
             {
+                case 0:
+                    tag = _abilities[powerNum].getTag();
+                    break;
+                    
                 case 1:
-                    tag = "Rock";
+                    tag = _abilities[powerNum].getTag();
                     break;
                     
                 case 2:
-                    tag = "Water";
+                    tag = _abilities[powerNum].getTag();
                     break;
                     
                 case 3:
-                    tag = "Fire";
+                    tag = _abilities[powerNum].getTag();
                     break;
                     
                 case 4:
-                    tag = "Wind";
-                    break;
-                    
-                case 5:
-                    tag = "Lightning";
+                    tag = _abilities[powerNum].getTag();
                     break;
                         
             }
@@ -369,7 +395,18 @@ namespace Character
             float abilityYSpeed = abilityToSpawn.GetComponent<Rigidbody2D>().velocity.y; 
             abilityToSpawn.GetComponent<Rigidbody2D>().velocity = new Vector2(0, abilityYSpeed);
             abilityDictionary[tag].Enqueue(abilityToSpawn);
+            if (_abilities[powerNum].getTimer() != 0f)
+            {
+                StartCoroutine(AbilityDisappear(_abilities[powerNum].getTimer(), abilityToSpawn));
+            }
 
+        }
+
+        private IEnumerator AbilityDisappear(float timer, GameObject abilityToSpawn)
+        {
+            yield return new WaitForSeconds(timer);
+            abilityToSpawn.SetActive(false);
+            
         }
 
         private void Zoom()
