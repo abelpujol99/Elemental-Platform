@@ -95,12 +95,14 @@ namespace Character
         private float _lowJumpMultiplier = 1f;
         private float _maximumZoomIn = 0.54f;
         private float _maximumZoomOut;
+        private float _abilityTime;
         
         private bool _run;
         private bool _jump;
         private bool _fall;
         private bool _doubleJump;
         private bool _canDoubleJump;
+        
         
         private int _powerNum;
         private int _maxPowers;
@@ -110,14 +112,18 @@ namespace Character
         private int _windCapacity = 1;
         private int _lightningCapacity = 1;
         private int _speed = 50;
-
-
+        
+        
         void Start()
         {
             _maximumZoomOut = Camera.main.orthographicSize;
             _posCamera = Camera.main.transform.position;
             _rb2D = GetComponent<Rigidbody2D>();
-            _rockUpgrade = false;
+            _rockUpgrade = true;
+            _waterUpgrade = true;
+            _fireUpgrade = true;
+            _windUpgrade = true;
+            _lightningUpgrade = true;
             SetPowers();
             jumpUpgrade = true;
             //doubleJumpUpgrade = true;
@@ -125,8 +131,6 @@ namespace Character
 
         void Update()
         {
-            
-            Debug.Log(doubleJumpUpgrade);
 
             Jump();
             
@@ -280,7 +284,7 @@ namespace Character
             {
                 _abilities = new List<Ability>();
                 
-                _rocksList = new Ability("Rock", rock, _rockCapacity, 0f);
+                _rocksList = new Ability("Rock", rock, _rockCapacity, 3f);
                 _abilities.Add(_rocksList);
                 _maxPowers += 1;
 
@@ -385,28 +389,27 @@ namespace Character
                     break;
                         
             }
-            
+
             _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             _abilityPos.z = 0f;
+            _abilities[powerNum].setTimer(_abilities[powerNum].getTimer());
             abilityToSpawn = abilityDictionary[tag].Dequeue();
             abilityToSpawn.SetActive(true);
             abilityToSpawn.transform.position = _abilityPos;
             abilityToSpawn.transform.rotation = Quaternion.identity;
-            float abilityYSpeed = abilityToSpawn.GetComponent<Rigidbody2D>().velocity.y; 
-            abilityToSpawn.GetComponent<Rigidbody2D>().velocity = new Vector2(0, abilityYSpeed);
+            /*float abilityYSpeed = abilityToSpawn.GetComponent<Rigidbody2D>().velocity.y; 
+            abilityToSpawn.GetComponent<Rigidbody2D>().velocity = new Vector2(0, abilityYSpeed);*/
             abilityDictionary[tag].Enqueue(abilityToSpawn);
             if (_abilities[powerNum].getTimer() != 0f)
             {
                 StartCoroutine(AbilityDisappear(_abilities[powerNum].getTimer(), abilityToSpawn));
             }
-
         }
 
         private IEnumerator AbilityDisappear(float timer, GameObject abilityToSpawn)
         {
             yield return new WaitForSeconds(timer);
             abilityToSpawn.SetActive(false);
-            
         }
 
         private void Zoom()

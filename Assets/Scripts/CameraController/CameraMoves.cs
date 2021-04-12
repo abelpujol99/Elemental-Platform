@@ -17,6 +17,7 @@ namespace CameraController
             transform.position = desiredPosition;
             
             transform.LookAt(target);
+
         }
     }
 }

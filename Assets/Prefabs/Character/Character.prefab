@@ -198,10 +198,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rock: {fileID: 6995859749326785915, guid: 171a53fcdb7d2944aabce12fbfd13fec, type: 3}
-  water: {fileID: 0}
-  fire: {fileID: 0}
-  wind: {fileID: 0}
-  lightning: {fileID: 0}
+  water: {fileID: 2472008848403422929, guid: c6cedc4fd180c3f4ba53cdfdbdeb5e6a, type: 3}
+  fire: {fileID: 9076930295393282881, guid: 04faa956100d0d7488cc54d8eab136b0, type: 3}
+  wind: {fileID: 1817880175926051597, guid: ac79534a255073a4bb20799d9418ce1f, type: 3}
+  lightning: {fileID: 1936801452089805495, guid: a738622e7d7df3e4a8be15831a1dc9bd, type: 3}
   spriteRenderer: {fileID: 2213920681987148942}
   animator: {fileID: 2213920681987148929}
 --- !u!114 &7605101560815944243
