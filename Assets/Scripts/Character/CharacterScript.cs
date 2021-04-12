@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using CameraController;
 using UnityEngine;
 
@@ -284,7 +286,7 @@ namespace Character
             {
                 _abilities = new List<Ability>();
                 
-                _rocksList = new Ability("Rock", rock, _rockCapacity, 3f);
+                _rocksList = new Ability("Rock", rock, _rockCapacity, 0f);
                 _abilities.Add(_rocksList);
                 _maxPowers += 1;
 
@@ -392,17 +394,25 @@ namespace Character
 
             _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             _abilityPos.z = 0f;
-            _abilities[powerNum].setTimer(_abilities[powerNum].getTimer());
+            float angle = Mathf.Atan2(_abilityPos.y - transform.position.y, _abilityPos.x - transform.position.x) * Mathf.Rad2Deg;
+            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            //_abilities[powerNum].setTimer(_abilities[powerNum].getTimer());
             abilityToSpawn = abilityDictionary[tag].Dequeue();
             abilityToSpawn.SetActive(true);
-            abilityToSpawn.transform.position = _abilityPos;
-            abilityToSpawn.transform.rotation = Quaternion.identity;
             /*float abilityYSpeed = abilityToSpawn.GetComponent<Rigidbody2D>().velocity.y; 
             abilityToSpawn.GetComponent<Rigidbody2D>().velocity = new Vector2(0, abilityYSpeed);*/
             abilityDictionary[tag].Enqueue(abilityToSpawn);
             if (_abilities[powerNum].getTimer() != 0f)
             {
+                abilityToSpawn.transform.position = transform.position * 1.1f;
+                abilityToSpawn.transform.rotation = targetRotation;
+                abilityToSpawn.GetComponent<Rigidbody2D>().AddForce(new Vector2(_abilityPos.x - transform.position.x, _abilityPos.y - transform.position.y) * 100);
                 StartCoroutine(AbilityDisappear(_abilities[powerNum].getTimer(), abilityToSpawn));
+            }
+            else
+            {
+                abilityToSpawn.transform.position = _abilityPos;
+                abilityToSpawn.transform.rotation = Quaternion.identity;
             }
         }
 
