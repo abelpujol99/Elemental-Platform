@@ -202,6 +202,11 @@ MonoBehaviour:
   fire: {fileID: 9076930295393282881, guid: 04faa956100d0d7488cc54d8eab136b0, type: 3}
   wind: {fileID: 1817880175926051597, guid: ac79534a255073a4bb20799d9418ce1f, type: 3}
   lightning: {fileID: 1936801452089805495, guid: a738622e7d7df3e4a8be15831a1dc9bd, type: 3}
+  superRock: {fileID: 6995859749326785915, guid: 171a53fcdb7d2944aabce12fbfd13fec, type: 3}
+  superWater: {fileID: 4863971478294689691, guid: 0fbbca2e2b97a5749aa07f1ff1994aed, type: 3}
+  superFire: {fileID: 7237352463337476282, guid: 66116be31d1c28d40b9cbb7f90613cf3, type: 3}
+  superWind: {fileID: 7197826234009722148, guid: 80761808471002f4c9369732d67d8075, type: 3}
+  superLightning: {fileID: 5627498613830955818, guid: d7955294775a00448945ba9a03bcc6ee, type: 3}
   spriteRenderer: {fileID: 2213920681987148942}
   animator: {fileID: 2213920681987148929}
 --- !u!114 &7605101560815944243

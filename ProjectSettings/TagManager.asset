@@ -7,6 +7,14 @@ TagManager:
   - CheckGround
   - Ground
   - Platform
+  - Water
+  - Fire
+  - Wind
+  - Lightning
+  - SuperFire
+  - SuperLightning
+  - SuperWater
+  - SuperWind
   layers:
   - Default
   - TransparentFX

@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Professor\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Professor\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Elemental-Platform.2027569520.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Professor\Desktop\Elemental-Platform" t="IncludeRecursive">
+    <e p="C:\REPOSITORI\Elemental-Platform" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Ability" t="Include">
+            <e p="Abilities" t="Include">
+              <e p="Fire.cs" t="Include" />
+              <e p="Lightning.cs" t="Include" />
+              <e p="Rock.cs" t="Include" />
+              <e p="Water.cs" t="Include" />
+              <e p="Wind.cs" t="Include" />
+            </e>
+            <e p="Ability.cs" t="Include" />
+            <e p="abilityUtility.cs" t="Include" />
+          </e>
           <e p="CameraController" t="Include">
             <e p="CameraMoves.cs" t="Include" />
           </e>
@@ -21,6 +30,7 @@
           </e>
           <e p="Enemy" t="Include">
             <e p="EnemySpike.cs" t="Include" />
+            <e p="Rino.cs" t="Include" />
           </e>
           <e p="Platform" t="Include">
             <e p="PlatformUpDown.cs" t="Include" />
@@ -90,5 +100,7 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\Abel Pujol\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Abel Pujol\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Elemental-Platform.1118278643.00" t="ExcludeRecursive" />
   </component>
 </project>
