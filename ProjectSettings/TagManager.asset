@@ -15,6 +15,7 @@ TagManager:
   - SuperLightning
   - SuperWater
   - SuperWind
+  - Tilemap1
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Grid
   - 
   - 
   - 

@@ -96,6 +96,14 @@ namespace Enemy
             }
         }
 
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Tilemap1"))
+            {
+                _onAir = true;
+            }
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("SuperFire"))
@@ -112,7 +120,6 @@ namespace Enemy
             }
             else if (collision.gameObject.CompareTag("SuperWind"))
             {
-                _onAir = true;
                 _rb2D.velocity = new Vector2(0, _knockUp);
             }
         }

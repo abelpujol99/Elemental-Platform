@@ -116,6 +116,7 @@ namespace Character
         private float _abilityTime;
         private float _holdTime = 0.75f;
         private float _superAbilityTimer = 0.3f;
+        private float _abilityRange = 1.5f;
         
         private bool _run;
         private bool _jump;
@@ -134,6 +135,9 @@ namespace Character
         private int _lightningCapacity = 1;
         private int _superAbilityCapacity = 1;
         private int _speed = 50;
+
+
+        private float direction;
         
         
         void Start()
@@ -154,6 +158,8 @@ namespace Character
 
         void Update()
         {
+            Debug.DrawRay(new Vector2(transform.position.x + direction, transform.position.y), _abilityPos, Color.green);
+            Debug.Log(transform.position);
 
             Jump();
             
@@ -445,7 +451,7 @@ namespace Character
             
             GameObject abilityToSpawn;
 
-            float direction;
+            //float direction;
 
             switch (_powerNum)
             {
@@ -481,9 +487,6 @@ namespace Character
             _abilityPos.z = 0f;
             float angle = Mathf.Atan2(_abilityPos.y - transform.position.y, _abilityPos.x - transform.position.x) * Mathf.Rad2Deg;
             Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
-            abilityToSpawn = abilityDictionary[tag].Dequeue();
-            abilityToSpawn.SetActive(true);
-            abilityDictionary[tag].Enqueue(abilityToSpawn);
             
             if (transform.position.x < _abilityPos.x)
             {
@@ -498,6 +501,7 @@ namespace Character
             
             if (ability[num].getTimer() > 0.3f)
             {
+                abilityToSpawn = spawnAbility(tag);
                 abilityToSpawn.transform.position = new Vector3( transform.position.x + direction,  transform.position.y, 0);
                 //abilityToSpawn.transform.position = transform.position;
                 abilityToSpawn.transform.rotation = targetRotation;
@@ -506,15 +510,35 @@ namespace Character
             }
             else
             {
-                if (ability[num].getTimer() != 0)
-                {
-                    StartCoroutine(AbilityDisappear(ability[num].getTimer(), abilityToSpawn));
-                }
-                abilityToSpawn.transform.position = _abilityPos;
-                abilityToSpawn.transform.rotation = Quaternion.identity;
+                /*Debug.Log(_abilityPos);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, _abilityPos, _abilityRange, LayerMask.GetMask("Grid"));
+                
+                if (hit)
+                {*/
+                    abilityToSpawn = spawnAbility(tag);
+                    
+                    if (ability[num].getTimer() != 0)
+                    {
+                        StartCoroutine(AbilityDisappear(ability[num].getTimer(), abilityToSpawn));
+                    }
+                    
+                    abilityToSpawn.transform.position = _abilityPos;
+                    abilityToSpawn.transform.rotation = Quaternion.identity;
+                //}
+                
                 
             }
 
+        }
+
+        private GameObject spawnAbility(string tag)
+        {
+            GameObject abilityToSpawn;
+            abilityToSpawn = abilityDictionary[tag].Dequeue();
+            abilityToSpawn.SetActive(true);
+            abilityDictionary[tag].Enqueue(abilityToSpawn);
+
+            return abilityToSpawn;
         }
 
         private IEnumerator AbilityDisappear(float timer, GameObject abilityToSpawn)

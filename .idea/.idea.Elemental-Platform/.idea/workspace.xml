@@ -2,153 +2,134 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63bc1448-dff3-43ec-982d-cc439b9bf61e" name="Default Changelist" comment="Fire with kill">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Fire.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Fire.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Lightning.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Lightning.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Rock.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Rock.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Water.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Water.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Wind.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Wind.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Ability.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/Ability.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/AbilityUtility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability/abilityUtility.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Elemental-Platform/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Elemental-Platform/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Elemental-Platform/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Elemental-Platform/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Fire.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Fire.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Lightning.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Lightning.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Rock.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Rock.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Water.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Water.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Wind.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Wind.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Spike Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Spike Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Grid/Grid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Grid/Grid.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Normal/Fire.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Normal/Fire.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Normal/Lightning.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Normal/Lightning.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Normal/Water.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Normal/Water.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Normal/Wind.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Normal/Wind.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Super/Lightning explosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Super/Lightning explosion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Super/Water explosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Super/Water explosion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Super/Wind Explosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Abilities/Super/Wind Explosion.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/02/020627182dcdc43c913c1eb3e77fa12e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/0c/0c6f18d28bfab4f024f0a74146050125" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/0e/0e2ba576a8e57075c5f3e609a107c24a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/0e/0e92fd1ae024eb04ad509dcd86f2af36" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/0e/0ec5bce6d4b04d984cc423dd85425899" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/11/1188bfef95213104b012ef7cfc264f3b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/1a/1a02c6179d71b02ce50a7a38524e0079" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/1a/1af1c3ef8a0d458c45ba0535e06f03c9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/1c/1ce287be6bc9d49ea8778625672b2116" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/1d/1d38d2d477e523f9b645b5ed87d32a7b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/21/21c25ff46adaf3df24ace86be5158c43" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/29/29fa75f1eb408805cb79c801dca9dbc2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/2a/2adcadef71cc04a0f67ef11209db672a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/2b/2b9dd057349074ea9e9873e7022d822d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/2e/2ed046663c8b141d920fbe5e472fe5ee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/38/383973c5447bf405a324172400aebe01" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/39/39e0302a6ea3cfc3bae89c9fa559ae6a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3d/3dad0b9841304698a9a3490d378c6007" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/41/4175cacc8f2b85973c3d0c53bd2cccf2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/45/45af73746f659831291708965b057d18" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/45/45b98cd1fc7817f4c54d9241730a8364" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/47/47733822014354ca80e9f55251b5b859" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/47/47f5d1f13d5e463eda7847726c35e048" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/48/4849dc73a68c4e067418fb3d4fa45cf0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/4e/4e555b6e42e8780638e809cd0a4ff1e8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/50/5056a8632b140cc6db722610b111d071" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/50/506bc34fb57d55b681cc9349bd62d788" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/52/52a66a081169980fe26d4f5125d76d25" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/54/54168f619f1104fbb01d94faa95c14fb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/54/54dc248b58499cb9de0cb55af9548569" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/55/5516a58ba177afae2a80c730f90720fb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/55/5564fc4d9a55c2d262fa1890e28be6aa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/56/56bc48b2df3b624c8a3d9e1c973a1382" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/57/57ab8568bb972d95d6ef67ca63a38f8c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/57/57f88bc1546e18c80726a7af880ad2e4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/61/61a26c81e946cc001cb4c600be5766b2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/61/61bddec18604062a3131719568f58037" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/67/67a2546be140205e8295968f3350d1c6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/67/67ecd5c054b60b81a1f1444ef7205444" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/67/67f1a0bc8e414275e69cce61c8b97078" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/6c/6c23d78adebd36958f85b46f795f8c11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/6c/6c570e583efc0ead9b6fecaf454aeec4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/6d/6d1ffad22965588c99d8beff123b08fb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/6f/6f4b1d075d4b469dcb0d7ee862465505" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/71/7170bc2e6255c82aae4785e0ee9622d5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/79/7929f29f23d499b3df830b54c4e507b3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/79/794fb47462b4811a4f7dfb00a009823f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/82/82da6c2be17f27dc6ff8856ea971659f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/84/842d4ee0380a272024c501db0eee9a4f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/88/8849a58a2c560995a54c7cddd7d70781" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/88/888bf13156e4779f5ddaad32bc2cda74" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8b/8bae43e6ad59c2dd217db76698824ae8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8c/8c0276e3b3099cf74239bf2bcd18f031" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8c/8cdb767e3daad87bbc44fe38e857e98f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8e/8e8be7179088b0522a121c0896576cd4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8f/8f38e35ec4ef84a781cc87da0db127a0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/90/906eb58de84905233fe3c5459a3106e7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/92/92ccef9e52f832a7bd65410f8b4921bb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/94/94d5026cf19292ffa15c801f454dd532" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/95/95797dd607e3d6ef3b653c2ae0477528" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/96/966bf5c1e8401021cf3eae750c7b0b5a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/97/97246a01a12c52957d83ce81bdf6434c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a1/a1a2f8873ed76887a2badcde12f0ad09" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a6/a672492bd8a2e260ec14973143052a70" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ac/ac3edf6e99bcd643ada8a5dd049723b8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ad/ada42eb9fd14ea909ff2b63e34e97eb2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/af/af316e63a73dc3abc020a74f2e0a130c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/b4/b4053157a78580a051c51abdc7dc481b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/b4/b4914779e143d31d456c9bbe6885204d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/b7/b703473e8515e0d7c95bb3f7c7b8a51d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ba/ba39fcfee6a9233d6b8000692c8768f5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ba/baf5c4857d202fad93c75e0118171262" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/bd/bda989fae0fe9c3ea66c4274787ec8ad" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c2/c2ab3db3d43b5c9bbc05604ed546b5e3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c3/c30f2f3080cbfada1fbcc2bc4857deef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/cb/cb8e3928150ea195bd3575ae203862a3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d1/d1759260d24b3d0517371fde10aa3388" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d1/d17d90dc223f79091968085ec8c9b557" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d1/d1882cffa8a1cbab6d809523cc024d95" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d7/d794551d3d3ac815118973dc66a7913b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/db/db04e9baa6c6352e2b8fe5184bc7c0c4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/dc/dce43f064e89276487c614ce6e037d12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/dd/dd13a71f3a6e20c2f06c7247ca92bbc6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e1/e1c29b17bd855c79efd73fa7e952d66f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e3/e3b3822f18b0a0bb495ebc62d3ae8406" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e4/e49215eba066988dd5708d36fc5ceef9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e7/e7eb8953e0e42482a1a5f319f5e244ea" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/eb/ebee6780b2f7c18ed066bdbd03a14717" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ee/eecf7da5740a404dafe221e0c505c402" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f1/f134719fa4dd89eac5ee219d90072595" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f1/f136e85dc39f38be6bd2eb49669b125f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f2/f24ebd1edc886c843617c74775298a42" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f3/f35570a4a527d34c9a1803e2327cd810" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/fa/faf97b4867199378b91a36cfa86bd536" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/fe/fef5adf775e900a4c8bb47c01ad27565" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ff/ffc72452ba5aa209608da419097c2c5e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Collab/Cache/Window.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Library/Collab/Cache/Window.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/00/00d4b4408f585597bb87a4de0837d48e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/02/021c627acffef999600a3929e97ffff1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/02/02c5185a3ed77c3662f50425809cbe30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/02/02f6b80fa1e2214225e6bedde6090cf8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/04/046d73ebf419247639295e97c978c689" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/07/072eec86ad58f97a3f87ae6557795f15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/09/09d9037073df3cee76c3aa7ec394eed9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/0c/0c3032d120c2ba9c462d20e4feaf1a73" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/11/110b83ba24a57a6685ea1876e78a9a5e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/14/1493bef67fd8f70e5cc26a5228fdad8a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/17/17f521129ee5c32c8a58213bc8a2f5c9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/19/19b36b8f1b6b55728935c2dccddb8a03" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/1c/1c5d40056537a2b537bb61f670f9eafd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/1c/1c8c064a29c0c8a37f0bc8da2a979fde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/22/221b3a663d13a6236a88c6ca4cecd15a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/23/23d5589e8a9358738a09f90a3595ab4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/29/29fe780ecbfadcb91c1864167966db72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/2a/2a156e21d6c2d4339d2cb03dba05af6f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/2b/2bc49bef3b9b062c772c1ac7201f9e47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/2c/2c4033b359bc6ac1ded05b7f0f71318f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/2e/2e7ef5081d0e362067e7bfb7580597a9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/2f/2fb5e0d3fddba3f9ea80fa86a62b0ae3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/33/33586cada674cfd5e01bd5b53cb4ebfa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/34/34047d01cab46d03051573a7bc4b8854" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/36/36e35dc1abffc9b3a7972ea1b67483d6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/39/39d0a2374d8a0f6f4abb8b097b94e63b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3b/3bfb179a657383f3e654688d185fe131" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3e/3e75c45e194f82591c4a80b52252b159" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/41/4120155d8a9701561fe1dedaad54afe4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/41/415b4fb1d0db60daed4824bf6a5925b9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/45/457154597b652e76e77939c764352923" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/46/4674957b0e5f1d6e448e1a3450f83f1d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/4b/4b8aede2258096d0263e3a48c7e5a79b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/51/51424af95a4425c2f8407b5eb87eaaf1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/5b/5be7e4e7959e08b849dcfcad3633e950" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/5f/5f8b402c3a6462c20ece737f54945aa6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/63/634220384115bc4703f389328c5581cf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/63/63da4faec095b875a6a2a0435ed0478e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/65/65fa68602613954f72c854ab797307ca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/68/6892315e8ffe8dbee92b62455f86b191" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/6c/6c791761f2f6dc1c41f34bbbb0bb9a0c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/6d/6dbc6101b4a5ea779309d9dbb837469d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/7a/7aa2f8a81a82b1a7710af6772b29e582" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/7c/7cc1314f61dd853da1eb8cf2983a45da" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/7d/7d6638261428e9919c6354aaac024fe9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/7d/7dc2a4da5e0e67331b4bbb1325419159" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/80/80302fcadecc837f04b751ecbb888769" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/80/807f1dad1afc8c740e9a8b50ac060ed0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/85/853601026bf08d74d813187dc8cd346e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/85/85949b167992f5336282eb4897e67a09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/86/8615a335cbff4f4cd3bf015abcd3712e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8c/8cec87c8e2164e3de6bb152143f65336" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8d/8d0e069046281c5fb24aa1f79a7365a4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8d/8d3c8219d56785f2f75d764d33faa071" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8e/8ea9f0e23a213b66fc65f4f5ae60b68d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8e/8edff03634e99f4c79a58643f869aba6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/91/91c3f1ca929228ed6c818d77792ca8b6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/9a/9ad19a3d51dfb7863a2043e5681aae69" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/9b/9b129694c42041292c169a916642d65f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/9b/9ba224481bb264ccbcfc63ce2b5aa405" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/9b/9bda18f6f18440230ca06512ac5d895a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/9f/9f4b902f91d7063ce116c643c4a5c8dd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a1/a17083cba3804f6694235ab01de65198" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a9/a94dbdf243d465332b03fc94857b5213" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/aa/aa7371bf27866b0bf1aa308ce32ba212" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/aa/aa7d770e196f8bf2e7caf9d8573bbdd6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/af/afac99258895c95d81b333bd4e92c1c5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/b1/b1d16ebc7caefd51ed5ec20a5f867e35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/b8/b86d8ccb8de23746abfabf915339cc47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/b9/b921e78d62372a3fcdd03e73215c216b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/bd/bde31d9704ab7a22fd0540ae5638b5e3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c1/c1915181eee94529f31bc7eaa0b04f8c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c2/c2098aaf3571393d0d5ba2a774ee0cca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c3/c3925ac6fcbc8c9ee60427df06728029" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c4/c4086d17a051dbd65d9b129e47252d35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c6/c6d9cdeb4b4c4d62afb4f29b88655e2c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c7/c73ff141bf2cbac43ce97b37f1e42e12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c8/c84cbf6b1fd3dbdaea22671f370e7bd6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c9/c95037f6efd9de94e5db51365070b768" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/cb/cb7bad105e596169836b7d2ae631d12d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/cb/cbe6c12dbe605df6cbb3536fb0ab589e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/cc/cc0341d18104c50774f608e9bb6d3085" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/cd/cd0048c0badcc71153767e4eb2726e0b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/cd/cd59c922964bdb696032d5269699cf3f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/cd/cda6e34af422ee275e20d6706ac71032" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ce/ce051c876e36a623010148d10cc7cbe3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d2/d2f330cd22c657de69bf92e40e2522b7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d7/d74debcacc32274a582157d1e7d5af95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d7/d7faad64967669e5d0399d50ece356f6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e1/e16edca6163bfd983ca1f6cc5e64beb8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e1/e1e74e3f8b9addcf2efec0c5a1653c49" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e2/e26c89f29a661ba2d1e0b8e0924870bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e8/e815c7d1f9ea12d8bc41f95bc418e841" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/eb/eb155fcd260b233349d5f4cf3a91c2af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/eb/ebba0581756277f46ce7d481da47d534" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ec/ec863f932b09a91a3a40148807745fab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ed/edda231f96d93c5198a1699a21fe210b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ef/ef36bc5ed418a3c9d923da9ab4848d83" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f6/f66160bec10baa0fa02ca18346d9ec4e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f6/f66fe2252e7a6771fc52f19a0a858473" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f6/f68514a39ea21f6c1a70790c321c7d4b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f6/f6be8ebaf109907c9f07f57386c99261" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f7/f78578a322db9037dc2cbc832213b84a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f9/f97a1acd55d1bb56a76e6d040a4ff854" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/fe/fe10c5ce77a6ad1ba5053e8e0a0fbd58" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PackageManager/ProjectCache" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PackageManager/ProjectCache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PackageManager/ProjectCache.md5" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PackageManager/ProjectCache.md5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB-lock" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB-lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/dc/dce362a5b6eef1663409ea0ed8ad4d3a.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/dc/dce362a5b6eef1663409ea0ed8ad4d3a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/15/15fc2f9d714d04b633e05c4bdcc61690.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/15/15fc2f9d714d04b633e05c4bdcc61690.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/aa/aa5759596e09e5dac704e8706b7f790d.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/aa/aa5759596e09e5dac704e8706b7f790d.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/90/9035d1e257948022e8266364e6002212.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/90/9035d1e257948022e8266364e6002212.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
     </list>
@@ -293,6 +274,8 @@
       <workItem from="1618237120535" duration="4947000" />
       <workItem from="1618255389908" duration="5410000" />
       <workItem from="1618297290837" duration="35483000" />
+      <workItem from="1618381531433" duration="5140000" />
+      <workItem from="1618403502700" duration="1300000" />
     </task>
     <task id="LOCAL-00001" summary="Fire with kill">
       <created>1614095592755</created>
