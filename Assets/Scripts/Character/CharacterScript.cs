@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Ability.Abilities;
 using System.Reflection;
+using System.Security.Cryptography;
 using CameraController;
+using Ability;
 using UnityEngine;
 
 namespace Character
@@ -60,19 +62,20 @@ namespace Character
         
         public enum Abilities {JUMP_UPGRADE, DOUBLE_JUMP_UPGRADE, ROCK, WATER, FIRE, WIND, LIGHTNING}
 
+        public static bool isGround;
         public static bool jumpUpgrade;
         public static bool doubleJumpUpgrade;
-        public static bool _rockUpgrade;
-        public static bool _waterUpgrade;
-        public static bool _fireUpgrade;
-        public static bool _windUpgrade;
-        public static bool _lightningUpgrade;
-        public static bool _superRockUpgrade;
-        public static bool _superWaterUpgrade;
-        public static bool _superFireUpgrade;
-        public static bool _superWindUpgrade;
-        public static bool _superLightningUpgrade;
-        
+        public static bool rockUpgrade;
+        public static bool waterUpgrade;
+        public static bool fireUpgrade;
+        public static bool windUpgrade;
+        public static bool lightningUpgrade;
+        public static bool superRockUpgrade;
+        public static bool superWaterUpgrade;
+        public static bool superFireUpgrade;
+        public static bool superWindUpgrade;
+        public static bool superLightningUpgrade;
+
         [SerializeField] private GameObject rock;
         [SerializeField] private GameObject water;
         [SerializeField] private GameObject fire;
@@ -84,7 +87,8 @@ namespace Character
         [SerializeField] private GameObject superWind;
         [SerializeField] private GameObject superLightning;
         [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] public Animator animator;
+        
+        public Animator animator;
 
         private Rigidbody2D _rb2D;
         
@@ -116,7 +120,8 @@ namespace Character
         private float _abilityTime;
         private float _holdTime = 0.75f;
         private float _superAbilityTimer = 0.3f;
-        private float _abilityRange = 1.5f;
+        private float _abilityRange;
+        private float _maxAbilityRange = 1;
         
         private bool _run;
         private bool _jump;
@@ -124,8 +129,7 @@ namespace Character
         private bool _doubleJump;
         private bool _canDoubleJump;
         private bool _useSuperAbility;
-        
-        
+
         private int _powerNum;
         private int _maxPowers;
         private int _rockCapacity = 2;
@@ -137,19 +141,16 @@ namespace Character
         private int _speed = 50;
 
 
-        private float direction;
-        
-        
         void Start()
         {
             _maximumZoomOut = Camera.main.orthographicSize;
             _posCamera = Camera.main.transform.position;
             _rb2D = GetComponent<Rigidbody2D>();
-            _rockUpgrade = true;
-            _waterUpgrade = true;
-            _fireUpgrade = true;
-            _windUpgrade = true;
-            _lightningUpgrade = true;
+            rockUpgrade = true;
+            waterUpgrade = true;
+            fireUpgrade = true;
+            windUpgrade = true;
+            lightningUpgrade = true;
             SetPowers();
             jumpUpgrade = true;
             //doubleJumpUpgrade = true;
@@ -158,9 +159,9 @@ namespace Character
 
         void Update()
         {
-            Debug.DrawRay(new Vector2(transform.position.x + direction, transform.position.y), _abilityPos, Color.green);
-            Debug.Log(transform.position);
 
+            Debug.DrawLine(transform.position, transform.position + (_abilityPos - transform.position).normalized * _abilityRange, Color.green);
+            
             Jump();
             
             if (!Input.GetMouseButton(1))
@@ -188,7 +189,7 @@ namespace Character
         {
             if (trigger.CompareTag("Platform"))
             {
-                CheckGround.isGrounded = true;
+                isGround = true;
             }
         }
 
@@ -196,7 +197,7 @@ namespace Character
         {
             if (trigger.CompareTag("Platform"))
             {
-                CheckGround.isGrounded = false;
+                isGround = false;
             }
         }
 
@@ -229,14 +230,14 @@ namespace Character
             if (jumpUpgrade)
             {
 
-                if (CheckGround.isGrounded && !_canDoubleJump)
+                if (isGround && !_canDoubleJump)
                 {
                     _canDoubleJump = true;
                 }
                 
                 if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
                 {
-                    if (CheckGround.isGrounded)
+                    if (isGround)
                     {
                         _rb2D.velocity = new Vector2(_rb2D.velocity.x, _jumpSpeed);
                     }
@@ -259,14 +260,14 @@ namespace Character
                     }
                 }
         
-                if (_rb2D.velocity.y > 0 && !CheckGround.isGrounded)
+                if (_rb2D.velocity.y > 0 && !isGround)
                 {
                     _run = false;
                     _jump = true;
                     animator.SetBool("Run", false);
                     animator.SetBool("Jump", true);
                 }
-                else if (_rb2D.velocity.y < 0 && !CheckGround.isGrounded)
+                else if (_rb2D.velocity.y < 0 && !isGround)
                 {
                     _jump = false;
                     _run = false;
@@ -276,12 +277,12 @@ namespace Character
                     animator.SetBool("Fall", _fall);
                     animator.SetBool("DoubleJump", _doubleJump);
                 }
-                else if (_jump && CheckGround.isGrounded)
+                else if (_jump && isGround)
                 {
                     _jump = false;
                     animator.SetBool("Jump", _jump);
                 }
-                else if (_fall && CheckGround.isGrounded)
+                else if (_fall && isGround)
                 {
                     _fall = false;
                     animator.SetBool("Fall", _fall);
@@ -304,7 +305,7 @@ namespace Character
 
         private void SetPowers()
         {
-            if (_rockUpgrade)
+            if (rockUpgrade)
             {
                 _abilities = new List<List<AbilityParameters>>();
 
@@ -316,7 +317,7 @@ namespace Character
                 _abilities.Add(_rocksList);
                 _maxPowers += 1;
 
-                if (_waterUpgrade)
+                if (waterUpgrade)
                 {
                     _waterList = new List<AbilityParameters>();
                     
@@ -326,7 +327,7 @@ namespace Character
                     _abilities.Add(_waterList);
                     _maxPowers += 1;
 
-                    if (_fireUpgrade)
+                    if (fireUpgrade)
                     {
                         _fireList = new List<AbilityParameters>();
                         
@@ -336,7 +337,7 @@ namespace Character
                         _abilities.Add(_fireList);
                         _maxPowers += 1;
 
-                        if (_windUpgrade)
+                        if (windUpgrade)
                         {
                             _windList = new List<AbilityParameters>();
                             
@@ -346,7 +347,7 @@ namespace Character
                             _abilities.Add(_windList);
                             _maxPowers += 1;
 
-                            if (_lightningUpgrade)
+                            if (lightningUpgrade)
                             {
                                 _lightningList = new List<AbilityParameters>();
 
@@ -409,6 +410,8 @@ namespace Character
         {
             if (_maxPowers > 0)
             {
+                
+                
                 if (Input.GetMouseButton(0) && _useSuperAbility)
                 {
                     _holdTime -= Time.deltaTime;
@@ -448,10 +451,6 @@ namespace Character
             }
             
             string tag = "";
-            
-            GameObject abilityToSpawn;
-
-            //float direction;
 
             switch (_powerNum)
             {
@@ -483,11 +482,21 @@ namespace Character
                         
             }
 
+            CastAbility(ability, num, tag);
+        }
+        private void CastAbility(List<AbilityParameters> ability, int num, string tag)
+        {
+            
             _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             _abilityPos.z = 0f;
-            float angle = Mathf.Atan2(_abilityPos.y - transform.position.y, _abilityPos.x - transform.position.x) * Mathf.Rad2Deg;
-            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
             
+            GameObject abilityToSpawn = new GameObject();
+            
+            float angle = Mathf.Atan2(_abilityPos.y - transform.position.y, _abilityPos.x - transform.position.x) * Mathf.Rad2Deg;
+            float direction;
+            
+            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
             if (transform.position.x < _abilityPos.x)
             {
                 spriteRenderer.flipX = false;
@@ -503,32 +512,29 @@ namespace Character
             {
                 abilityToSpawn = spawnAbility(tag);
                 abilityToSpawn.transform.position = new Vector3( transform.position.x + direction,  transform.position.y, 0);
-                //abilityToSpawn.transform.position = transform.position;
                 abilityToSpawn.transform.rotation = targetRotation;
-                abilityToSpawn.GetComponent<Rigidbody2D>().AddForce(new Vector2(_abilityPos.x - transform.position.x, _abilityPos.y - transform.position.y).normalized * 300);
+                abilityToSpawn.GetComponent<Rigidbody2D>().AddForce(new Vector2(_abilityPos.x - transform.position.x + direction, _abilityPos.y - transform.position.y).normalized * 300);
                 StartCoroutine(AbilityDisappear(ability[num].getTimer(), abilityToSpawn));
             }
             else
             {
-                /*Debug.Log(_abilityPos);
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, _abilityPos, _abilityRange, LayerMask.GetMask("Grid"));
-                
-                if (hit)
-                {*/
+                _abilityRange = (transform.position - _abilityPos).magnitude;
+
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, (_abilityPos - transform.position).normalized, _abilityRange, LayerMask.GetMask("Tilemap1", "Tilemap2"));
+
+                if (Mathf.Abs(_abilityRange) < _maxAbilityRange && !hit)
+                {
                     abilityToSpawn = spawnAbility(tag);
-                    
+                
                     if (ability[num].getTimer() != 0)
                     {
                         StartCoroutine(AbilityDisappear(ability[num].getTimer(), abilityToSpawn));
                     }
-                    
+
                     abilityToSpawn.transform.position = _abilityPos;
                     abilityToSpawn.transform.rotation = Quaternion.identity;
-                //}
-                
-                
+                }
             }
-
         }
 
         private GameObject spawnAbility(string tag)
@@ -583,23 +589,23 @@ namespace Character
                     break;
                 
                 case Abilities.ROCK:
-                    _rockUpgrade = true;
+                    rockUpgrade = true;
                     break;
                 
                 case Abilities.WATER:
-                    _waterUpgrade = true;
+                    waterUpgrade = true;
                     break;
                 
                 case Abilities.FIRE:
-                    _fireUpgrade = true;
+                    fireUpgrade = true;
                     break;
                 
                 case Abilities.WIND:
-                    _windUpgrade = true;
+                    windUpgrade = true;
                     break;
                 
                 case Abilities.LIGHTNING:
-                    _lightningUpgrade = true;
+                    lightningUpgrade = true;
                     break;
             }
         }

@@ -197,6 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4053e513b91fd7341a9e8fa7f0319f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _throw: {fileID: 662584939337986598, guid: c4753be8018a52c4ebd0f67b159de6bc, type: 3}
+  _catch: {fileID: 404071197140605419, guid: fe3224566e1e28340bbc789f582c49bd, type: 3}
   rock: {fileID: 6995859749326785915, guid: 171a53fcdb7d2944aabce12fbfd13fec, type: 3}
   water: {fileID: 2472008848403422929, guid: c6cedc4fd180c3f4ba53cdfdbdeb5e6a, type: 3}
   fire: {fileID: 9076930295393282881, guid: 04faa956100d0d7488cc54d8eab136b0, type: 3}
@@ -232,7 +234,6 @@ GameObject:
   m_Component:
   - component: {fileID: 93898091855393975}
   - component: {fileID: 1772505398883465279}
-  - component: {fileID: 1319466311628260368}
   m_Layer: 0
   m_Name: CheckGround
   m_TagString: CheckGround
@@ -280,15 +281,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.10575181, y: 0.008129835}
   m_EdgeRadius: 0
---- !u!114 &1319466311628260368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8006194048934640669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bebcc46c485636f4091a67f9d7b498d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

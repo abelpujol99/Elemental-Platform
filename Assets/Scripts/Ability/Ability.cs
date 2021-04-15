@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Ability
 {
-    public class Ability : MonoBehaviour
+    public abstract class Ability : MonoBehaviour
     {
         private string _tag;
         private GameObject _ability;
@@ -50,5 +50,12 @@ namespace Ability
             this._timer = timer;
         }
         
+        public abstract void abilityUtility(string tag, Ability ability, float timer, Vector3 position, GameObject character);
+
+        public void aseijbsi()
+        {
+            Debug.Log("test");
+        }
+
     }
 }

@@ -21,7 +21,6 @@
           </e>
           <e p="Character" t="Include">
             <e p="CharacterScript.cs" t="Include" />
-            <e p="CheckGround.cs" t="Include" />
             <e p="PlayerRespawn.cs" t="Include" />
           </e>
           <e p="Door" t="Include">

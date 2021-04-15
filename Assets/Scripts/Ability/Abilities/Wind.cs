@@ -9,7 +9,7 @@ namespace Ability.Abilities
         {
         }
         
-        public void abilityUtility(string tag, Ability ability, float timer, Vector3 position, GameObject character)
+        public override void abilityUtility(string tag, Ability ability, float timer, Vector3 position, GameObject character)
         {
             float xPositionSpawn;
             

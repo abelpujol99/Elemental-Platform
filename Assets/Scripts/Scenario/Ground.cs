@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Character;
+﻿using Character;
 using UnityEngine;
 
 namespace Scenario
@@ -12,7 +9,7 @@ namespace Scenario
         {
             if (trigger.transform.CompareTag("CheckGround"))
             {
-                CheckGround.isGrounded = true;
+                CharacterScript.isGround = true;
             }
         }
 
@@ -20,7 +17,7 @@ namespace Scenario
         {
             if (trigger.transform.CompareTag("CheckGround"))
             {
-                CheckGround.isGrounded = false;
+                CharacterScript.isGround = false;
             }
         }
     }

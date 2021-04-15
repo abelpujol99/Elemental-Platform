@@ -16,6 +16,11 @@ TagManager:
   - SuperWater
   - SuperWind
   - Tilemap1
+  - Tilemap2
+  - Throw
+  - Catch
+  - Grid
+  - Rock
   layers:
   - Default
   - TransparentFX
@@ -26,9 +31,9 @@ TagManager:
   - 
   - 
   - Grid
-  - 
-  - 
-  - 
+  - Tilemap1
+  - Tilemap2
+  - Ability
   - 
   - 
   - 
