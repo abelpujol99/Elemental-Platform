@@ -2,14 +2,14 @@ using UnityEngine;
 
 namespace Ability.Abilities
 {
-    public class Lightning : Ability, AbilityUtility
+    public class Lightning : Ability
     {
 
-        public Lightning(string tag, GameObject ability, int size, float timer) : base(tag, ability, size, timer)
+        public Lightning(string tag, GameObject ability, int size, float timer, bool cast, float cooldown) : base(tag, ability, size, timer, cast, cooldown)
         {
         }
         
-        public override void abilityUtility(string tag, Ability ability, float timer, Vector3 position, GameObject character)
+        public override void abilityUtility(GameObject ability, Vector3 position, GameObject character)
         {
             float xPositionSpawn;
             

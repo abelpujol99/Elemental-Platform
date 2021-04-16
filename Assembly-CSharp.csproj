@@ -67,7 +67,6 @@
      <Compile Include="Assets\Scripts\Ability\Abilities\Fire.cs" />
      <Compile Include="Assets\Scripts\Trap\CheckPlayer.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\AppearText1.cs" />
-     <Compile Include="Assets\Scripts\Ability\AbilityUtility.cs" />
      <Compile Include="Assets\Scripts\Scenario\Ground.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\Text2.cs" />
      <Compile Include="Assets\Scripts\Enemy\Rino.cs" />

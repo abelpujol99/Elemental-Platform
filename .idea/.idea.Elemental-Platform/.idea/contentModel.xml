@@ -14,7 +14,6 @@
               <e p="Wind.cs" t="Include" />
             </e>
             <e p="Ability.cs" t="Include" />
-            <e p="abilityUtility.cs" t="Include" />
           </e>
           <e p="CameraController" t="Include">
             <e p="CameraMoves.cs" t="Include" />
