@@ -72,6 +72,6 @@ namespace Ability
             _cooldown = cooldown;
         }
         
-        public abstract void abilityUtility(GameObject ability, Vector3 position, GameObject character);
+        public abstract void abilityUtility(GameObject ability, Vector3 abilityPosition, Vector3 characterPosition, float maxAbilityRange);
     }
 }

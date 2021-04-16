@@ -1,67 +1,20 @@
-using System;
-using Character;
 using UnityEngine;
 
 namespace Ability.Abilities
 {
     public class Water : Ability
     {
-
-        private float visibleTime;
-        private float cooldownTime;
-
-        private void Update()
+        public override void abilityUtility(GameObject ability, Vector3 abilityPosition, Vector3 characterPosition, float maxAbilityRange)
         {
-            if (visibleTime == 0f)
-            {
-                Debug.Log("Disponible");
-                gameObject.SetActive(false);
-            }
-            else 
-            {
-                Debug.Log("No disponible");
-                visibleTime -= Time.deltaTime;
-            }
-
-            if (cooldownTime == 0)
-            {
-                setCast(true);
-            }
-            else
-            {
-                Debug.Log("holiii");
-                cooldownTime -= Time.deltaTime;
-            }
+            gameObject.SetActive(true);
+            setCast(false);
             
-        }
-
-        public override void abilityUtility(GameObject ability, Vector3 position, GameObject character)
-        {
-            if (isCast())
-            {
-                float xPositionSpawn;
-            
-                if (character.transform.position.x < position.x)
-                {
-                    xPositionSpawn = 0.3f;
-                }
-                else
-                {
-                    xPositionSpawn = -0.3f;
-                }
-                float angle = Mathf.Atan2(position.y - character.transform.position.y, position.x - character.transform.position.x) * Mathf.Rad2Deg;
-                Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
-                ability.transform.position = new Vector3( character.transform.position.x + xPositionSpawn, character.transform.position.y, 0);
-                //abilityToSpawn.transform.position = transform.position;
-                ability.transform.rotation = targetRotation;
-                ability.GetComponent<Rigidbody2D>().AddForce(new Vector2(position.x - character.transform.position.x, position.y - character.transform.position.y).normalized * 300);
-
-                visibleTime = getTimer();
-                cooldownTime = getCooldown();
-                setCast(false);
-
-            }
-            
+            float angle = Mathf.Atan2(abilityPosition.y - characterPosition.y, abilityPosition.x - characterPosition.x) * Mathf.Rad2Deg;
+            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            ability.transform.position = (abilityPosition - characterPosition).normalized * 0.3f + characterPosition;
+            ability.transform.rotation = targetRotation;
+            ability.GetComponent<Rigidbody2D>().AddForce(new Vector2(abilityPosition.x - characterPosition.x, abilityPosition.y - characterPosition.y).normalized * 300);
+         
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

@@ -5,31 +5,19 @@ namespace Ability.Abilities
 {
     public class Rock : Ability
     {
-
-        private void Start()
+        public override void abilityUtility(GameObject ability, Vector3 abilityPosition, Vector3 characterPosition, float maxAbilityRange)
         {
+            float _abilityRange = (abilityPosition - characterPosition).magnitude;
             
-            _tag = getTag();
-            _ability = getAbility();
-            _size = getSize();
-            _timer = getTimer();
-            _cast = isCast();
-            _cooldown = getCooldown();
-        }
+            RaycastHit2D hit = Physics2D.Raycast(characterPosition, abilityPosition - characterPosition, _abilityRange, LayerMask.GetMask("Tilemap1", "Tilemap2"));
 
-
-        public override void abilityUtility(GameObject ability, Vector3 position, GameObject character)
-        {
-            if (transform.position.x < position.x)
+            if (!hit && maxAbilityRange >= _abilityRange)
             {
-                character.GetComponent<SpriteRenderer>().flipX = false;
+                setCast(false);
+                gameObject.SetActive(true);
+                ability.transform.position = abilityPosition;
+                ability.transform.rotation = Quaternion.identity;
             }
-            else
-            {
-                character.GetComponent<SpriteRenderer>().flipX = true;
-            }
-            ability.transform.position = position;
-            ability.transform.rotation = Quaternion.identity;
         }
     }
 }

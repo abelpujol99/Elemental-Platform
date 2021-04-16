@@ -4,31 +4,19 @@ namespace Ability.Abilities
 {
     public class SuperLightning : Ability
     {
-
-        public override void abilityUtility(GameObject ability, Vector3 position, GameObject character)
+        public override void abilityUtility(GameObject ability, Vector3 abilityPosition, Vector3 characterPosition, float maxAbilityRange)
         {
-            float xPositionSpawn;
+            float _abilityRange = (abilityPosition - characterPosition).magnitude;
             
-            if (transform.position.x < position.x)
+            RaycastHit2D hit = Physics2D.Raycast(characterPosition, abilityPosition - characterPosition, _abilityRange, LayerMask.GetMask("Tilemap1", "Tilemap2"));
+
+            if (!hit && maxAbilityRange >= _abilityRange)
             {
-                xPositionSpawn = 0.2f;
+                setCast(false);
+                gameObject.SetActive(true);
+                ability.transform.position = abilityPosition;
+                ability.transform.rotation = Quaternion.identity;
             }
-            else
-            {
-                xPositionSpawn = -0.2f;
-            }
-            float angle = Mathf.Atan2(position.y - transform.position.y, position.x - transform.position.x) * Mathf.Rad2Deg;
-            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
-            ability.transform.position = new Vector3( transform.position.x + xPositionSpawn, transform.position.y, 0);
-            //abilityToSpawn.transform.position = transform.position;
-            ability.transform.rotation = targetRotation;
-            ability.GetComponent<Rigidbody2D>().AddForce(new Vector2(position.x - transform.position.x, position.y - transform.position.y) * 100);
-        }
-        
-        
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            gameObject.SetActive(false);
         }
     }
 }

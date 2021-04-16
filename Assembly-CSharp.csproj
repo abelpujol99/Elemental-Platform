@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Trap\FireDamage.cs" />
      <Compile Include="Assets\Scripts\Upgrade\TakeUpgrade.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level2\TutorialManagerLevel2.cs" />
+     <Compile Include="Assets\Scripts\Ability\Abilities\SuperWind.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterScript.cs" />
      <Compile Include="Assets\Scripts\Character\PlayerRespawn.cs" />
      <Compile Include="Assets\Scripts\CameraController\CameraMoves.cs" />
@@ -63,23 +64,22 @@
      <Compile Include="Assets\Scripts\Tutorial\Level1\TutorialManagerLevel1.cs" />
      <Compile Include="Assets\Scripts\Trap\DamageObject.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level4\TutorialManagerLevel4.cs" />
+     <Compile Include="Assets\Scripts\Ability\Abilities\SuperLightning.cs" />
      <Compile Include="Assets\Scripts\Door\LevelComplete.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Fire.cs" />
      <Compile Include="Assets\Scripts\Trap\CheckPlayer.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\AppearText1.cs" />
      <Compile Include="Assets\Scripts\Scenario\Ground.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\Text2.cs" />
+     <Compile Include="Assets\Scripts\Ability\Abilities\SuperRock.cs" />
      <Compile Include="Assets\Scripts\Enemy\Rino.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\DissapearText1.cs" />
+     <Compile Include="Assets\Scripts\Ability\Abilities\SuperWater.cs" />
+     <Compile Include="Assets\Scripts\Ability\Abilities\SuperFire.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Water.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Rock.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemySpike.cs" />
      <Compile Include="Assets\Scripts\Ability\Ability.cs" />
-     <Compile Include="Assets\Scripts\Ability\Abilities\SuperRock.cs" />
-     <Compile Include="Assets\Scripts\Ability\Abilities\SuperLightning.cs" />
-     <Compile Include="Assets\Scripts\Ability\Abilities\SuperFire.cs" />
-     <Compile Include="Assets\Scripts\Ability\Abilities\SuperWater.cs" />
-     <Compile Include="Assets\Scripts\Ability\Abilities\SuperWind.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -102,85 +102,85 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Animation.Runtime">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.PixelPerfect.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.SpriteShape.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Path.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Animation.Triangle.Runtime">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="PsdPlugin">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Psdimporter.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.InternalAPIEngineBridge.001">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Common.Runtime">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.SpriteShape.Runtime">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.PixelPerfect">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Animation.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Common.Editor">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.InternalAPIEditorBridge.001">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/Professor/Desktop/Elemental-Platform/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/REPOSITORI/Elemental-Platform/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

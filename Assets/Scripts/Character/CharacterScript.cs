@@ -75,6 +75,16 @@ namespace Character
         private float _superAbilityTimer = 0.3f;
         private float _abilityRange;
         private float _maxAbilityRange = 1;
+        private float _cooldownRock = 2f;
+        private float _cooldownWater = 2f;
+        private float _cooldownFire = 3f;
+        private float _cooldownWind = 1f;
+        private float _cooldownLightning = 2.5f;
+        private float _cooldownSuperRock = 5f;
+        private float _cooldownSuperWater = 4f;
+        private float _cooldownSuperFire = 5f;
+        private float _cooldownSuperWind = 4.5f;
+        private float _cooldownSuperLightning = 4f;
         
         private bool _run;
         private bool _jump;
@@ -269,7 +279,7 @@ namespace Character
                 rockAux.setSize(2);
                 rockAux.setTimer(2f);
                 rockAux.setCast(true);
-                rockAux.setCoolDown(2f);
+                rockAux.setCoolDown(_cooldownRock);
 
                 SuperRock superRockAux = _superRock.GetComponent<SuperRock>();
                 superRockAux.setTag("SuperRock");
@@ -277,7 +287,7 @@ namespace Character
                 superRockAux.setSize(_superAbilityCapacity);
                 superRockAux.setTimer(_superAbilityTimer);
                 superRockAux.setCast(true);
-                superRockAux.setCoolDown(5f);
+                superRockAux.setCoolDown(_cooldownSuperRock);
                 
                 _rocksList.Add(rockAux);
                 _rocksList.Add(superRockAux);
@@ -295,7 +305,7 @@ namespace Character
                     waterAux.setSize(_waterCapacity);
                     waterAux.setTimer(1f);
                     waterAux.setCast(true);
-                    waterAux.setCoolDown(2f);
+                    waterAux.setCoolDown(_cooldownWater);
 
                     SuperWater superWaterAux = _superWater.GetComponent<SuperWater>();
                     superWaterAux.setTag("SuperWater");
@@ -303,7 +313,7 @@ namespace Character
                     superWaterAux.setSize(_superAbilityCapacity);
                     superWaterAux.setTimer(_superAbilityTimer);
                     superWaterAux.setCast(true);
-                    superWaterAux.setCoolDown(4f);
+                    superWaterAux.setCoolDown(_cooldownSuperWater);
                     
                     _waterList.Add(waterAux);
                     _waterList.Add(superWaterAux);
@@ -321,7 +331,7 @@ namespace Character
                         fireAux.setSize(_fireCapacity);
                         fireAux.setTimer(2f);
                         fireAux.setCast(true);
-                        fireAux.setCoolDown(3f);
+                        fireAux.setCoolDown(_cooldownFire);
 
                         SuperFire superFireAux = _superFire.GetComponent<SuperFire>();
                         superFireAux.setTag("SuperFire");
@@ -329,7 +339,7 @@ namespace Character
                         superFireAux.setSize(_superAbilityCapacity);
                         superFireAux.setTimer(_superAbilityTimer);
                         superFireAux.setCast(true);
-                        superFireAux.setCoolDown(5f);
+                        superFireAux.setCoolDown(_cooldownSuperFire);
                         
                         _fireList.Add(fireAux);
                         _fireList.Add(superFireAux);
@@ -348,7 +358,7 @@ namespace Character
                             windAux.setSize(_windCapacity);
                             windAux.setTimer(3f);
                             windAux.setCast(true);
-                            windAux.setCoolDown(1f);
+                            windAux.setCoolDown(_cooldownWind);
 
                             SuperWind superWindAux = _superWind.GetComponent<SuperWind>();
                             superWindAux.setTag("SuperWind");
@@ -356,7 +366,7 @@ namespace Character
                             superWindAux.setSize(_superAbilityCapacity);
                             superWindAux.setTimer(_superAbilityTimer);
                             superWindAux.setCast(true);
-                            superWindAux.setCoolDown(4.5f);
+                            superWindAux.setCoolDown(_cooldownSuperWind);
                             
                             _windList.Add(windAux);
                             _windList.Add(superWindAux);
@@ -374,7 +384,7 @@ namespace Character
                                 lightningAux.setSize(_lightningCapacity);
                                 lightningAux.setTimer(0.5f);
                                 lightningAux.setCast(true);
-                                lightningAux.setCoolDown(2.5f);
+                                lightningAux.setCoolDown(_cooldownLightning);
 
                                 SuperLightning superLightningAux = _superLightning.GetComponent<SuperLightning>();
                                 superLightningAux.setTag("SuperLightning");
@@ -382,7 +392,7 @@ namespace Character
                                 superLightningAux.setSize(_superAbilityCapacity);
                                 superLightningAux.setTimer(_superAbilityTimer);
                                 superLightningAux.setCast(true);
-                                superLightningAux.setCoolDown(4f);
+                                superLightningAux.setCoolDown(_cooldownSuperLightning);
 
                                 _lightningList.Add(lightningAux);
                                 _lightningList.Add(superLightningAux);
@@ -516,121 +526,119 @@ namespace Character
                         
             }
 
-            CastAbility(ability, tag, holded);
+            CastAbility(tag, num);
         }
         
-        private void CastAbility(List<Ability.Ability> ability, string tag, bool holded)
+        private void CastAbility(string tag, int num)
         {
             GameObject abilityToSpawn;
             
             _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             _abilityPos.z = 0f;
 
-            if (transform.position.x < _abilityPos.x)
-            {
-                _spriteRenderer.flipX = false;
-            }
-            else
-            {
-                _spriteRenderer.flipX = true;
-            }
-
             abilityToSpawn = spawnAbility(tag);
 
-            if (_powerNum == 0)
-            {
-                if (!holded)
-                {
-                    abilityToSpawn.GetComponent<Rock>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
-                }
-                else
-                {
-                    abilityToSpawn.GetComponent<SuperRock>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
-                }
-            }
-            else if (_powerNum == 1)
-            {
-                if (!holded)
-                {
-                    abilityToSpawn.GetComponent<Water>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
-                }
-                else
-                {
-                    abilityToSpawn.GetComponent<SuperWater>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
-                }
-            } 
-            else if (_powerNum == 2)
-            {
-                if (!holded)
-                {
-                    abilityToSpawn.GetComponent<Fire>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
-                }
-                else
-                {
-                    abilityToSpawn.GetComponent<SuperFire>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
-                }
-            } 
-            else if (_powerNum == 3)
-            {
-                if (!holded)
-                {
-                    abilityToSpawn.GetComponent<Wind>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
-                }
-                else
-                {
-                    abilityToSpawn.GetComponent<SuperWind>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
-                }
-            }
-            else if (_powerNum == 4)
-            {
-                if (!holded)
-                {
-                    abilityToSpawn.GetComponent<Lightning>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
-                }
-                else
-                {
-                    abilityToSpawn.GetComponent<SuperLightning>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
-                }
-            }
+            Ability.Ability abilityComponent = abilityToSpawn.GetComponent<Ability.Ability>();
+            
 
-            /*if (ability[num].getTimer() > 0.3f)
+            if (abilityComponent.isCast())
             {
-                abilityToSpawn = spawnAbility(tag);
-                abilityToSpawn.transform.position = new Vector3( transform.position.x + direction,  transform.position.y, 0);
-                abilityToSpawn.transform.rotation = targetRotation;
-                abilityToSpawn.GetComponent<Rigidbody2D>().AddForce(new Vector2(_abilityPos.x - transform.position.x + direction, _abilityPos.y - transform.position.y).normalized * 300);
-                StartCoroutine(AbilityDisappear(ability[num].getTimer(), abilityToSpawn));
-                StartCoroutine(AbilityCooldown(ability[num].getTimer(), abilityToSpawn));
-            }
-            else
-            {
-                _abilityRange = (transform.position - _abilityPos).magnitude;
-
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, (_abilityPos - transform.position).normalized, _abilityRange, LayerMask.GetMask("Tilemap1", "Tilemap2"));
-
-                if (Mathf.Abs(_abilityRange) < _maxAbilityRange && !hit)
+                if (transform.position.x < _abilityPos.x)
                 {
-                    abilityToSpawn = spawnAbility(tag);
+                    _spriteRenderer.flipX = false;
+                }
+                else
+                {
+                    _spriteRenderer.flipX = true;
+                }
+
+                StartCoroutine(AbilityCooldown(abilityComponent.getCooldown(), abilityToSpawn));
                 
-                    if (ability[num].getTimer() != 0)
+                if (_powerNum == 0)
+                {
+                    if (num == 0)
                     {
-                        StartCoroutine(AbilityDisappear(ability[num].getTimer(), abilityToSpawn));
+                        abilityToSpawn.GetComponent<Rock>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                     }
-
-                    abilityToSpawn.transform.position = _abilityPos;
-                    abilityToSpawn.transform.rotation = Quaternion.identity;
+                    else
+                    {
+                        abilityToSpawn.GetComponent<SuperRock>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                    }
                 }
-            }*/
+                else if (_powerNum == 1)
+                {
+                    if (num == 0)
+                    {
+                        abilityToSpawn.GetComponent<Water>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                    }
+                    else
+                    {
+                        abilityToSpawn.GetComponent<SuperWater>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                    }
+                } 
+                else if (_powerNum == 2)
+                {
+                    if (num == 0)
+                    {
+                        abilityToSpawn.GetComponent<Fire>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                    }
+                    else
+                    {
+                        abilityToSpawn.GetComponent<SuperFire>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                    }
+                } 
+                else if (_powerNum == 3)
+                {
+                    if (num == 0)
+                    {
+                        abilityToSpawn.GetComponent<Wind>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                    }
+                    else
+                    {
+                        abilityToSpawn.GetComponent<SuperWind>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                    }
+                }
+                else if (_powerNum == 4)
+                {
+                    if (num == 0)
+                    {
+                        abilityToSpawn.GetComponent<Lightning>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                    }
+                    else
+                    {
+                        abilityToSpawn.GetComponent<SuperLightning>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                    }
+                }
+
+                if (abilityComponent.getTimer() > 0)
+                {
+                    StartCoroutine(AbilityDisappear(abilityComponent.getTimer(), abilityToSpawn));
+                }
+                
+            }
         }
         
         private GameObject spawnAbility(string tag)
         {
             GameObject abilityToSpawn;
+
             abilityToSpawn = abilityDictionary[tag].Dequeue();
-            abilityToSpawn.SetActive(true);
             abilityDictionary[tag].Enqueue(abilityToSpawn);
 
             return abilityToSpawn;
+        }
+
+        private IEnumerator AbilityCooldown(float cooldown, GameObject ability)
+        {
+            yield return new WaitForSeconds(cooldown);
+            ability.GetComponent<Ability.Ability>().setCast(true);
+            
+        }
+
+        private IEnumerator AbilityDisappear(float timer, GameObject ability)
+        {
+            yield return new WaitForSeconds(timer);
+            ability.SetActive(false);
         }
         
         private void Zoom()
