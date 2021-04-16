@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Ability.Abilities
@@ -5,10 +6,18 @@ namespace Ability.Abilities
     public class Rock : Ability
     {
 
-        public Rock(string tag, GameObject ability, int size, float timer, bool cast, float cooldown) : base(tag, ability, size, timer, cast, cooldown)
+        private void Start()
         {
+            
+            _tag = getTag();
+            _ability = getAbility();
+            _size = getSize();
+            _timer = getTimer();
+            _cast = isCast();
+            _cooldown = getCooldown();
         }
-        
+
+
         public override void abilityUtility(GameObject ability, Vector3 position, GameObject character)
         {
             if (transform.position.x < position.x)

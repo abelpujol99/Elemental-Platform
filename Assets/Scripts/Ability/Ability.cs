@@ -5,23 +5,12 @@ namespace Ability
 {
     public abstract class Ability : MonoBehaviour
     {
-        protected string _tag;
-        protected GameObject _ability;
-        protected int _size;
-        protected float _timer;
-        protected bool _cast;
-        protected float _cooldown;
-
-        public Ability(string tag, GameObject ability, int size, float timer, bool cast, float cooldown)
-        {
-            _tag = tag;
-            _ability = ability;
-            _size = size;
-            _timer = timer;
-            _cast = cast;
-            _cooldown = cooldown;
-        }
-
+        [SerializeField] protected string _tag;
+        [SerializeField] protected GameObject _ability;
+        [SerializeField] protected int _size;
+        [SerializeField] protected float _timer;
+        [SerializeField] protected bool _cast;
+        [SerializeField] protected float _cooldown;
 
         public string getTag()
         {
@@ -51,6 +40,16 @@ namespace Ability
         public float getCooldown()
         {
             return _cooldown;
+        }
+
+        public void setTag(string tag)
+        {
+            _tag = tag;
+        }
+
+        public void setAbility(GameObject ability)
+        {
+            _ability = ability;
         }
 
         public void setSize(int size)

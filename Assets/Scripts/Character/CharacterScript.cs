@@ -7,83 +7,12 @@ using System.Security.Cryptography;
 using CameraController;
 using Ability;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Character
 {
     public class CharacterScript : MonoBehaviour
     {
-        /*[System.Serializable]
-        public class AbilityParameters
-        {
-            private string tag;
-            private GameObject ability;
-            private float size;
-            private float timer;
-            private bool cast;
-            private float cooldown;
-
-            public AbilityParameters(string tag, GameObject ability, float size, float timer, bool cast, float cooldown)
-            {
-                this.tag = tag;
-                this.ability = ability;
-                this.size = size;
-                this.timer = timer;
-                this.cast = cast;
-                this.cooldown = cooldown;
-            }
-
-
-            public string getTag()
-            {
-                return tag;
-            }
-
-            public GameObject getAbility()
-            {
-                return ability;
-            }
-
-            public float getSize()
-            {
-                return size;
-            }
-
-            public float getTimer()
-            {
-                return timer;
-            }
-
-            public bool isCast()
-            {
-                return cast;
-            }
-
-            public float getCooldown()
-            {
-                return cooldown;
-            }
-
-            public void setSize(int size)
-            {
-                this.size = size;
-            }
-
-            public void setTimer(float timer)
-            {
-                this.timer = timer;
-            }
-
-            public void setCast(bool cast)
-            {
-                this.cast = cast;
-            }
-
-            public void setCoolDown(float cooldown)
-            {
-                this.cooldown = cooldown;
-            }
-        }*/
-        
         public enum Abilities {JUMP_UPGRADE, DOUBLE_JUMP_UPGRADE, ROCK, WATER, FIRE, WIND, LIGHTNING}
 
         public static bool isGround;
@@ -100,17 +29,17 @@ namespace Character
         public static bool superWindUpgrade;
         public static bool superLightningUpgrade;
 
-        [SerializeField] private GameObject rock;
-        [SerializeField] private GameObject water;
-        [SerializeField] private GameObject fire;
-        [SerializeField] private GameObject wind;
-        [SerializeField] private GameObject lightning;
-        [SerializeField] private GameObject superRock;
-        [SerializeField] private GameObject superWater;
-        [SerializeField] private GameObject superFire;
-        [SerializeField] private GameObject superWind;
-        [SerializeField] private GameObject superLightning;
-        [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private GameObject _rock;
+        [SerializeField] private GameObject _water;
+        [SerializeField] private GameObject _fire;
+        [SerializeField] private GameObject _wind;
+        [SerializeField] private GameObject _lightning;
+        [SerializeField] private GameObject _superRock;
+        [SerializeField] private GameObject _superWater;
+        [SerializeField] private GameObject _superFire;
+        [SerializeField] private GameObject _superWind;
+        [SerializeField] private GameObject _superLightning;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
         
         public Animator animator;
 
@@ -164,7 +93,6 @@ namespace Character
         private int _superAbilityCapacity = 1;
         private int _speed = 100;
 
-
         void Start()
         {
             _maximumZoomOut = Camera.main.orthographicSize;
@@ -216,7 +144,7 @@ namespace Character
                 isGround = true;
             }
         }
-
+        
         private void OnTriggerExit2D(Collider2D trigger)
         {
             if (trigger.CompareTag("Platform"))
@@ -224,19 +152,19 @@ namespace Character
                 isGround = false;
             }
         }
-
+        
         private void LeftRightMove()
         {
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
-                spriteRenderer.flipX = false;
+                _spriteRenderer.flipX = false;
                 _rb2D.velocity = new Vector2(_moveSpeed, _rb2D.velocity.y);
                 _run = true;
                 animator.SetBool("Run", _run);
             } 
             else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
-                spriteRenderer.flipX = true;
+                _spriteRenderer.flipX = true;
                 _rb2D.velocity = new Vector2(-_moveSpeed, _rb2D.velocity.y);
                 _run = true;
                 animator.SetBool("Run", _run);
@@ -248,7 +176,7 @@ namespace Character
                 animator.SetBool("Run", _run);
             }
         }
-
+        
         private void Jump()
         {
             if (jumpUpgrade)
@@ -314,7 +242,7 @@ namespace Character
                 
             }
         }
-
+        
         private void LowHighJump()
         {
             if (_rb2D.velocity.y < 0)
@@ -326,7 +254,7 @@ namespace Character
                 _rb2D.velocity += Vector2.up * Physics2D.gravity.y * (_lowJumpMultiplier) * Time.deltaTime;
             }
         }
-
+        
         private void SetPowers()
         {
             if (rockUpgrade)
@@ -334,9 +262,25 @@ namespace Character
                 _abilities = new List<List<Ability.Ability>>();
 
                 _rocksList = new List<Ability.Ability>();
+
+                Rock rockAux = _rock.GetComponent<Rock>();
+                rockAux.setTag("Rock");
+                rockAux.setAbility(_rock);
+                rockAux.setSize(2);
+                rockAux.setTimer(2f);
+                rockAux.setCast(true);
+                rockAux.setCoolDown(2f);
+
+                SuperRock superRockAux = _superRock.GetComponent<SuperRock>();
+                superRockAux.setTag("SuperRock");
+                superRockAux.setAbility(_superRock);
+                superRockAux.setSize(_superAbilityCapacity);
+                superRockAux.setTimer(_superAbilityTimer);
+                superRockAux.setCast(true);
+                superRockAux.setCoolDown(5f);
                 
-                _rocksList.Add(new Rock("Rock", rock, _rockCapacity, 0f, true, 1f));
-                _rocksList.Add(new Rock("SuperRock", superRock, _superAbilityCapacity, _superAbilityTimer, true, 5f));
+                _rocksList.Add(rockAux);
+                _rocksList.Add(superRockAux);
                 
                 _abilities.Add(_rocksList);
                 _maxPowers += 1;
@@ -345,8 +289,24 @@ namespace Character
                 {
                     _waterList = new List<Ability.Ability>();
                     
-                    _waterList.Add(new Water("Water", water, _waterCapacity, 1f, true, 2f));
-                    _waterList.Add(new Water("SuperWater", superWater, _superAbilityCapacity, _superAbilityTimer, true, 4f));
+                    Water waterAux = _water.GetComponent<Water>();
+                    waterAux.setTag("Water");
+                    waterAux.setAbility(_water);
+                    waterAux.setSize(_waterCapacity);
+                    waterAux.setTimer(1f);
+                    waterAux.setCast(true);
+                    waterAux.setCoolDown(2f);
+
+                    SuperWater superWaterAux = _superWater.GetComponent<SuperWater>();
+                    superWaterAux.setTag("SuperWater");
+                    superWaterAux.setAbility(_superWater);
+                    superWaterAux.setSize(_superAbilityCapacity);
+                    superWaterAux.setTimer(_superAbilityTimer);
+                    superWaterAux.setCast(true);
+                    superWaterAux.setCoolDown(4f);
+                    
+                    _waterList.Add(waterAux);
+                    _waterList.Add(superWaterAux);
                     
                     _abilities.Add(_waterList);
                     _maxPowers += 1;
@@ -354,19 +314,52 @@ namespace Character
                     if (fireUpgrade)
                     {
                         _fireList = new List<Ability.Ability>();
+
+                        Fire fireAux = _fire.GetComponent<Fire>();
+                        fireAux.setTag("Fire");
+                        fireAux.setAbility(_fire);
+                        fireAux.setSize(_fireCapacity);
+                        fireAux.setTimer(2f);
+                        fireAux.setCast(true);
+                        fireAux.setCoolDown(3f);
+
+                        SuperFire superFireAux = _superFire.GetComponent<SuperFire>();
+                        superFireAux.setTag("SuperFire");
+                        superFireAux.setAbility(_superFire);
+                        superFireAux.setSize(_superAbilityCapacity);
+                        superFireAux.setTimer(_superAbilityTimer);
+                        superFireAux.setCast(true);
+                        superFireAux.setCoolDown(5f);
                         
-                        _fireList.Add(new Fire("Fire", fire, _fireCapacity, 2f, true, 3f));
-                        _fireList.Add(new Fire("SuperFire", superFire, _superAbilityCapacity, _superAbilityTimer, true, 5f));
+                        _fireList.Add(fireAux);
+                        _fireList.Add(superFireAux);
                         
                         _abilities.Add(_fireList);
                         _maxPowers += 1;
 
                         if (windUpgrade)
                         {
+
                             _windList = new List<Ability.Ability>();
+
+                            Wind windAux = _wind.GetComponent<Wind>();
+                            windAux.setTag("Wind");
+                            windAux.setAbility(_wind);
+                            windAux.setSize(_windCapacity);
+                            windAux.setTimer(3f);
+                            windAux.setCast(true);
+                            windAux.setCoolDown(1f);
+
+                            SuperWind superWindAux = _superWind.GetComponent<SuperWind>();
+                            superWindAux.setTag("SuperWind");
+                            superWindAux.setAbility(_superWind);
+                            superWindAux.setSize(_superAbilityCapacity);
+                            superWindAux.setTimer(_superAbilityTimer);
+                            superWindAux.setCast(true);
+                            superWindAux.setCoolDown(4.5f);
                             
-                            _windList.Add(new Wind("Wind", wind, _windCapacity, 3f, true, 1f));
-                            _windList.Add(new Wind("SuperWind", superWind, _superAbilityCapacity, _superAbilityTimer, true, 4.5f));
+                            _windList.Add(windAux);
+                            _windList.Add(superWindAux);
                             
                             _abilities.Add(_windList);
                             _maxPowers += 1;
@@ -375,8 +368,24 @@ namespace Character
                             {
                                 _lightningList = new List<Ability.Ability>();
 
-                                _lightningList.Add(new Lightning("Lightning", lightning, _lightningCapacity, 0.5f, true, 2.5f));
-                                _lightningList.Add(new Lightning("SuperLightning", superLightning, _superAbilityCapacity, _superAbilityTimer, true, 4f));
+                                Lightning lightningAux = _lightning.GetComponent<Lightning>();
+                                lightningAux.setTag("Lightning");
+                                lightningAux.setAbility(_lightning);
+                                lightningAux.setSize(_lightningCapacity);
+                                lightningAux.setTimer(0.5f);
+                                lightningAux.setCast(true);
+                                lightningAux.setCoolDown(2.5f);
+
+                                SuperLightning superLightningAux = _superLightning.GetComponent<SuperLightning>();
+                                superLightningAux.setTag("SuperLightning");
+                                superLightningAux.setAbility(_superLightning);
+                                superLightningAux.setSize(_superAbilityCapacity);
+                                superLightningAux.setTimer(_superAbilityTimer);
+                                superLightningAux.setCast(true);
+                                superLightningAux.setCoolDown(4f);
+
+                                _lightningList.Add(lightningAux);
+                                _lightningList.Add(superLightningAux);
                                 
                                 _abilities.Add(_lightningList);
                                 _maxPowers += 1;
@@ -384,6 +393,7 @@ namespace Character
                         }
                     }
                 }
+                
                 
                 abilityDictionary = new Dictionary<string, Queue<GameObject>>();
             
@@ -405,7 +415,7 @@ namespace Character
                 }
             }
         }
-
+        
         private void ChoosePower()
         {
             if (_maxPowers != 0)
@@ -429,7 +439,7 @@ namespace Character
                 }
             }
         }
-
+        
         private void UseNormalOrSuperAbility()
         {
             if (_maxPowers > 0)
@@ -506,50 +516,81 @@ namespace Character
                         
             }
 
-            CastAbility(ability, tag);
+            CastAbility(ability, tag, holded);
         }
-        private void CastAbility(List<Ability.Ability> ability, string tag)
+        
+        private void CastAbility(List<Ability.Ability> ability, string tag, bool holded)
         {
             GameObject abilityToSpawn;
             
             _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             _abilityPos.z = 0f;
-            
-            float angle = Mathf.Atan2(_abilityPos.y - transform.position.y, _abilityPos.x - transform.position.x) * Mathf.Rad2Deg;
-            float direction;
-            
-            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
             if (transform.position.x < _abilityPos.x)
             {
-                spriteRenderer.flipX = false;
+                _spriteRenderer.flipX = false;
             }
             else
             {
-                spriteRenderer.flipX = true;
+                _spriteRenderer.flipX = true;
             }
 
             abilityToSpawn = spawnAbility(tag);
 
-            /*if (_powerNum == 0)
+            if (_powerNum == 0)
             {
-                abilityToSpawn.GetComponent<Rock>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                if (!holded)
+                {
+                    abilityToSpawn.GetComponent<Rock>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                }
+                else
+                {
+                    abilityToSpawn.GetComponent<SuperRock>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                }
             }
             else if (_powerNum == 1)
             {
-                abilityToSpawn.GetComponent<Water>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                if (!holded)
+                {
+                    abilityToSpawn.GetComponent<Water>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                }
+                else
+                {
+                    abilityToSpawn.GetComponent<SuperWater>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                }
             } 
             else if (_powerNum == 2)
             {
-                abilityToSpawn.GetComponent<Fire>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                if (!holded)
+                {
+                    abilityToSpawn.GetComponent<Fire>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                }
+                else
+                {
+                    abilityToSpawn.GetComponent<SuperFire>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                }
             } 
             else if (_powerNum == 3)
             {
-                abilityToSpawn.GetComponent<Wind>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                if (!holded)
+                {
+                    abilityToSpawn.GetComponent<Wind>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                }
+                else
+                {
+                    abilityToSpawn.GetComponent<SuperWind>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                }
             }
             else if (_powerNum == 4)
             {
-                abilityToSpawn.GetComponent<Lightning>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                if (!holded)
+                {
+                    abilityToSpawn.GetComponent<Lightning>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                }
+                else
+                {
+                    abilityToSpawn.GetComponent<SuperLightning>().abilityUtility(abilityToSpawn, _abilityPos, gameObject);
+                }
             }
 
             /*if (ability[num].getTimer() > 0.3f)
@@ -581,7 +622,7 @@ namespace Character
                 }
             }*/
         }
-
+        
         private GameObject spawnAbility(string tag)
         {
             GameObject abilityToSpawn;
@@ -591,19 +632,7 @@ namespace Character
 
             return abilityToSpawn;
         }
-
-        /*private IEnumerator AbilityDisappear(float timer, GameObject abilityToSpawn)
-        {
-            yield return new WaitForSeconds(timer);
-            abilityToSpawn.SetActive(false);
-        }
-
-        private IEnumerator AbilityCooldown(float cooldown, GameObject abilityToSpawn)
-        {
-            yield return new WaitForSeconds(cooldown);
-            abilityToSpawn.GetComponent<Water>();
-        }*/
-
+        
         private void Zoom()
         {
             float zoom = Input.GetAxis("Mouse ScrollWheel");
@@ -625,7 +654,7 @@ namespace Character
                 }
             }
         }
-
+        
         public void ActiveAbility(Abilities ability)
         {
             switch (ability)
@@ -659,5 +688,6 @@ namespace Character
                     break;
             }
         }
+        
     }
 }

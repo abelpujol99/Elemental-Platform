@@ -10,16 +10,6 @@ namespace Ability.Abilities
         private float visibleTime;
         private float cooldownTime;
 
-        public Water(string tag, GameObject ability, int size, float timer, bool cast, float cooldown) : base(tag, ability, size, timer, cast, cooldown)
-        {
-            Debug.Log(timer + " Timer 2");
-        }
-
-        private void Start()
-        {
-            Debug.Log(this.getTimer() + " Timer");
-        }
-
         private void Update()
         {
             if (visibleTime == 0f)
@@ -29,8 +19,8 @@ namespace Ability.Abilities
             }
             else 
             {
-                Debug.Log("No Disponible");
-                visibleTime -= Time.deltaTime * 1;
+                Debug.Log("No disponible");
+                visibleTime -= Time.deltaTime;
             }
 
             if (cooldownTime == 0)
@@ -39,7 +29,8 @@ namespace Ability.Abilities
             }
             else
             {
-                cooldownTime -= Time.deltaTime * 1;
+                Debug.Log("holiii");
+                cooldownTime -= Time.deltaTime;
             }
             
         }

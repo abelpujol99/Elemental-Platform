@@ -5,9 +5,6 @@ namespace Ability.Abilities
     public class Wind : Ability
     {
 
-        public Wind(string tag, GameObject ability, int size, float timer, bool cast, float cooldown) : base(tag, ability, size, timer, cast, cooldown)
-        {
-        }
         
         public override void abilityUtility(GameObject ability, Vector3 position, GameObject character)
         {

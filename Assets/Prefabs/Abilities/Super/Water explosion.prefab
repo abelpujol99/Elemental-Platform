@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7790805945677193506}
   - component: {fileID: 3113326780643817188}
   - component: {fileID: 2702013206203875597}
+  - component: {fileID: -8649047311672755337}
   m_Layer: 0
   m_Name: Water explosion
   m_TagString: SuperWater
@@ -109,3 +110,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.13, y: 7.69}
   m_EdgeRadius: 0
+--- !u!114 &-8649047311672755337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4863971478294689691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b88b0d9a39425e9deb92ac952b8b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: 
+  _ability: {fileID: 0}
+  _size: 0
+  _timer: 0
+  _cast: 0
+  _cooldown: 0

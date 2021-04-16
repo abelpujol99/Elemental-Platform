@@ -5,10 +5,6 @@ namespace Ability.Abilities
     public class Lightning : Ability
     {
 
-        public Lightning(string tag, GameObject ability, int size, float timer, bool cast, float cooldown) : base(tag, ability, size, timer, cast, cooldown)
-        {
-        }
-        
         public override void abilityUtility(GameObject ability, Vector3 position, GameObject character)
         {
             float xPositionSpawn;
