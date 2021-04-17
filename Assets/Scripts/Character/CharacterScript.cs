@@ -13,21 +13,21 @@ namespace Character
 {
     public class CharacterScript : MonoBehaviour
     {
-        public enum Abilities {JUMP_UPGRADE, DOUBLE_JUMP_UPGRADE, ROCK, WATER, FIRE, WIND, LIGHTNING}
+        public enum Abilities {JUMP_UPGRADE, DOUBLE_JUMP_UPGRADE, ROCK, WATER, FIRE, WIND, LIGHTNING, SUPER_ROCK, SUPER_WATER, SUPER_FIRE, SUPER_WIND, SUPER_LIGHTNING}
 
-        public static bool isGround;
-        public static bool jumpUpgrade;
-        public static bool doubleJumpUpgrade;
-        public static bool rockUpgrade;
-        public static bool waterUpgrade;
-        public static bool fireUpgrade;
-        public static bool windUpgrade;
-        public static bool lightningUpgrade;
-        public static bool superRockUpgrade;
-        public static bool superWaterUpgrade;
-        public static bool superFireUpgrade;
-        public static bool superWindUpgrade;
-        public static bool superLightningUpgrade;
+        public bool isGround;
+        public bool jumpUpgrade;
+        public bool doubleJumpUpgrade;
+        public bool rockUpgrade;
+        public bool waterUpgrade;
+        public bool fireUpgrade;
+        public bool windUpgrade;
+        public bool lightningUpgrade;
+        public bool superRockUpgrade;
+        public bool superWaterUpgrade;
+        public bool superFireUpgrade;
+        public bool superWindUpgrade;
+        public bool superLightningUpgrade;
 
         [SerializeField] private GameObject _rock;
         [SerializeField] private GameObject _water;
@@ -552,61 +552,61 @@ namespace Character
                     _spriteRenderer.flipX = true;
                 }
 
-                StartCoroutine(AbilityCooldown(abilityComponent.getCooldown(), abilityToSpawn));
+                StartCoroutine(AbilityCooldown(abilityComponent, abilityToSpawn));
                 
                 if (_powerNum == 0)
                 {
                     if (num == 0)
                     {
-                        abilityToSpawn.GetComponent<Rock>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                        abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                     }
                     else
                     {
-                        abilityToSpawn.GetComponent<SuperRock>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                        abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                     }
                 }
                 else if (_powerNum == 1)
                 {
                     if (num == 0)
                     {
-                        abilityToSpawn.GetComponent<Water>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                        abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                     }
                     else
                     {
-                        abilityToSpawn.GetComponent<SuperWater>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                        abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                     }
                 } 
                 else if (_powerNum == 2)
                 {
                     if (num == 0)
                     {
-                        abilityToSpawn.GetComponent<Fire>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                        abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                     }
                     else
                     {
-                        abilityToSpawn.GetComponent<SuperFire>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                        abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                     }
                 } 
                 else if (_powerNum == 3)
                 {
                     if (num == 0)
                     {
-                        abilityToSpawn.GetComponent<Wind>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                        abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                     }
                     else
                     {
-                        abilityToSpawn.GetComponent<SuperWind>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                        abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                     }
                 }
                 else if (_powerNum == 4)
                 {
                     if (num == 0)
                     {
-                        abilityToSpawn.GetComponent<Lightning>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                        abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                     }
                     else
                     {
-                        abilityToSpawn.GetComponent<SuperLightning>().abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
+                        abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                     }
                 }
 
@@ -628,10 +628,10 @@ namespace Character
             return abilityToSpawn;
         }
 
-        private IEnumerator AbilityCooldown(float cooldown, GameObject ability)
+        private IEnumerator AbilityCooldown(Ability.Ability abilityComponent, GameObject ability)
         {
-            yield return new WaitForSeconds(cooldown);
-            ability.GetComponent<Ability.Ability>().setCast(true);
+            yield return new WaitForSeconds(abilityComponent.getTimer());
+            abilityComponent.setCast(true);
             
         }
 
@@ -693,6 +693,26 @@ namespace Character
                 
                 case Abilities.LIGHTNING:
                     lightningUpgrade = true;
+                    break;
+                
+                case Abilities.SUPER_ROCK:
+                    superRockUpgrade = true;
+                    break;
+                
+                case Abilities.SUPER_WATER:
+                    superWaterUpgrade = true;
+                    break;
+                
+                case Abilities.SUPER_FIRE:
+                    superFireUpgrade = true;
+                    break;
+                
+                case Abilities.SUPER_WIND:
+                    superWindUpgrade = true;
+                    break;
+                
+                case Abilities.SUPER_LIGHTNING:
+                    superLightningUpgrade = true;
                     break;
             }
         }

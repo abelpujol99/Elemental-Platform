@@ -20,7 +20,7 @@ namespace Tutorial.Level4
 
         void Update()
         {
-            if (CharacterScript.doubleJumpUpgrade && !doubleJumped)
+            if (character.doubleJumpUpgrade && !doubleJumped)
             {
                 text.text = "Now you can Double Jump\nTry<color=#0073FF>            +</color>             ,\n<color=#0073FF>      +</color>      or<color=#0073FF>      +</color>";
                 controls[0].SetActive(true);

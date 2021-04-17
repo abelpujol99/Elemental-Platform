@@ -15082,6 +15082,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[311].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 5595039398366904648, guid: db6492b60389a634f9237f835948de8f, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 783749470}
     - target: {fileID: 5595039398366904655, guid: db6492b60389a634f9237f835948de8f, type: 3}
       propertyPath: m_Size.y
       value: 22
@@ -22516,4 +22520,5 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2312307878193895811, guid: db6492b60389a634f9237f835948de8f, type: 3}
+    - {fileID: 709657996851407539, guid: db6492b60389a634f9237f835948de8f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: db6492b60389a634f9237f835948de8f, type: 3}

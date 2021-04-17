@@ -15,39 +15,17 @@ MonoBehaviour:
   SimpleSelectedItems:
     m_Keys:
     - .collabignore
-    - Assets/Prefabs/Character/Character.prefab
-    - Assets/Prefabs/Character/Character.prefab.meta
-    - Assets/Scenes/Level 1.unity
-    - Assets/Scenes/Level 1.unity.meta
-    - Assets/Scripts/Ability/Abilities/Fire.cs
-    - Assets/Scripts/Ability/Abilities/Fire.cs.meta
-    - Assets/Scripts/Ability/Abilities/Lightning.cs
-    - Assets/Scripts/Ability/Abilities/Lightning.cs.meta
-    - Assets/Scripts/Ability/Abilities/Rock.cs
-    - Assets/Scripts/Ability/Abilities/Rock.cs.meta
-    - Assets/Scripts/Ability/Abilities/SuperFire.cs
-    - Assets/Scripts/Ability/Abilities/SuperFire.cs.meta
-    - Assets/Scripts/Ability/Abilities/SuperLightning.cs
-    - Assets/Scripts/Ability/Abilities/SuperLightning.cs.meta
-    - Assets/Scripts/Ability/Abilities/SuperRock.cs
-    - Assets/Scripts/Ability/Abilities/SuperRock.cs.meta
-    - Assets/Scripts/Ability/Abilities/SuperWater.cs
-    - Assets/Scripts/Ability/Abilities/SuperWater.cs.meta
-    - Assets/Scripts/Ability/Abilities/SuperWind.cs
-    - Assets/Scripts/Ability/Abilities/SuperWind.cs.meta
-    - Assets/Scripts/Ability/Abilities/Water.cs
-    - Assets/Scripts/Ability/Abilities/Water.cs.meta
-    - Assets/Scripts/Ability/Abilities/Wind.cs
-    - Assets/Scripts/Ability/Abilities/Wind.cs.meta
-    - Assets/Scripts/Ability/Ability.cs
-    - Assets/Scripts/Ability/Ability.cs.meta
+    - Assets/Prefabs/Platform/BrownPlatform.prefab
+    - Assets/Prefabs/Platform/BrownPlatform.prefab.meta
     - Assets/Scripts/Character/CharacterScript.cs
     - Assets/Scripts/Character/CharacterScript.cs.meta
+    - Assets/Scripts/Platform/PlatformUpDown.cs
+    - Assets/Scripts/Platform/PlatformUpDown.cs.meta
     - Packages/manifest.json
     - Packages/packages-lock.json
     - ProjectSettings/ProjectVersion.txt
     - 
-    m_Values: 000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 0000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

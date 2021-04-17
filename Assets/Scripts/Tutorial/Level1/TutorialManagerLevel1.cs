@@ -54,7 +54,7 @@ namespace Tutorial.Level1
                 controls[7].SetActive(false);
             }
         } 
-        else if(CharacterScript.jumpUpgrade && !jumped)
+        else if(character.jumpUpgrade && !jumped)
         {
             text.text = "   Now you can jump\n   Press             ,\n   or ";
             backGround.gameObject.SetActive(true);

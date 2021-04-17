@@ -10,8 +10,7 @@ namespace Platform
     {
         private PlatformEffector2D effector;
 
-        [SerializeField] private float startWaitTime = 0.5f;
-
+        private float startWaitTime = 0.5f;
         private float waitedTime;
 
         private void Start()
