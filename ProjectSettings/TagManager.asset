@@ -21,6 +21,8 @@ TagManager:
   - Catch
   - Grid
   - Rock
+  - Shuriken
+  - SuperShuriken
   layers:
   - Default
   - TransparentFX

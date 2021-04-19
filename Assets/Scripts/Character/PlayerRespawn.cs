@@ -10,10 +10,12 @@ namespace Character
 
         private float checkPointPositionX, checkPointPositionY;
 
-        [SerializeField] private Animator animator;
+        private Animator _animator;
 
         void Start()
         {
+            _animator = GetComponent<Animator>();
+            
             if (PlayerPrefs.GetFloat("checkPointPositionX") != 0)
             {
                 transform.position = (new Vector2(PlayerPrefs.GetFloat("checkPointPositionX"), PlayerPrefs.GetFloat("checkPointPositionY")));
@@ -22,7 +24,7 @@ namespace Character
 
         public void playerDamage()
         {
-            animator.Play("Hit");
+            _animator.Play("Hit");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

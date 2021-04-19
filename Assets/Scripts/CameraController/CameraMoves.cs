@@ -9,15 +9,35 @@ namespace CameraController
         [SerializeField] private Transform target;
         [SerializeField] private Transform offset;
 
-        private float smoothSpeed = 0.125f;
+        private bool _inside;
 
-        private void LateUpdate()
+        private float _smoothSpeed = 3;
+
+        private void Update()
         {
-            Vector3 desiredPosition = new Vector3(target.position.x + offset.position.x, target.position.y + offset.position.y, offset.position.z);
-            transform.position = desiredPosition;
-            
-            transform.LookAt(target);
+            _smoothSpeed = _smoothSpeed * Time.deltaTime;
 
+            if (!_inside)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, target.position.y, transform.position.z), _smoothSpeed * Time.deltaTime);
+            }
+            
+        }
+
+        private void OnTriggerEnter2D(Collider2D trigger)
+        {
+            if (trigger.CompareTag("Player"))
+            {
+                _inside = true;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D trigger)
+        {
+            if (trigger.CompareTag("Player"))
+            {
+                _inside = false;
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7237352463337476285}
   - component: {fileID: 7237352463337476284}
   - component: {fileID: 7237352463337476283}
-  - component: {fileID: 6776254887454477027}
+  - component: {fileID: 3138427211265297770}
   m_Layer: 0
   m_Name: Fire explosion
   m_TagString: SuperFire
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8, y: 2.32}
   m_EdgeRadius: 0
---- !u!114 &6776254887454477027
+--- !u!114 &3138427211265297770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,12 +119,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7237352463337476282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b48003d0bec4b23b8abfe3a25f2b10c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ff434871b844612b37d28e3ec0401bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
-  _ability: {fileID: 0}
-  _size: 0
-  _timer: 0
-  _cast: 0
-  _cooldown: 0
+  _tag: SuperFire
+  _ability: {fileID: 7237352463337476282}
+  _size: 1
+  _timer: 0.3
+  _cast: 1
+  _cooldown: 5

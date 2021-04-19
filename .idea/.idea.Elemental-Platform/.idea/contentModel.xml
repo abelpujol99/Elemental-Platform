@@ -7,18 +7,15 @@
         <e p="Scripts" t="Include">
           <e p="Ability" t="Include">
             <e p="Abilities" t="Include">
-              <e p="Fire.cs" t="Include" />
-              <e p="Lightning.cs" t="Include" />
               <e p="Rock.cs" t="Include" />
-              <e p="SuperFire.cs" t="Include" />
-              <e p="SuperLightning.cs" t="Include" />
+              <e p="Shuriken.cs" t="Include" />
+              <e p="StaticAbility.cs" t="Include" />
               <e p="SuperRock.cs" t="Include" />
-              <e p="SuperWater.cs" t="Include" />
-              <e p="SuperWind.cs" t="Include" />
-              <e p="Water.cs" t="Include" />
-              <e p="Wind.cs" t="Include" />
+              <e p="ThrowableAbility.cs" t="Include" />
             </e>
             <e p="Ability.cs" t="Include" />
+            <e p="MaxAbilityRange.cs" t="Include" />
+            <e p="SuperAbilityCastTime.cs" t="Include" />
           </e>
           <e p="CameraController" t="Include">
             <e p="CameraMoves.cs" t="Include" />

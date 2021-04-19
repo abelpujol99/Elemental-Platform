@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1936801452089805492}
   - component: {fileID: 3531649309344025209}
   - component: {fileID: 8141468977278587919}
-  - component: {fileID: 3011032861549408121}
+  - component: {fileID: 7534105901106784126}
   m_Layer: 0
   m_Name: Lightning
   m_TagString: Lightning
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3011032861549408121
+--- !u!114 &7534105901106784126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1936801452089805495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a483fa0b27c4a72a8daa3c0672962c8, type: 3}
+  m_Script: {fileID: 11500000, guid: d0c7844efe70413eaf6dfe453efc637e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: 

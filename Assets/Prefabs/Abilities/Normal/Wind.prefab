@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1817880175926051587}
   - component: {fileID: 1817880175926051596}
   - component: {fileID: 2297262479821503219}
-  - component: {fileID: -1528585077068957427}
+  - component: {fileID: 25285459973852625}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Wind
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-1528585077068957427
+--- !u!114 &25285459973852625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1817880175926051597}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cf2362085704fd7b0a12371090de09c, type: 3}
+  m_Script: {fileID: 11500000, guid: d0c7844efe70413eaf6dfe453efc637e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7790805945677193506}
   - component: {fileID: 3113326780643817188}
   - component: {fileID: 2702013206203875597}
-  - component: {fileID: -8649047311672755337}
+  - component: {fileID: -6693150713698134303}
   m_Layer: 0
   m_Name: Water explosion
   m_TagString: SuperWater
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.13, y: 7.69}
   m_EdgeRadius: 0
---- !u!114 &-8649047311672755337
+--- !u!114 &-6693150713698134303
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4863971478294689691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b88b0d9a39425e9deb92ac952b8b00, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ff434871b844612b37d28e3ec0401bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: 

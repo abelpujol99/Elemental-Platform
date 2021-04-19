@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7598822991137864041}
   - component: {fileID: 8285452395178094454}
   - component: {fileID: 5790570450176305347}
-  - component: {fileID: -7965385780308435998}
+  - component: {fileID: 3547215306664044198}
   m_Layer: 0
   m_Name: Water
   m_TagString: Water
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-7965385780308435998
+--- !u!114 &3547215306664044198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2472008848403422929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbaca16d57414b00ae91c5ccc495b0a6, type: 3}
+  m_Script: {fileID: 11500000, guid: d0c7844efe70413eaf6dfe453efc637e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: 
