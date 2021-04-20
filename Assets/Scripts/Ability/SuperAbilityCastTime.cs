@@ -41,8 +41,11 @@ namespace Ability
 
         public void ResetFillAmount()
         {
-            _image.fillAmount = 0;
-            _time = 0;
+            if (gameObject.activeSelf)
+            {
+                _image.fillAmount = 0;
+                _time = 0;
+            }
         }
 
         private void SetPosition()

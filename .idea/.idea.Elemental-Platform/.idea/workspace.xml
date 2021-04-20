@@ -19,11 +19,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/ControllerCamera.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/FollowPlayer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/jhaswvgfhjevrghe.cs" />
@@ -63,7 +63,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level1/TutorialManagerLevel1.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level4/TutorialManagerLevel4.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/PlayerRespawn.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/SuperAbilityCastTime.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/ThrowableAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/StaticAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperRock.cs" />
@@ -71,9 +70,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraController/CameraMoves.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/MaxAbilityRange.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/MaxAbilityRange.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Shuriken.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/SuperAbilityCastTime.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Bat.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ot86w0elpn1ezOGsdC11AqxwZ8" />
@@ -173,6 +174,8 @@
       <workItem from="1618766503818" duration="11691000" />
       <workItem from="1618815422131" duration="3732000" />
       <workItem from="1618819483169" duration="13120000" />
+      <workItem from="1618851171185" duration="19711000" />
+      <workItem from="1618901174341" duration="11442000" />
     </task>
     <task id="LOCAL-00001" summary="Fire with kill">
       <created>1614095592755</created>

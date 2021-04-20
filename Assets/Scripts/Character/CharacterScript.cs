@@ -103,7 +103,7 @@ namespace Character
             _auxHoldTime = holdTime;
             SetPowers();
             jumpUpgrade = true;
-            //doubleJumpUpgrade = true;
+            doubleJumpUpgrade = true;
             _useSuperAbility = true;
         }
 
@@ -275,16 +275,7 @@ namespace Character
                 shurikenAux.setCast(true);
                 shurikenAux.setCoolDown(1f);
                 
-                ThrowableAbility superShurikenAux = _superShuriken.GetComponent<ThrowableAbility>();
-                superShurikenAux.setTag("SuperShuriken");
-                superShurikenAux.setAbility(_superShuriken);
-                superShurikenAux.setSize(1);
-                superShurikenAux.setTimer(0f);
-                superShurikenAux.setCast(true);
-                superShurikenAux.setCoolDown(3f);
-                
                 _shurikenList.Add(shurikenAux);
-                _shurikenList.Add(superShurikenAux);
                 
                 _abilities.Add(_shurikenList);
                 _maxPowers += 1;
@@ -660,6 +651,7 @@ namespace Character
             GameObject abilityToSpawn;
 
             abilityToSpawn = abilityDictionary[tag].Dequeue();
+            abilityToSpawn.SetActive(false);
             abilityDictionary[tag].Enqueue(abilityToSpawn);
 
             return abilityToSpawn;

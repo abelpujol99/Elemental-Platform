@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 9013419237508666489}
   - component: {fileID: 5380029974738340231}
   - component: {fileID: 2893565387989735555}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Frog
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -238,6 +238,7 @@ MonoBehaviour:
   _superWind: {fileID: 7197826234009722148, guid: 80761808471002f4c9369732d67d8075, type: 3}
   _superLightning: {fileID: 5627498613830955818, guid: d7955294775a00448945ba9a03bcc6ee, type: 3}
   _visualTimer: {fileID: 728823345003628659, guid: 7aa13b4379d62904cb8445bac7b29a45, type: 3}
+  _abilityRangeCircle: {fileID: 0}
 --- !u!114 &2893565387989735555
 MonoBehaviour:
   m_ObjectHideFlags: 0

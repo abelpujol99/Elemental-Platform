@@ -1,14 +1,15 @@
+using System.Numerics;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Ability.Abilities
 {
     public class Shuriken : Ability
     {
-        private float _rotationSpeed;
-
         private void Update()
         {
-            _rotationSpeed = 5f;
             transform.Rotate(Vector3.back * -10);
         }
 

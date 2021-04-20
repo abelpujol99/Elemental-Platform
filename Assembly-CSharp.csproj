@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\Scenario\Ground.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\Text2.cs" />
      <Compile Include="Assets\Scripts\Ability\SuperAbilityCastTime.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Bat.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\SuperRock.cs" />
      <Compile Include="Assets\Scripts\Enemy\Rino.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\DissapearText1.cs" />
