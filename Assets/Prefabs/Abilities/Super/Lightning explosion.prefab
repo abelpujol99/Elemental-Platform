@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1660651008898945420}
   - component: {fileID: 4674847526268592859}
   - component: {fileID: 5697751523086376461}
-  - component: {fileID: 8652367048273177390}
+  - component: {fileID: 5599736741426669925}
   m_Layer: 0
   m_Name: Lightning explosion
   m_TagString: SuperLightning
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.555154, y: 4.7111406}
   m_EdgeRadius: 0
---- !u!114 &8652367048273177390
+--- !u!114 &5599736741426669925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5627498613830955818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff434871b844612b37d28e3ec0401bf, type: 3}
+  m_Script: {fileID: 11500000, guid: c9bc2377207841929b9ac389041b58c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: 

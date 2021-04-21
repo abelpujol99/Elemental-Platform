@@ -24,24 +24,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/ControllerCamera.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/FollowPlayer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/jhaswvgfhjevrghe.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level3/Text2.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Trap/CheckPlayer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Platform/Platform.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level3/DissapearText1.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level3/AppearText1.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Door/KeyCollected.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level2/TutorialManagerLevel2.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpike.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Trap/DamageObject.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Trap/FireDamage.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CheckPoint/CheckPoint.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CameraController/CameraController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CheckGround.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tilemap/TilemapGround.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/abilityUtility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/AbilityUtility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CheckObstacles/CheckObstacles.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Obsctacles.cs" />
@@ -49,13 +31,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CheckObstacles/Throw.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Rock.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Ability.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Fire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Lightning.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Water.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Wind.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Ground.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Door/LevelComplete.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Platform/PlatformUpDown.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperWater.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperFire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperLightning.cs" />
@@ -67,14 +45,36 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/StaticAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperRock.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Upgrade/TakeUpgrade.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CameraController/CameraMoves.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/MaxAbilityRange.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/MaxAbilityRange.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Shuriken.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/SuperAbilityCastTime.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Bat.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Platform/PlatformUpDown.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CameraController/CameraMoves.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Plant.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Fire.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Water.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWind.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWater.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperRock.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperLightning.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperFire.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/StaticAbility.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Water.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/ThrowableAbility.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Ninja/Shuriken.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Lightning.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Fire.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Projectile.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Bat/Bat.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/Rino.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Wind.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Ground.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Rock.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ot86w0elpn1ezOGsdC11AqxwZ8" />
@@ -176,6 +176,8 @@
       <workItem from="1618819483169" duration="13120000" />
       <workItem from="1618851171185" duration="19711000" />
       <workItem from="1618901174341" duration="11442000" />
+      <workItem from="1618940685917" duration="8827000" />
+      <workItem from="1618988726786" duration="18947000" />
     </task>
     <task id="LOCAL-00001" summary="Fire with kill">
       <created>1614095592755</created>

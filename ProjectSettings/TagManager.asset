@@ -17,12 +17,12 @@ TagManager:
   - SuperWind
   - Tilemap1
   - Tilemap2
-  - Throw
-  - Catch
   - Grid
   - Rock
   - Shuriken
   - SuperShuriken
+  - Enemy
+  - GreenProjectile
   layers:
   - Default
   - TransparentFX
@@ -37,8 +37,8 @@ TagManager:
   - Tilemap2
   - Ability
   - Player
-  - 
-  - 
+  - Rock
+  - Enemy
   - 
   - 
   - 

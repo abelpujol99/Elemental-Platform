@@ -8,14 +8,14 @@ namespace Platform
 {
     public class PlatformUpDown : MonoBehaviour
     {
-        private PlatformEffector2D effector;
+        private PlatformEffector2D _effector;
 
-        private float startWaitTime = 0.5f;
-        private float waitedTime;
+        private float _startWaitTime = 0.1f;
+        private float _waitedTime;
 
         private void Start()
         {
-            effector = GetComponent<PlatformEffector2D>();
+            _effector = GetComponent<PlatformEffector2D>();
         }
 
         private void Update()
@@ -23,25 +23,25 @@ namespace Platform
 
             if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
             {
-                waitedTime = startWaitTime;
+                _waitedTime = _startWaitTime;
             }
         
             if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
-                if (waitedTime <= 0)
+                if (_waitedTime <= 0)
                 {
-                    effector.rotationalOffset = 180;
-                    waitedTime = startWaitTime;
+                    _effector.rotationalOffset = 180;
+                    _waitedTime = _startWaitTime;
                 }
                 else
                 {
-                    waitedTime -= Time.deltaTime;
+                    _waitedTime -= Time.deltaTime;
                 }
             }
 
             if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
-                effector.rotationalOffset = 0;
+                _effector.rotationalOffset = 0;
             }
         }
     }

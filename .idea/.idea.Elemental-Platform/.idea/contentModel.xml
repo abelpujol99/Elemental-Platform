@@ -7,11 +7,23 @@
         <e p="Scripts" t="Include">
           <e p="Ability" t="Include">
             <e p="Abilities" t="Include">
-              <e p="Rock.cs" t="Include" />
-              <e p="Shuriken.cs" t="Include" />
-              <e p="StaticAbility.cs" t="Include" />
-              <e p="SuperRock.cs" t="Include" />
-              <e p="ThrowableAbility.cs" t="Include" />
+              <e p="Ninja" t="Include">
+                <e p="Shuriken.cs" t="Include" />
+              </e>
+              <e p="Normal" t="Include">
+                <e p="Fire.cs" t="Include" />
+                <e p="Lightning.cs" t="Include" />
+                <e p="Rock.cs" t="Include" />
+                <e p="Water.cs" t="Include" />
+                <e p="Wind.cs" t="Include" />
+              </e>
+              <e p="Super" t="Include">
+                <e p="SuperFire.cs" t="Include" />
+                <e p="SuperLightning.cs" t="Include" />
+                <e p="SuperRock.cs" t="Include" />
+                <e p="SuperWater.cs" t="Include" />
+                <e p="SuperWind.cs" t="Include" />
+              </e>
             </e>
             <e p="Ability.cs" t="Include" />
             <e p="MaxAbilityRange.cs" t="Include" />
@@ -29,9 +41,17 @@
             <e p="LevelComplete.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
-            <e p="Bat.cs" t="Include" />
+            <e p="Bat" t="Include">
+              <e p="Bat.cs" t="Include" />
+            </e>
             <e p="EnemySpike.cs" t="Include" />
-            <e p="Rino.cs" t="Include" />
+            <e p="Plant" t="Include">
+              <e p="Plant.cs" t="Include" />
+              <e p="Projectile.cs" t="Include" />
+            </e>
+            <e p="Rino" t="Include">
+              <e p="Rino.cs" t="Include" />
+            </e>
           </e>
           <e p="Platform" t="Include">
             <e p="PlatformUpDown.cs" t="Include" />

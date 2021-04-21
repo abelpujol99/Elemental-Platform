@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6995859749326785918}
   - component: {fileID: 6995859749326785919}
   - component: {fileID: 6995859749326785912}
-  - component: {fileID: 3462084545633266934}
+  - component: {fileID: -6612403933795537812}
   - component: {fileID: 5867775096078014113}
   - component: {fileID: 4941944567517827236}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Rock
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 15.44
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3462084545633266934
+--- !u!114 &-6612403933795537812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,12 +159,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaee2cfd693e4fb2ab059b8ef4b11633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
-  _ability: {fileID: 0}
-  _size: 0
+  _tag: Rock
+  _ability: {fileID: 6995859749326785915}
+  _size: 2
   _timer: 0
-  _cast: 0
-  _cooldown: 0
+  _cast: 1
+  _cooldown: 2
 --- !u!114 &4941944567517827236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,9 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2568a22c851c421ab110da004792cf5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
-  _ability: {fileID: 0}
-  _size: 0
-  _timer: 0
-  _cast: 0
-  _cooldown: 0
+  _tag: SuperRock
+  _ability: {fileID: 6995859749326785915}
+  _size: 1
+  _timer: 0.3
+  _cast: 1
+  _cooldown: 5

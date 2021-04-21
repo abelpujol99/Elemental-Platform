@@ -6,6 +6,9 @@ using System.Reflection;
 using System.Security.Cryptography;
 using CameraController;
 using Ability;
+using Ability.Abilities.Ninja;
+using Ability.Abilities.Normal;
+using Ability.Abilities.Super;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -38,13 +41,15 @@ namespace Character
 
         private SpriteRenderer _abilityRangeCircleSprite;
         
-        private Vector3 _abilityPos, _posCamera, _initialPosCamera;
+        private Vector3 _abilityPos, _posCamera, _initialPosCamera, _left, _right;
 
-        private RaycastHit2D hit;
+        private RaycastHit2D _leftLeg;
+        private RaycastHit2D _rightLeg;
+        private RaycastHit2D _hit;
 
         private List<List<Ability.Ability>> _abilities;
         
-        private Dictionary<string, Queue<GameObject>> abilityDictionary;
+        private Dictionary<string, Queue<GameObject>> _abilityDictionary;
 
         private List<Ability.Ability> _shurikenList , _rockList, _waterList, _fireList, _windList, _lightningList, _superShurikenList, _superRockList, _superWaterList, _superWindList, _superLightningList;
         
@@ -109,8 +114,33 @@ namespace Character
 
         void Update()
         {
+            
+            /*_left = new Vector3(transform.position.x - 0.069f, transform.position.y - 0.145f, transform.position.z); 
+            _right = new Vector3(transform.position.x + 0.069f, transform.position.y - 0.145f, transform.position.z); 
+
+            Debug.DrawRay(_left, new Vector3(transform.position.x - 0.069f, transform.position.y - 0.161f, transform.position.z) - _left, Color.green);
+            Debug.DrawRay(_right, new Vector3(transform.position.x + 0.069f, transform.position.y - 0.161f, transform.position.z) - _right, Color.green);
+
+            _leftLeg = Physics2D.Raycast(_left,
+                new Vector3(transform.position.x - 0.069f, transform.position.y - 0.161f, transform.position.z) - _left, 0.161f, LayerMask.GetMask("Tilemap1"));
+            
+            _rightLeg = Physics2D.Raycast(_right,
+                new Vector3(transform.position.x - 0.069f, transform.position.y - 0.161f, transform.position.z) - _right, 0.161f , LayerMask.GetMask("Tilemap1"));
+
+
+            if (_leftLeg || _rightLeg)
+            {
+                isGround = true;
+            }
+            else
+            {
+                isGround = false;
+            }*/
+            
             Jump();
+            
             ChoosePowerWithButton();
+            
             if (!Input.GetMouseButton(1))
             {
                 _abilityRangeCircleSprite.enabled = false;
@@ -122,7 +152,6 @@ namespace Character
                     
                     CastAbility("Shuriken");
                 }
-                Zoom();
             }
             else
             {
@@ -249,7 +278,11 @@ namespace Character
         
         private void LowHighJump()
         {
-            if (_rb2D.velocity.y < 0)
+            if (isGround)
+            {
+                _rb2D.velocity += Vector2.up * Physics2D.gravity * 0;
+            }
+            else if (_rb2D.velocity.y < 0)
             {
                 _rb2D.velocity += Vector2.up * Physics2D.gravity.y * (_fallMultiplier) * Time.deltaTime;
             }
@@ -311,7 +344,7 @@ namespace Character
                     {
                         _waterList = new List<Ability.Ability>();
 
-                        ThrowableAbility waterAux = _water.GetComponent<ThrowableAbility>();
+                        Water waterAux = _water.GetComponent<Water>();
                         waterAux.setTag("Water");
                         waterAux.setAbility(_water);
                         waterAux.setSize(_waterCapacity);
@@ -319,7 +352,7 @@ namespace Character
                         waterAux.setCast(true);
                         waterAux.setCoolDown(_cooldownWater);
 
-                        StaticAbility superWaterAux = _superWater.GetComponent<StaticAbility>();
+                        SuperWater superWaterAux = _superWater.GetComponent<SuperWater>();
                         superWaterAux.setTag("SuperWater");
                         superWaterAux.setAbility(_superWater);
                         superWaterAux.setSize(_superAbilityCapacity);
@@ -337,7 +370,7 @@ namespace Character
                         {
                             _fireList = new List<Ability.Ability>();
 
-                            ThrowableAbility fireAux = _fire.GetComponent<ThrowableAbility>();
+                            Fire fireAux = _fire.GetComponent<Fire>();
                             fireAux.setTag("Fire");
                             fireAux.setAbility(_fire);
                             fireAux.setSize(_fireCapacity);
@@ -345,7 +378,7 @@ namespace Character
                             fireAux.setCast(true);
                             fireAux.setCoolDown(_cooldownFire);
 
-                            StaticAbility superFireAux = _superFire.GetComponent<StaticAbility>();
+                            SuperFire superFireAux = _superFire.GetComponent<SuperFire>();
                             superFireAux.setTag("SuperFire");
                             superFireAux.setAbility(_superFire);
                             superFireAux.setSize(_superAbilityCapacity);
@@ -364,7 +397,7 @@ namespace Character
 
                                 _windList = new List<Ability.Ability>();
 
-                                ThrowableAbility windAux = _wind.GetComponent<ThrowableAbility>();
+                                Wind windAux = _wind.GetComponent<Wind>();
                                 windAux.setTag("Wind");
                                 windAux.setAbility(_wind);
                                 windAux.setSize(_windCapacity);
@@ -372,7 +405,7 @@ namespace Character
                                 windAux.setCast(true);
                                 windAux.setCoolDown(_cooldownWind);
 
-                                StaticAbility superWindAux = _superWind.GetComponent<StaticAbility>();
+                                SuperWind superWindAux = _superWind.GetComponent<SuperWind>();
                                 superWindAux.setTag("SuperWind");
                                 superWindAux.setAbility(_superWind);
                                 superWindAux.setSize(_superAbilityCapacity);
@@ -390,7 +423,7 @@ namespace Character
                                 {
                                     _lightningList = new List<Ability.Ability>();
 
-                                    ThrowableAbility lightningAux = _lightning.GetComponent<ThrowableAbility>();
+                                    Lightning lightningAux = _lightning.GetComponent<Lightning>();
                                     lightningAux.setTag("Lightning");
                                     lightningAux.setAbility(_lightning);
                                     lightningAux.setSize(_lightningCapacity);
@@ -398,7 +431,7 @@ namespace Character
                                     lightningAux.setCast(true);
                                     lightningAux.setCoolDown(_cooldownLightning);
 
-                                    StaticAbility superLightningAux = _superLightning.GetComponent<StaticAbility>();
+                                    SuperLightning superLightningAux = _superLightning.GetComponent<SuperLightning>();
                                     superLightningAux.setTag("SuperLightning");
                                     superLightningAux.setAbility(_superLightning);
                                     superLightningAux.setSize(_superAbilityCapacity);
@@ -417,7 +450,7 @@ namespace Character
                     }
                 }
 
-                abilityDictionary = new Dictionary<string, Queue<GameObject>>();
+                _abilityDictionary = new Dictionary<string, Queue<GameObject>>();
                 
                 foreach (List<Ability.Ability> ability in _abilities)
                 {
@@ -432,7 +465,7 @@ namespace Character
                             abilityPool.Enqueue(obj);
                         }
                         
-                        abilityDictionary.Add(specificAbility.getTag(), abilityPool);
+                        _abilityDictionary.Add(specificAbility.getTag(), abilityPool);
                     }
                 }
             }
@@ -490,22 +523,23 @@ namespace Character
             if (_maxPowers > 0)
             {
                 SuperAbilityCastTime visualComponent = _visualTimer.GetComponent<SuperAbilityCastTime>();
+
+                _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                _abilityPos.z = 0f;
+                    
+                _abilityRange = (_abilityPos - transform.position).magnitude;
                 
                 if (Input.GetMouseButton(0) && _useSuperAbility)
                 {
-                    _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    _abilityPos.z = 0f;
                     
-                    _abilityRange = (_abilityPos - transform.position).magnitude;
-                    
-                    hit = Physics2D.Raycast(transform.position, _abilityPos - transform.position, _abilityRange, LayerMask.GetMask("Tilemap1", "Tilemap2"));
+                    _hit = Physics2D.Raycast(transform.position, _abilityPos - transform.position, _abilityRange, LayerMask.GetMask("Tilemap1", "Tilemap2"));
 
-                    if (hit)
+                    if (_hit)
                     {
                         visualComponent.ResetFillAmount();
                         _visualTimer.SetActive(false);
                     }
-                    else if (holdTime == _auxHoldTime && _maxAbilityRange >= _abilityRange && !hit)
+                    else if (holdTime == _auxHoldTime && _maxAbilityRange >= _abilityRange && !_hit)
                     {
                         _visualTimer.SetActive(true);
                         visualComponent.HoldedTime(holdTime);
@@ -518,7 +552,7 @@ namespace Character
                     }
                     holdTime -= Time.deltaTime;
 
-                    if (holdTime <= 0 && _maxAbilityRange >= _abilityRange && !hit)
+                    if (holdTime <= 0 && _maxAbilityRange >= _abilityRange && !_hit)
                     {
                         _useSuperAbility = false;
                         UsePower(true);
@@ -531,7 +565,11 @@ namespace Character
                 {
                     visualComponent.ResetFillAmount();
                     _visualTimer.SetActive(false);
-                    UsePower(false);
+                    
+                    if (!(_maxAbilityRange < _abilityRange && _powerNum == 1))
+                    {
+                        UsePower(false);
+                    }
                 }
                 if (!Input.GetMouseButton(0))
                 {
@@ -594,7 +632,7 @@ namespace Character
         private void CastAbility(string tag)
         {
             GameObject abilityToSpawn;
-
+            
             abilityToSpawn = spawnAbility(tag);
 
             Ability.Ability abilityComponent = abilityToSpawn.GetComponent<Ability.Ability>();
@@ -650,9 +688,9 @@ namespace Character
         {
             GameObject abilityToSpawn;
 
-            abilityToSpawn = abilityDictionary[tag].Dequeue();
+            abilityToSpawn = _abilityDictionary[tag].Dequeue();
             abilityToSpawn.SetActive(false);
-            abilityDictionary[tag].Enqueue(abilityToSpawn);
+            _abilityDictionary[tag].Enqueue(abilityToSpawn);
 
             return abilityToSpawn;
         }
@@ -668,32 +706,6 @@ namespace Character
         {
             yield return new WaitForSeconds(timer);
             ability.SetActive(false);
-        }
-        
-        private void Zoom()
-        {
-            float zoom = Input.GetAxis("Mouse ScrollWheel");
-            if (zoom > 0f)
-            {
-                if (_camera.orthographicSize > _maximumZoomIn)
-                {
-                    _camera.orthographicSize -= 0.1f;
-                    _camera.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(transform.position.x, transform.position.y, _posCamera.z), Time.deltaTime * _speed);
-                    //_cameraComponent.enabled = true;
-                }
-            } 
-            else if (zoom < 0f)
-            {
-                if (_camera.orthographicSize < _maximumZoomOut)
-                {
-                    _camera.orthographicSize += 0.1f;
-                    _camera.transform.position = Vector3.MoveTowards(Camera.main.transform.position, _posCamera, Time.deltaTime * _speed);
-                    if (_camera.transform.position == _initialPosCamera)
-                    {
-                        //_cameraComponent.enabled = false;
-                    }
-                }
-            }
         }
         
         public void ActiveAbility(Abilities ability)

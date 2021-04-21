@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1629610084085642090}
   - component: {fileID: 3875787227445493330}
   - component: {fileID: 3335158636057452891}
-  - component: {fileID: -6831285769681176872}
+  - component: {fileID: 7405558493121585001}
   m_Layer: 0
   m_Name: Wind Explosion
   m_TagString: SuperWind
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
---- !u!114 &-6831285769681176872
+--- !u!114 &7405558493121585001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7197826234009722148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff434871b844612b37d28e3ec0401bf, type: 3}
+  m_Script: {fileID: 11500000, guid: e1561c78c8194979b059e21c0b68de97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: 
