@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Character;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -29,7 +30,7 @@ namespace Enemy.Plant
 
         private Dictionary<string, Queue<GameObject>> _projectileDictionary;
 
-        private int _direction;
+        private float _projectilePositionXSpawn;
 
         private float _cadenceAux;
 
@@ -37,20 +38,24 @@ namespace Enemy.Plant
 
         private void Start()
         {
+            _projectilePositionXSpawn = 1f;
             _cadenceAux = _cadence;
             _animator = GetComponent<Animator>();
             _canAttack = true;
-            if (!_fixedPosition)
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            if (_spriteRenderer.flipX)
             {
-                _spriteRenderer = GetComponent<SpriteRenderer>();
+                _projectilePositionXSpawn = Mathf.Abs(_projectilePositionXSpawn);
             }
-            
+            else
+            {
+                _projectilePositionXSpawn = Mathf.Abs(_projectilePositionXSpawn) * -1;
+            }
             SetProjectiles();
         }
 
         private void Update()
         {
-
             _cadence -= Time.deltaTime;
             
             if (!_fixedPosition)
@@ -58,12 +63,12 @@ namespace Enemy.Plant
                 if (_target.position.x > transform.position.x)
                 {
                     _spriteRenderer.flipX = true;
-                    _direction = 1;
+                    _projectilePositionXSpawn = Mathf.Abs(_projectilePositionXSpawn);
                 }
                 else
                 {
                     _spriteRenderer.flipX = false;
-                    _direction = -1;
+                    _projectilePositionXSpawn = Mathf.Abs(_projectilePositionXSpawn) * -1;
                 }
             }
 
@@ -115,19 +120,27 @@ namespace Enemy.Plant
         {
             GameObject projectileToSpawn;
 
-            Vector3 projectileSpawnPosition = new Vector3(transform.position.x + _direction, transform.position.y,
+            Vector3 projectileSpawnPosition = new Vector3(transform.position.x + _projectilePositionXSpawn, transform.position.y,
                 transform.position.z);
 
             projectileToSpawn = _projectileDictionary[tag].Dequeue();
-            projectileToSpawn.transform.position = (projectileSpawnPosition - transform.position).normalized * 0.2f + transform.position;
+            projectileToSpawn.transform.position = (projectileSpawnPosition - transform.position).normalized * 0.3f + transform.position;
 
             yield return new WaitForSeconds(0.33f);
 
             projectileToSpawn.SetActive(true);
             _projectileDictionary[tag].Enqueue(projectileToSpawn);
-            projectileToSpawn.GetComponent<Rigidbody2D>().AddForce(new Vector2((transform.position.x + _direction) - transform.position.x, transform.position.y - transform.position.y).normalized * 200);
+            projectileToSpawn.GetComponent<Rigidbody2D>().AddForce(new Vector2((transform.position.x + _projectilePositionXSpawn) - transform.position.x, transform.position.y - transform.position.y).normalized * 200);
             _animator.SetBool("Attack", false);
             
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.transform.CompareTag("Player"))
+            {
+                collision.transform.GetComponent<PlayerRespawn>().playerDamage();
+            }
         }
     }
 }

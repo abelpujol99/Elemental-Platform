@@ -54,7 +54,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraController/CameraMoves.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Plant.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Fire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Water.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWind.cs" />
@@ -63,18 +62,19 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperLightning.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperFire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/StaticAbility.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Water.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/ThrowableAbility.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Ninja/Shuriken.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Lightning.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Fire.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Projectile.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Bat/Bat.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/Rino.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Wind.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Ground.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Rock.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Fire.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Wind.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Lightning.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Plant.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Projectile.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Water.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Ninja/Shuriken.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/Rino.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ot86w0elpn1ezOGsdC11AqxwZ8" />
@@ -178,6 +178,7 @@
       <workItem from="1618901174341" duration="11442000" />
       <workItem from="1618940685917" duration="8827000" />
       <workItem from="1618988726786" duration="18947000" />
+      <workItem from="1619029335859" duration="10615000" />
     </task>
     <task id="LOCAL-00001" summary="Fire with kill">
       <created>1614095592755</created>

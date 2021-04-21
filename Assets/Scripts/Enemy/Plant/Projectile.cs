@@ -40,15 +40,16 @@ namespace Enemy.Plant
             _size = size;
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D trigger)
         {
-            if (collision.transform.CompareTag("Tilemap1") || collision.transform.CompareTag("Tilemap2") || collision.transform.CompareTag("Rock") || collision.transform.CompareTag("Enemy"))
+            if (trigger.transform.CompareTag("Tilemap1") || trigger.transform.CompareTag("Tilemap2") || trigger.transform.CompareTag("Rock") || trigger.transform.CompareTag("Enemy") || trigger.transform.CompareTag("GreenProjectile"))
             {
                 gameObject.SetActive(false);
             } 
-            else if (collision.transform.CompareTag("Player"))
+            else if (trigger.transform.CompareTag("Player"))
             {
-                collision.transform.GetComponent<PlayerRespawn>().playerDamage();
+                //trigger.transform.GetComponent<PlayerRespawn>().playerDamage();
+                gameObject.SetActive(false);
             }
         }
     }

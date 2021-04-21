@@ -218,35 +218,6 @@ namespace Enemy.Rino
             {
                 collision.transform.GetComponent<PlayerRespawn>().playerDamage();
             }
-
-            if (collision.transform.CompareTag("Shuriken"))
-            {
-                _health -= 0.5f;
-                Hit();
-            }
-            else if (collision.gameObject.CompareTag("Fire"))
-            {
-                _health -= 2;
-                Hit();
-            }
-            else if (collision.gameObject.CompareTag("Lightning"))
-            {
-                _health -= 1;
-                Hit();
-            }
-            else if (collision.gameObject.CompareTag("Water"))
-            {
-                _health -= 0.1f;
-                Hit();
-            }
-            else if (collision.gameObject.CompareTag("Wind"))
-            {
-                if (_speed == _initialSpeed)
-                {
-                    StartCoroutine(ReturnSpeed());
-                    _speed -= _speed / _slow;
-                }
-            }
             else if (collision.gameObject.CompareTag("Tilemap1"))
             {
                 _lastTargetPosition = transform.position;
@@ -278,30 +249,60 @@ namespace Enemy.Rino
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerEnter2D(Collider2D trigger)
         {
-            if (collision.gameObject.CompareTag("SuperFire"))
+            if (trigger.transform.CompareTag("Player"))
             {
-                _health -= 6;
-                Hit();
+                trigger.transform.GetComponent<PlayerRespawn>().playerDamage();
             }
-            else if (collision.gameObject.CompareTag("SuperLightning"))
-            {
-                _health -= 2.5f;
-                Hit();
-            }
-            else if (collision.gameObject.CompareTag("SuperWater"))
+            else if (trigger.transform.CompareTag("Shuriken"))
             {
                 _health -= 0.5f;
                 Hit();
             }
-            else if (collision.gameObject.CompareTag("SuperWind"))
+            else if (trigger.gameObject.CompareTag("Fire"))
+            {
+                _health -= 2;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("Lightning"))
+            {
+                _health -= 1;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("Water"))
+            {
+                _health -= 0.1f;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("Wind"))
+            {
+                if (_speed == _initialSpeed)
+                {
+                    StartCoroutine(ReturnSpeed());
+                    _speed -= _speed / _slow;
+                }
+            }
+            else if (trigger.gameObject.CompareTag("SuperFire"))
+            {
+                _health -= 6;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("SuperLightning"))
+            {
+                _health -= 2.5f;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("SuperWater"))
+            {
+                _health -= 0.5f;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("SuperWind"))
             {
                 _rb2D.velocity = new Vector2(0, _knockUp);
                 _knockedUp = true;
             }
         }
-
-        
     }
 }

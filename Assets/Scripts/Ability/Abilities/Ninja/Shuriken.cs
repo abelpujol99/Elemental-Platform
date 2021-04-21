@@ -26,9 +26,13 @@ namespace Ability.Abilities.Ninja
          
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D trigger)
         {
-            gameObject.SetActive(false);
+            if (trigger.transform.CompareTag("GreenProjectile"))
+            {
+                trigger.gameObject.SetActive(false);
+                gameObject.SetActive(false);
+            }
         }
         
         public string getTag()

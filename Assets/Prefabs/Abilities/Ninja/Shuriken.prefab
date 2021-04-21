@@ -95,7 +95,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.077135086, y: -0.09256202}
@@ -144,9 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a828d521014045a01063a4a10a7ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
-  _ability: {fileID: 0}
-  _size: 0
+  _tag: Shuriken
+  _ability: {fileID: 7985466707551815754}
+  _size: 1
   _timer: 0
-  _cast: 0
-  _cooldown: 0
+  _cast: 1
+  _cooldown: 1

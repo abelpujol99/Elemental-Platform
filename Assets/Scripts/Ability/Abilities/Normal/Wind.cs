@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Ability.Abilities.Normal
@@ -18,11 +19,11 @@ namespace Ability.Abilities.Normal
          
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D trigger)
         {
-            if (collision.transform.CompareTag("GreenProjectile"))
+            if (trigger.transform.CompareTag("GreenProjectile"))
             {
-                collision.gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity * 1; 
+                trigger.gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity * 1; 
                 gameObject.SetActive(false);
             }
             else

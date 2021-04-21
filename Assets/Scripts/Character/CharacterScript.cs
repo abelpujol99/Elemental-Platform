@@ -311,7 +311,6 @@ namespace Character
                 _shurikenList.Add(shurikenAux);
                 
                 _abilities.Add(_shurikenList);
-                _maxPowers += 1;
 
                 if (rockUpgrade)
                 {

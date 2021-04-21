@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Ability.Abilities.Normal
@@ -17,7 +18,7 @@ namespace Ability.Abilities.Normal
          
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D trigger)
         {
             gameObject.SetActive(false);
         }
