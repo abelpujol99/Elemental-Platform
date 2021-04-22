@@ -1,16 +1,16 @@
-﻿using Character;
+﻿using System;
+using Character;
 using UnityEngine;
 
 namespace Scenario
 {
     public class Ground : MonoBehaviour
     {
-        [SerializeField] private CharacterScript character;
         private void OnTriggerEnter2D(Collider2D trigger)
         {
             if (trigger.transform.CompareTag("CheckGround"))
             {
-                character.isGround = true;
+                CharacterScript.isGround = true;
             }
         }
 
@@ -18,7 +18,7 @@ namespace Scenario
         {
             if (trigger.transform.CompareTag("CheckGround"))
             {
-                character.isGround = false;
+                CharacterScript.isGround = false;
             }
         }
         

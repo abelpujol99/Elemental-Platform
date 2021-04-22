@@ -48,8 +48,7 @@ namespace Enemy.Plant
             } 
             else if (trigger.transform.CompareTag("Player"))
             {
-                //trigger.transform.GetComponent<PlayerRespawn>().playerDamage();
-                gameObject.SetActive(false);
+                trigger.transform.GetComponent<PlayerRespawn>().playerDamage();
             }
         }
     }

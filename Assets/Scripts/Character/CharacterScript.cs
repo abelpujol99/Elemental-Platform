@@ -19,15 +19,13 @@ namespace Character
     {
         public enum Abilities {JUMP_UPGRADE, DOUBLE_JUMP_UPGRADE, ROCK, WATER, FIRE, WIND, LIGHTNING, SUPER_ROCK, SUPER_WATER, SUPER_FIRE, SUPER_WIND, SUPER_LIGHTNING}
 
-        public static bool shurikenUpgrade, jumpUpgrade, doubleJumpUpgrade, rockUpgrade, waterUpgrade, fireUpgrade, windUpgrade, lightningUpgrade, superRockUpgrade, superWaterUpgrade, superFireUpgrade, superWindUpgrade, superLightningUpgrade;
+        public static bool isGround, shurikenUpgrade, jumpUpgrade, doubleJumpUpgrade, rockUpgrade, waterUpgrade, fireUpgrade, windUpgrade, lightningUpgrade, superRockUpgrade, superWaterUpgrade, superFireUpgrade, superWindUpgrade, superLightningUpgrade;
         
         public static float _maxAbilityRange = 1;
 
         private static float holdTime;
         
         public Animator animator;
-        
-        public bool isGround;
 
         [SerializeField] private GameObject _shuriken, _rock, _water, _fire, _wind, _lightning, _superShuriken, _superRock, _superWater, _superFire, _superWind, _superLightning, _visualTimer, _abilityRangeCircle;
 

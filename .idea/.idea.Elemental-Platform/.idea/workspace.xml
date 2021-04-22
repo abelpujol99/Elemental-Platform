@@ -64,16 +64,16 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/StaticAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/ThrowableAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Bat/Bat.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Ground.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Rock.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Fire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Wind.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Lightning.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Plant.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Projectile.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Water.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Ninja/Shuriken.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Projectile.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Ground.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/Rino.cs" />
     </changedPaths>
   </component>
@@ -179,6 +179,7 @@
       <workItem from="1618940685917" duration="8827000" />
       <workItem from="1618988726786" duration="18947000" />
       <workItem from="1619029335859" duration="10615000" />
+      <workItem from="1619073955519" duration="13669000" />
     </task>
     <task id="LOCAL-00001" summary="Fire with kill">
       <created>1614095592755</created>
