@@ -30,14 +30,12 @@ namespace Enemy.Rino
         private float _slow;
         private float _distanceToFloor;
         private float _distanceFront;
-        private float _distanceToDetect;
         private float _difference;
         
         public bool _onAir;
         public bool _canMove;
         private bool _knockedUp;
-        private bool _attacking;
-        private bool _obstacle;
+        public bool _attacking;
 
         private void Start()
         {
@@ -49,7 +47,6 @@ namespace Enemy.Rino
             _slow = 3;
             _distanceToFloor = 0.3f;
             _distanceFront = 0.38f;
-            _distanceToDetect = 0.1f;
             _canMove = true;
             if (_distance > 0)
             {
@@ -62,93 +59,85 @@ namespace Enemy.Rino
         }
 
         private void Update()
-        {            
+        {
+            if (_health <= 0)
+            {
+                _animator.Play("Die");
+                GetComponent<BoxCollider2D>().enabled = false;
+                GetComponent<Rigidbody2D>().isKinematic = true;
+                StartCoroutine(DestroyRino());
+            }
             
-            
-            float distanceBetweenCharacterAndRino = Vector3.Distance(transform.position, _characterPosition.position);
 
-            _vectorToAvoidObstacles1 = new Vector3(transform.position.x + _distanceFront, transform.position.y - 0.1f, 0);
+            if (_distance > 0)
+            {
+                _spriteRenderer.flipX = true;
+            }
+            else
+            {
+                _spriteRenderer.flipX = false;
+            }
+
+            //float distanceBetweenCharacterAndRino = Vector3.Distance(transform.position, _characterPosition.position);
+
+            _vectorToAvoidObstacles1 = new Vector3(transform.position.x + Mathf.Sign(_distance) * _distanceFront, transform.position.y - 0.1f, 0);
             _vectorToAvoidObstacles2 = new Vector3(transform.position.x + 0.1f, transform.position.y, 0);
 
-            _vectorToAvoidFall1 = new Vector3(transform.position.x + _distanceToFloor, transform.position.y - 0.2f, 0);
-            _vectorToAvoidFall2 = new Vector3(transform.position.x + _distanceToFloor / 4, transform.position.y, 0);
+            _vectorToAvoidFall1 = new Vector3(transform.position.x + Mathf.Sign(_distance) *  _distanceToFloor, transform.position.y - 0.1f, 0);
+            _vectorToAvoidFall2 = new Vector3(transform.position.x + Mathf.Sign(_distance) *  _distanceToFloor / 4, transform.position.y, 0);
             
-            Debug.DrawRay(_vectorToAvoidFall1, new Vector3(transform.position.x + _distanceToFloor / 4, transform.position.y, 0) - transform.position, Color.green);
+            Debug.DrawRay(_vectorToAvoidFall1, (Mathf.Sign(_distance) * Vector2.right + Vector2.down).normalized * 0.14f, Color.green);
+            Debug.DrawRay(_vectorToAvoidObstacles1, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.1f , Color.green);
 
 
             _avoidObstacles = Physics2D.Raycast(_vectorToAvoidObstacles1, 
-                new Vector3(transform.position.x + 0.3f, transform.position.y, 0) - transform.position,
-                Vector3.Distance(_vectorToAvoidObstacles2, transform.position), LayerMask.GetMask("Tilemap2", "Rock", "Enemy"));
+                (Mathf.Sign(_distance) * Vector2.right).normalized,
+                0.1f, LayerMask.GetMask("Tilemap2", "Rock", "Enemy"));
 
-            _avoidFall = Physics2D.Raycast(_vectorToAvoidFall1, new Vector3(transform.position.x + _distanceToFloor / 4, transform.position.y, 0) - transform.position,
-                0.1f,
+            _avoidFall = Physics2D.Raycast(_vectorToAvoidFall1, (Mathf.Sign(_distance) * Vector2.right + Vector2.down).normalized,
+                0.14f,
                 LayerMask.GetMask("Tilemap1"));
             
-            _lookScenario = Physics2D.Raycast(transform.position, _characterPosition.position - transform.position,
+            /*_lookScenario = Physics2D.Raycast(transform.position, _characterPosition.position - transform.position,
                 distanceBetweenCharacterAndRino,
-                LayerMask.GetMask("Tilemap1", "Tilemap2"));
+                LayerMask.GetMask("Tilemap1", "Tilemap2"));*/
             
             _foundPlayer = Physics2D.Raycast(transform.position, _characterPosition.position - transform.position, 1.3f,
                 LayerMask.GetMask("Player"));
+            
 
-
-            if (_avoidObstacles)
+            if ((_avoidObstacles || !_avoidFall) && !_knockedUp)
             {
                 if (_spriteRenderer.flipX)
                 {
                     _spriteRenderer.flipX = false;
                     _distance = Mathf.Abs(_distance) * -1;
-                    _distanceToFloor = Mathf.Abs(_distanceToFloor) * -1;
-                    _distanceFront = Mathf.Abs(_distanceFront) * -1;
-                    _distanceToDetect = Mathf.Abs(_distanceToDetect) * -1;
                 }
                 else
                 {
                     _spriteRenderer.flipX = true;
                     _distance = Mathf.Abs(_distance);
-                    _distanceToFloor = Mathf.Abs(_distanceToFloor);
-                    _distanceFront = Mathf.Abs(_distanceFront);
-                    _distanceToDetect = Mathf.Abs(_distanceToDetect);
                 }
                 
-                if (_distance > 0)
-                {
-                    //_distanceToFloor = Mathf.Abs(_distanceToFloor);
-                }
-                else
-                {
-                    //_distanceToFloor = Mathf.Abs(_distanceToFloor) * -1;
-                }
-                _obstacle = true;
                 _targetPosition = _lastTargetPosition;
             }
             
-            
-            if (_rb2D.velocity.y != 0)
-            {
-                _onAir = true;
-                _canMove = false;
-            }
-            else if (_rb2D.velocity.y == 0)
-            {
-                _onAir = false;
-            }
 
-            if (!_lookScenario)
+            /*if (!_lookScenario)
             {
-                //Debug.Log("Escenario");
                 if (_foundPlayer && !_onAir)
                 {
-                    //Debug.Log("Ataca");
-                    Attack();
-                    
+                        //Attack();
+                }
+                else
+                {
+                    _attacking = false;
                 }
             }
             else
             {
-                //Debug.Log("no ataca");
                 _attacking = false;
-            }
+            }*/
             
             
             if (!_attacking)
@@ -168,10 +157,18 @@ namespace Enemy.Rino
                     _targetPosition = new Vector3(_lastTargetPosition.x + _distance, _lastTargetPosition.y, 0);
                 
                 }
-                else if (_obstacle || !_avoidFall)
+                else if ((_avoidObstacles || !_avoidFall) && !_knockedUp)
                 {
-                    Debug.Log("entras");
-                    _obstacle = false;
+                    
+                    if (_spriteRenderer.flipX)
+                    {
+                        _spriteRenderer.flipX = false;
+                    }
+                    else
+                    {
+                        _spriteRenderer.flipX = true;
+                    }
+                    
                     if (_lastTargetPosition.x > transform.position.x)
                     {
                         _difference = transform.position.x - _lastTargetPosition.x;
@@ -183,101 +180,9 @@ namespace Enemy.Rino
                     _difference = -(-_distance - _difference);
                     _lastTargetPosition = new Vector3(_lastTargetPosition.x + _distance + _difference, _lastTargetPosition.y, 0);
                     _targetPosition = _lastTargetPosition;
-                    Debug.Log(_lastTargetPosition);
                 }
                 Move();
             }
-            
-            
-            
-            
-            
-            /*if (_foundPlayer && _rb2D.velocity.y == 0)
-            {
-                if (!_lookScenario)
-                {
-                    Attack();
-                }
-                else
-                {
-                    _attacking = false;
-                    if (_targetPosition.x > transform.position.x)
-                    {
-                        _distance = Mathf.Abs(_distance);
-                    }
-                    else
-                    {
-                        _distance = Mathf.Abs(_distance) * -1;
-                    }
-                }
-                
-            }
-            else
-            {
-                _attacking = false;
-                if (_targetPosition.x > transform.position.x)
-                {
-                    _distance = Mathf.Abs(_distance);
-                }
-                else
-                {
-                    _distance = Mathf.Abs(_distance) * -1;
-                }
-            }
-
-            if (_rb2D.velocity.y != 0)
-            {
-                _onAir = true;
-            }
-            else if (_rb2D.velocity.y == 0)
-            {
-                _onAir = false;
-            }
-               
-            if (_distance > 0)
-            {
-                _spriteRenderer.flipX = true;
-                _distanceToFloor = Mathf.Abs(_distanceToFloor);
-            }
-            else
-            {
-                _spriteRenderer.flipX = false;
-                _distanceToFloor = Mathf.Abs(_distanceToFloor) * -1;
-            }
-            
-            if (_health <= 0)
-            {
-                _animator.Play("Die");
-                GetComponent<BoxCollider2D>().enabled = false;
-                GetComponent<Rigidbody2D>().isKinematic = true;
-                StartCoroutine(DestroyRino());
-            }
-            else if (!_attacking && _distance != 0)
-            {
-                if (!_onAir && _canMove)
-                {
-                    Move();
-                }
-                else
-                {
-                    _animator.SetBool("Run", false);
-                }
-            }
-
-            if (transform.position.x == _targetPosition.x && !_attacking) 
-            {
-                _distance *= -1;
-                _lastTargetPosition = transform.position;
-                _targetPosition = new Vector3(transform.position.x + _distance, transform.position.y, 0);
-            }
-            else if (!_avoidFall || _obstacle)
-            {
-                _obstacle = false;
-                _distance *= -1;
-                _lastTargetPosition = new Vector3(_lastTargetPosition.x + _distance, _lastTargetPosition.y, 0);
-                _targetPosition = _lastTargetPosition;
-                Debug.Log(_targetPosition);
-            }*/
         }
 
         private void Attack()
@@ -289,12 +194,10 @@ namespace Enemy.Rino
                 if (_characterPosition.position.x > transform.position.x)
                 {
                     _distance = Mathf.Abs(_distance);
-                    _spriteRenderer.flipX = true;
                 }
                 else
                 {
                     _distance = Mathf.Abs(_distance) * -1;
-                    _spriteRenderer.flipX = false;
                 }
                 
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(_characterPosition.position.x + _distance, transform.position.y, 0), Time.deltaTime * _speed);
@@ -306,7 +209,6 @@ namespace Enemy.Rino
         {
             if (_canMove)
             {
-                Debug.Log("muevete");
                 _animator.SetBool("Run", true);         
                 transform.position = Vector3.MoveTowards(transform.position, _targetPosition, Time.deltaTime * _speed);
             }
@@ -349,7 +251,7 @@ namespace Enemy.Rino
         {
             if (collision.transform.CompareTag("Player"))
             {
-                collision.transform.GetComponent<PlayerRespawn>().playerDamage();
+                collision.transform.GetComponent<PlayerRespawn>().PlayerDamage();
             }
             else if (collision.gameObject.CompareTag("Tilemap1"))
             {
@@ -364,20 +266,16 @@ namespace Enemy.Rino
                 {
                     _targetPosition = new Vector3(transform.position.x + _distance, transform.position.y, 0);
                 }
-                
+
                 _knockedUp = false;
             } 
-        }
-
-        private void OnCollisionExit2D(Collision2D collision)
-        {
         }
 
         private void OnTriggerEnter2D(Collider2D trigger)
         {
             if (trigger.transform.CompareTag("Player"))
             {
-                trigger.transform.GetComponent<PlayerRespawn>().playerDamage();
+                trigger.transform.GetComponent<PlayerRespawn>().PlayerDamage();
             }
             else if (trigger.transform.CompareTag("Shuriken"))
             {

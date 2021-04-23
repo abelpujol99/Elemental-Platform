@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Character;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,11 +10,11 @@ namespace Door
 {
     public class LevelComplete : MonoBehaviour
     {
-    
-        [SerializeField] private GameObject transition;
-        [SerializeField] private int neededKeys;
+
+        [SerializeField] private GameObject _transition;
+        [SerializeField] private int _neededKeys;
         public bool inDoor;
-        private bool doorUnlock;
+        private bool _doorUnlock;
         
         private void OnTriggerEnter2D(Collider2D trigger)
         {
@@ -34,31 +35,33 @@ namespace Door
     
         private void Start()
         {
-            if (neededKeys == 0)
+            
+            if (_neededKeys == 0)
             {
-                doorUnlock = true;
+                _doorUnlock = true;
             }
             else
             {
-                doorUnlock = false;
+                _doorUnlock = false;
             }
+
         }
     
         private void Update()
         {
-            if (inDoor && Input.GetKey(KeyCode.E) && doorUnlock)
+            if (inDoor && Input.GetKey(KeyCode.E) && _doorUnlock)
             {
-                transition.SetActive(true);
+                _transition.SetActive(true);
                 StartCoroutine(ChangeScene());
             }
         }
     
         public void countKeys()
         {
-            neededKeys -= 1;
-            if (neededKeys == 0)
+            _neededKeys -= 1;
+            if (_neededKeys == 0)
             {
-                doorUnlock = true;
+                _doorUnlock = true;
             }
     
         }

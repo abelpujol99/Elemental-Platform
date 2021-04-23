@@ -24,7 +24,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/AbilityUtility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CheckObstacles/CheckObstacles.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Obsctacles.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CheckObstacles/Catch.cs" />
@@ -33,14 +32,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Ability.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Lightning.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Wind.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Door/LevelComplete.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperWater.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperFire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperLightning.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperWind.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level1/TutorialManagerLevel1.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level4/TutorialManagerLevel4.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/PlayerRespawn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/ThrowableAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/StaticAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperRock.cs" />
@@ -65,15 +62,18 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/ThrowableAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Bat/Bat.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Rock.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Fire.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Wind.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Lightning.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Plant.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Water.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Ninja/Shuriken.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Projectile.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Ground.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Door/LevelComplete.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/RinoCheckGround.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Ninja/Shuriken.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Water.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Fire.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Lightning.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Wind.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/PlayerRespawn.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Plant.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/Rino.cs" />
     </changedPaths>
   </component>
@@ -180,6 +180,9 @@
       <workItem from="1618988726786" duration="18947000" />
       <workItem from="1619029335859" duration="10615000" />
       <workItem from="1619073955519" duration="13669000" />
+      <workItem from="1619106390393" duration="11528000" />
+      <workItem from="1619126365636" duration="1537000" />
+      <workItem from="1619157206035" duration="15335000" />
     </task>
     <task id="LOCAL-00001" summary="Fire with kill">
       <created>1614095592755</created>

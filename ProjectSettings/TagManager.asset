@@ -23,6 +23,10 @@ TagManager:
   - SuperShuriken
   - Enemy
   - GreenProjectile
+  - CloseTransition
+  - Door
+  - Key
+  - Upgrade
   layers:
   - Default
   - TransparentFX

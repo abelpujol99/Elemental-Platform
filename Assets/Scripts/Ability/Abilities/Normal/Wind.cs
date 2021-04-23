@@ -26,7 +26,7 @@ namespace Ability.Abilities.Normal
                 trigger.gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity * 1; 
                 gameObject.SetActive(false);
             }
-            else
+            else if (!(trigger.transform.CompareTag("Door") || trigger.transform.CompareTag("Key") || trigger.transform.CompareTag("Upgrade")))
             {
                 gameObject.SetActive(false);
             }

@@ -894,6 +894,14 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 279474801}
+    - target: {fileID: 4932659572979667982, guid: 5c179ff08d90bf64cb1ca20dfb9650f8, type: 3}
+      propertyPath: _neededKeys
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932659572979667982, guid: 5c179ff08d90bf64cb1ca20dfb9650f8, type: 3}
+      propertyPath: _transition
+      value: 
+      objectReference: {fileID: 279474801}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c179ff08d90bf64cb1ca20dfb9650f8, type: 3}
 --- !u!4 &211478847 stripped
@@ -34234,6 +34242,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2893565387989735555, guid: b188d2de3596560439705815f165e20d, type: 3}
+      propertyPath: _transition
+      value: 
+      objectReference: {fileID: 279474801}
     - target: {fileID: 4212831928475725097, guid: b188d2de3596560439705815f165e20d, type: 3}
       propertyPath: m_IsActive
       value: 1

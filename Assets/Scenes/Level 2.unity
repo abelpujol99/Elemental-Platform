@@ -19672,6 +19672,14 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 1939718193}
+    - target: {fileID: 4932659572979667982, guid: 5c179ff08d90bf64cb1ca20dfb9650f8, type: 3}
+      propertyPath: _neededKeys
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932659572979667982, guid: 5c179ff08d90bf64cb1ca20dfb9650f8, type: 3}
+      propertyPath: _transition
+      value: 
+      objectReference: {fileID: 1939718193}
     m_RemovedComponents:
     - {fileID: 2039503090580112785, guid: 5c179ff08d90bf64cb1ca20dfb9650f8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5c179ff08d90bf64cb1ca20dfb9650f8, type: 3}
@@ -20118,6 +20126,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2893565387989735555, guid: b188d2de3596560439705815f165e20d, type: 3}
+      propertyPath: _transition
+      value: 
+      objectReference: {fileID: 1939718193}
     - target: {fileID: 5380029974738340231, guid: b188d2de3596560439705815f165e20d, type: 3}
       propertyPath: _visualTimer
       value: 

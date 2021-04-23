@@ -11,7 +11,7 @@ namespace Trap
         {
             if (collision.transform.CompareTag("Player"))
             {
-                collision.transform.GetComponent<PlayerRespawn>().playerDamage();
+                collision.transform.GetComponent<PlayerRespawn>().PlayerDamage();
             }
         }
 

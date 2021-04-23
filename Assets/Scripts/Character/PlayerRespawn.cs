@@ -8,9 +8,13 @@ namespace Character
     public class PlayerRespawn : MonoBehaviour
     {
 
+        [SerializeField] private GameObject _transition;
+        
         private float checkPointPositionX, checkPointPositionY;
 
         private Animator _animator;
+
+        private bool _nextLevel;
 
         void Start()
         {
@@ -22,11 +26,20 @@ namespace Character
             }
         }
 
-        public void playerDamage()
+        public void PlayerDamage()
         {
-            _animator.Play("Hit");
+            if (!_transition.activeSelf)
+            {
+                _animator.Play("Hit");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+
+        public void RestartLevel()
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        
     }
 
 }

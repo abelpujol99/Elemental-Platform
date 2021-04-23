@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 4932659572979667982}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -623,8 +623,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec692c734787c54ea6fbe7a86f26add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
-  neededKeys: 0
+  _transition: {fileID: 0}
+  _neededKeys: 0
   inDoor: 0
 --- !u!1 &2039503090729445907
 GameObject:

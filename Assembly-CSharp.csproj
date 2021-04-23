@@ -91,6 +91,7 @@
      <Compile Include="Assets\Scripts\Enemy\EnemySpike.cs" />
      <Compile Include="Assets\Scripts\Ability\MaxAbilityRange.cs" />
      <Compile Include="Assets\Scripts\Ability\Ability.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Rino\RinoCheckGround.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

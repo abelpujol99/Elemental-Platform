@@ -19,7 +19,7 @@ namespace Trap
         private IEnumerator destroyPlayer(Collider2D trigger)
         {
             yield return new WaitForSeconds(0.35f);
-            trigger.transform.GetComponent<PlayerRespawn>().playerDamage();
+            trigger.transform.GetComponent<PlayerRespawn>().PlayerDamage();
         }
     }
 

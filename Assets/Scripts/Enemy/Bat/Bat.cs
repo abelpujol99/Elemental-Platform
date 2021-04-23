@@ -188,7 +188,7 @@ namespace Enemy.Bat
             
             if (collision.transform.CompareTag("Player"))
             {
-                collision.transform.GetComponent<PlayerRespawn>().playerDamage();
+                collision.transform.GetComponent<PlayerRespawn>().PlayerDamage();
             }
             if (collision.gameObject.CompareTag("Fire"))
             {

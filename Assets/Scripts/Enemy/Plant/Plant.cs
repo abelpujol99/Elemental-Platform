@@ -24,6 +24,8 @@ namespace Enemy.Plant
 
         private Animator _animator;
 
+        private Rigidbody2D _rb2D;
+
         private SpriteRenderer _spriteRenderer;
 
         private List<Projectile> _projectiles;
@@ -32,13 +34,14 @@ namespace Enemy.Plant
 
         private float _projectilePositionXSpawn;
 
-        private float _cadenceAux;
+        private float _cadenceAux, _knockUp;
 
         private bool _canAttack;
 
         private void Start()
         {
             _projectilePositionXSpawn = 1f;
+            _knockUp = 3;
             _cadenceAux = _cadence;
             _animator = GetComponent<Animator>();
             _canAttack = true;
@@ -52,10 +55,20 @@ namespace Enemy.Plant
                 _projectilePositionXSpawn = Mathf.Abs(_projectilePositionXSpawn) * -1;
             }
             SetProjectiles();
+            _rb2D = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
         {
+
+            if (_health <= 0)
+            {
+                _animator.Play("Die");
+                GetComponent<BoxCollider2D>().enabled = false;
+                GetComponent<Rigidbody2D>().isKinematic = true;
+                StartCoroutine(DestroyPlant());
+            }
+            
             _cadence -= Time.deltaTime;
             
             if (!_fixedPosition)
@@ -116,6 +129,13 @@ namespace Enemy.Plant
             _animator.SetBool("Attack", true);
         }
 
+        private void Hit()
+        {
+            _animator.SetBool("Hit", true);
+            _canAttack = false;
+            StartCoroutine(SetAttack());
+        }
+
         private IEnumerator Attack(string tag)
         {
             GameObject projectileToSpawn;
@@ -135,11 +155,74 @@ namespace Enemy.Plant
             
         }
 
+        private IEnumerator SetAttack()
+        {
+            yield return new WaitForSeconds(0.35f);
+            _animator.SetBool("Hit", false);
+            _canAttack = true;
+        }
+        
+        private IEnumerator DestroyPlant()
+        {
+            yield return new WaitForSeconds(0.38f);
+            Destroy(gameObject);
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.transform.CompareTag("Player"))
             {
-                collision.transform.GetComponent<PlayerRespawn>().playerDamage();
+                collision.transform.GetComponent<PlayerRespawn>().PlayerDamage();
+            }
+            else if (collision.transform.CompareTag("Tilemap1"))
+            {
+                if (!_canAttack)
+                {
+                    _canAttack = true;
+                }
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D trigger)
+        {
+            if (trigger.transform.CompareTag("Shuriken"))
+            {
+                _health -= 0.5f;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("Fire"))
+            {
+                _health -= 3;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("Lightning"))
+            {
+                _health -= 1;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("Water"))
+            {
+                _health += 1f;
+            }
+            else if (trigger.gameObject.CompareTag("SuperFire"))
+            {
+                _health -= 6;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("SuperLightning"))
+            {
+                _health -= 2.5f;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("SuperWater"))
+            {
+                _health += 1.5f;
+                Hit();
+            }
+            else if (trigger.gameObject.CompareTag("SuperWind"))
+            {
+                _rb2D.velocity = new Vector2(0, _knockUp);
+                _canAttack = false;
             }
         }
     }

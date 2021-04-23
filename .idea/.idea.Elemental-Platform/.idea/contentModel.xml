@@ -51,6 +51,7 @@
             </e>
             <e p="Rino" t="Include">
               <e p="Rino.cs" t="Include" />
+              <e p="RinoCheckGround.cs" t="Include" />
             </e>
           </e>
           <e p="Platform" t="Include">

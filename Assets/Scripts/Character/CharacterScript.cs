@@ -105,35 +105,18 @@ namespace Character
             _powerNum = 1;
             _auxHoldTime = holdTime;
             SetPowers();
-            jumpUpgrade = true;
-            doubleJumpUpgrade = true;
+            //jumpUpgrade = true;
+            //doubleJumpUpgrade = true;
             _useSuperAbility = true;
         }
 
         void Update()
         {
-            
-            /*_left = new Vector3(transform.position.x - 0.069f, transform.position.y - 0.145f, transform.position.z); 
-            _right = new Vector3(transform.position.x + 0.069f, transform.position.y - 0.145f, transform.position.z); 
 
-            Debug.DrawRay(_left, new Vector3(transform.position.x - 0.069f, transform.position.y - 0.161f, transform.position.z) - _left, Color.green);
-            Debug.DrawRay(_right, new Vector3(transform.position.x + 0.069f, transform.position.y - 0.161f, transform.position.z) - _right, Color.green);
-
-            _leftLeg = Physics2D.Raycast(_left,
-                new Vector3(transform.position.x - 0.069f, transform.position.y - 0.161f, transform.position.z) - _left, 0.161f, LayerMask.GetMask("Tilemap1"));
-            
-            _rightLeg = Physics2D.Raycast(_right,
-                new Vector3(transform.position.x - 0.069f, transform.position.y - 0.161f, transform.position.z) - _right, 0.161f , LayerMask.GetMask("Tilemap1"));
-
-
-            if (_leftLeg || _rightLeg)
+            if (Input.GetKey(KeyCode.R))
             {
-                isGround = true;
+                GetComponent<PlayerRespawn>().RestartLevel();
             }
-            else
-            {
-                isGround = false;
-            }*/
             
             Jump();
             
@@ -633,10 +616,14 @@ namespace Character
             abilityToSpawn = spawnAbility(tag);
 
             Ability.Ability abilityComponent = abilityToSpawn.GetComponent<Ability.Ability>();
-            
 
             if (abilityComponent.isCast())
             {
+                if (!(_powerNum == 1 && _hit))
+                {
+                    abilityToSpawn.SetActive(false);
+                }
+                
                 if (transform.position.x < _abilityPos.x)
                 {
                     _spriteRenderer.flipX = false;
@@ -686,7 +673,6 @@ namespace Character
             GameObject abilityToSpawn;
 
             abilityToSpawn = _abilityDictionary[tag].Dequeue();
-            abilityToSpawn.SetActive(false);
             _abilityDictionary[tag].Enqueue(abilityToSpawn);
 
             return abilityToSpawn;

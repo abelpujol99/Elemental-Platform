@@ -31,6 +31,8 @@ namespace Ability.Abilities.Ninja
             if (trigger.transform.CompareTag("GreenProjectile"))
             {
                 trigger.gameObject.SetActive(false);
+            }else if (!(trigger.transform.CompareTag("Door") || trigger.transform.CompareTag("Key") || trigger.transform.CompareTag("Upgrade")))
+            {
                 gameObject.SetActive(false);
             }
         }

@@ -3977,7 +3977,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1187360635}
   - component: {fileID: 1187360634}
-  - component: {fileID: 1187360637}
   - component: {fileID: 1187360636}
   - component: {fileID: 1187360633}
   m_Layer: 0
@@ -4066,32 +4065,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 98665660}
   offset: {x: 0, y: 0, z: 0}
---- !u!61 &1187360637
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187360632}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00000047683716, y: -0.057112694}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.4619074, y: 2.291625}
-  m_EdgeRadius: 0
 --- !u!1001 &1210837462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5533,6 +5506,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2893565387989735555, guid: b188d2de3596560439705815f165e20d, type: 3}
+      propertyPath: _transition
+      value: 
+      objectReference: {fileID: 1869113557}
     - target: {fileID: 5380029974738340231, guid: b188d2de3596560439705815f165e20d, type: 3}
       propertyPath: _visualTimer
       value: 
@@ -6038,6 +6015,10 @@ PrefabInstance:
       objectReference: {fileID: 654437662}
     - target: {fileID: 4932659572979667982, guid: 5c179ff08d90bf64cb1ca20dfb9650f8, type: 3}
       propertyPath: transition
+      value: 
+      objectReference: {fileID: 1869113557}
+    - target: {fileID: 4932659572979667982, guid: 5c179ff08d90bf64cb1ca20dfb9650f8, type: 3}
+      propertyPath: _transition
       value: 
       objectReference: {fileID: 1869113557}
     m_RemovedComponents: []

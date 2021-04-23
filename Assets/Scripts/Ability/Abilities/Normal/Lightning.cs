@@ -20,7 +20,10 @@ namespace Ability.Abilities.Normal
 
         private void OnTriggerEnter2D(Collider2D trigger)
         {
-            gameObject.SetActive(false);
+            if (!(trigger.transform.CompareTag("Door") || trigger.transform.CompareTag("Key") || trigger.transform.CompareTag("Upgrade")))
+            {
+                gameObject.SetActive(false);
+            }
         }
         
         public string getTag()
