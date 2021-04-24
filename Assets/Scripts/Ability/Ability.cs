@@ -11,8 +11,10 @@ namespace Ability
         [SerializeField] protected float _timer;
         [SerializeField] protected bool _cast;
         [SerializeField] protected float _cooldown;
+        [SerializeField] protected float _actualCooldown;
+        [SerializeField] protected CooldownActiveAbility _cooldownActiveAbility;
 
-        public string getTag()
+            public string getTag()
         {
             return _tag;
         }
@@ -40,6 +42,11 @@ namespace Ability
         public float getCooldown()
         {
             return _cooldown;
+        }
+
+        public float getActualCooldown()
+        {
+            return _actualCooldown;
         }
 
         public void setTag(string tag)
@@ -71,7 +78,25 @@ namespace Ability
         {
             _cooldown = cooldown;
         }
+
+        public void setActualCooldown(float actualCooldown)
+        {
+            _actualCooldown = actualCooldown;
+        }
         
         public abstract void abilityUtility(GameObject ability, Vector3 abilityPosition, Vector3 characterPosition, float maxAbilityRange);
+
+        protected void UpdateCooldown()
+        {
+            if (getTag().Contains("Super"))
+            {
+                //_cooldownActiveAbility.UpdateCooldown(getCooldown(), true);
+            }
+            else
+            {
+                //_cooldownActiveAbility.UpdateCooldown(getCooldown(), false);
+            }
+        }
+        
     }
 }

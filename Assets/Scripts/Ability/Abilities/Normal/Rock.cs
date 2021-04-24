@@ -27,6 +27,7 @@ namespace Ability.Abilities.Normal
             if (!hit && maxAbilityRange >= _abilityRange)
             {
                 setCast(false);
+                UpdateCooldown();
                 gameObject.SetActive(true);
                 StartCoroutine(FreezePositionX(ability));
                 ability.transform.position = abilityPosition;

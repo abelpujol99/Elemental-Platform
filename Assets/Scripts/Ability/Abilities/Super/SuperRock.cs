@@ -13,6 +13,7 @@ namespace Ability.Abilities.Super
             if (!hit && maxAbilityRange >= _abilityRange)
             {
                 setCast(false);
+                UpdateCooldown();
                 gameObject.SetActive(true);
                 ability.transform.position = abilityPosition;
                 ability.transform.rotation = Quaternion.identity;

@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\Scenario\Ground.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\Text2.cs" />
      <Compile Include="Assets\Scripts\Ability\SuperAbilityCastTime.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Rino\RinoCheckGround.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Normal\Fire.cs" />
      <Compile Include="Assets\Scripts\Enemy\Bat\Bat.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Super\SuperRock.cs" />
@@ -91,7 +92,8 @@
      <Compile Include="Assets\Scripts\Enemy\EnemySpike.cs" />
      <Compile Include="Assets\Scripts\Ability\MaxAbilityRange.cs" />
      <Compile Include="Assets\Scripts\Ability\Ability.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Rino\RinoCheckGround.cs" />
+     <Compile Include="Assets\Scripts\Character\CooldownActiveAbility.cs" />
+     <Compile Include="Assets\Scripts\Character\UpdateTimer.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

@@ -24,19 +24,12 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/CheckObstacles/CheckObstacles.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Obsctacles.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CheckObstacles/Catch.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CheckObstacles/Throw.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Rock.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Ability.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Lightning.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Wind.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperWater.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperFire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperLightning.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperWind.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level1/TutorialManagerLevel1.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level4/TutorialManagerLevel4.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/ThrowableAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/StaticAbility.cs" />
@@ -53,28 +46,35 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Fire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Water.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWind.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWater.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperRock.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperLightning.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperFire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/StaticAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/ThrowableAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Bat/Bat.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Rock.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Projectile.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Ground.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Door/LevelComplete.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/RinoCheckGround.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Ninja/Shuriken.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Water.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Fire.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Lightning.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Wind.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/PlayerRespawn.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Plant.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/Rino.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/Cooldwon&amp;ActiveAbility.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/Cooldown&amp;ActiveAbility.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level1/TutorialManagerLevel1.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CooldownActiveSuperAbility.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Fire.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Lightning.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Rock.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Water.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Wind.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperFire.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperLightning.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperRock.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWater.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWind.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Ability.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/UpdateTimer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CooldownActiveAbility.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ot86w0elpn1ezOGsdC11AqxwZ8" />
@@ -183,6 +183,8 @@
       <workItem from="1619106390393" duration="11528000" />
       <workItem from="1619126365636" duration="1537000" />
       <workItem from="1619157206035" duration="15335000" />
+      <workItem from="1619189343238" duration="603000" />
+      <workItem from="1619248049867" duration="38722000" />
     </task>
     <task id="LOCAL-00001" summary="Fire with kill">
       <created>1614095592755</created>
