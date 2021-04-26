@@ -55,6 +55,10 @@
               <e p="Rino.cs" t="Include" />
               <e p="RinoCheckGround.cs" t="Include" />
             </e>
+            <e p="Turtle" t="Include">
+              <e p="HitTurtle.cs" t="Include" />
+              <e p="Turtle.cs" t="Include" />
+            </e>
           </e>
           <e p="Platform" t="Include">
             <e p="PlatformUpDown.cs" t="Include" />

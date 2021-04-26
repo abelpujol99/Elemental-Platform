@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4674847526268592859}
   - component: {fileID: 5697751523086376461}
   - component: {fileID: 5599736741426669925}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Lightning explosion
   m_TagString: SuperLightning
   m_Icon: {fileID: 0}
@@ -122,9 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9bc2377207841929b9ac389041b58c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
-  _ability: {fileID: 0}
-  _size: 0
-  _timer: 0
-  _cast: 0
-  _cooldown: 0
+  _tag: SuperLightning
+  _ability: {fileID: 5627498613830955818}
+  _size: 1
+  _timer: 0.3
+  _cast: 1
+  _cooldown: 4
+  _actualCooldown: 0
+  _cooldownActiveAbility: {fileID: 0}

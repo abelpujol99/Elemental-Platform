@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5346223608963710815}
   - component: {fileID: 5028006782329210207}
   - component: {fileID: -7251758905463922896}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Fire
   m_TagString: Fire
   m_Icon: {fileID: 0}
@@ -146,7 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Fire
   _ability: {fileID: 9076930295393282881}
-  _size: 1
+  _size: 3
   _timer: 2
   _cast: 1
   _cooldown: 3
+  _actualCooldown: 0
+  _cooldownActiveAbility: {fileID: 0}

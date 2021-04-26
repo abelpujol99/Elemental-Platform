@@ -111,14 +111,16 @@ namespace Character
             _superWindList,
             _superLightningList;
 
-        private Dictionary<int, List<DateTime>> _allAbilitiesCooldowns;
+        private Dictionary<int, List<float>> _allAbilitiesCooldowns;
 
-        private List<DateTime> _shurikenCooldownList,
+        private List<float> _shurikenCooldownList,
             _rockCooldownList,
             _waterCooldownList,
             _fireCooldownList,
             _windCooldownList,
-            _lightningCooldownList;
+            _lightningCooldownList,
+            _auxList,
+            _auxSpecificAbilityList;
         
         private float _moveSpeed = 2;
         private float _jumpSpeed = 3;
@@ -133,7 +135,8 @@ namespace Character
 
         private int _maxPowers, _powerNum, _auxPowerNum;
 
-        private DateTime _initialTime;
+        private float _initialTime;
+        private float _actualTime;
 
         void Start()
         {
@@ -152,18 +155,18 @@ namespace Character
             _powerNum = 1;
             _auxPowerNum = 0;
             SetPowers();
-            //jumpUpgrade = true;
+            jumpUpgrade = true;
             //doubleJumpUpgrade = true;
-            _initialTime = DateTime.Now;
-            _initialTime = new DateTime(_initialTime.Year, _initialTime.Month, _initialTime.Day, _initialTime.Hour,
-                _initialTime.Minute - 1, _initialTime.Second);
+            _initialTime = Time.timeSinceLevelLoad - 30;
         }
 
         void Update()
         {
+            
             if (_powerNum != _auxPowerNum)
             {
                 _cooldownActiveAbility.ShowAbilities(_powerNum, _abilities[_powerNum][0].getSize());
+                /*_cooldownActiveAbility.ShowCooldown(_allAbilitiesCooldowns[_powerNum], _abilities[_powerNum][0].getCooldown(), _abilities[_powerNum][1].getCooldown(), false);*/
             }
             
             _auxPowerNum = _powerNum;
@@ -186,7 +189,7 @@ namespace Character
                     _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     _abilityPos.z = 0f;
                     
-                    CastAbility("Shuriken", false);
+                    CastAbility("Shuriken", 0);
                 }
             }
             else
@@ -334,9 +337,9 @@ namespace Character
             {
                 _abilities = new List<List<Ability.Ability>>();
 
-                _allAbilitiesCooldowns = new Dictionary<int, List<DateTime>>();
+                _allAbilitiesCooldowns = new Dictionary<int, List<float>>();
 
-                _shurikenCooldownList = new List<DateTime>();
+                _shurikenCooldownList = new List<float>();
                 
                 _shurikenList = new List<Ability.Ability>();
 
@@ -365,7 +368,7 @@ namespace Character
 
                     _rockList = new List<Ability.Ability>();
 
-                    _rockCooldownList = new List<DateTime>();
+                    _rockCooldownList = new List<float>();
 
                     Rock rockAux = _rock.GetComponent<Rock>();
                     rockAux.setTag("Rock");
@@ -401,7 +404,7 @@ namespace Character
                     {
                         _waterList = new List<Ability.Ability>();
 
-                        _waterCooldownList = new List<DateTime>();
+                        _waterCooldownList = new List<float>();
 
                         Water waterAux = _water.GetComponent<Water>();
                         waterAux.setTag("Water");
@@ -437,7 +440,7 @@ namespace Character
                         {
                             _fireList = new List<Ability.Ability>();
 
-                            _fireCooldownList = new List<DateTime>();
+                            _fireCooldownList = new List<float>();
 
                             Fire fireAux = _fire.GetComponent<Fire>();
                             fireAux.setTag("Fire");
@@ -474,7 +477,7 @@ namespace Character
 
                                 _windList = new List<Ability.Ability>();
 
-                                _windCooldownList = new List<DateTime>();
+                                _windCooldownList = new List<float>();
 
                                 Wind windAux = _wind.GetComponent<Wind>();
                                 windAux.setTag("Wind");
@@ -509,7 +512,7 @@ namespace Character
                                 {
                                     _lightningList = new List<Ability.Ability>();
 
-                                    _lightningCooldownList = new List<DateTime>();
+                                    _lightningCooldownList = new List<float>();
 
                                     Lightning lightningAux = _lightning.GetComponent<Lightning>();
                                     lightningAux.setTag("Lightning");
@@ -723,10 +726,10 @@ namespace Character
                         
             }
 
-            CastAbility(tag, holded);
+            CastAbility(tag, num);
         }
         
-        private void CastAbility(string tag, bool holded)
+        private void CastAbility(string tag, int num)
         {
             GameObject abilityToSpawn;
             
@@ -760,8 +763,42 @@ namespace Character
                 {
                     abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                 }
+
+                _actualTime = Time.timeSinceLevelLoad;
+
+                _auxList = _allAbilitiesCooldowns[_powerNum];
+
+                float auxDate = Time.timeSinceLevelLoad;
+                
+                if (num == 0)
+                {
+                    int auxValue = 0;
+
+                    for (int i = 0; i < _auxList.Count - 1; i++)
+                    {
+                        if (_auxList[i] < auxDate)
+                        {
+                            auxDate = _auxList[i];
+                            auxValue = i;
+                        }
+                    }
                     
-                _cooldownActiveAbility.UpdateCooldown(_allAbilitiesCooldowns[_powerNum], holded, _abilities[_powerNum][0].getCooldown(), _abilities[_powerNum][1].getCooldown());
+                    _auxList[auxValue] = _actualTime;
+
+                }
+                else
+                {
+                    _auxList[_auxList.Count - 1] = _actualTime;
+                }
+
+                /*_auxSpecificAbilityList = _cooldownActiveAbility.UpdateCooldown(
+                    _allAbilitiesCooldowns[_powerNum], _abilities[_powerNum][0].getSize(),
+                    _abilities[_powerNum][0].getCooldown(), _abilities[_powerNum][1].getCooldown(), true);
+
+                for (int i = 0; i < _auxSpecificAbilityList.Count; i++)
+                {
+                    _allAbilitiesCooldowns[_powerNum][i] = _auxSpecificAbilityList[i];
+                }*/
 
                 if (abilityComponent.getTimer() > 0)
                 {

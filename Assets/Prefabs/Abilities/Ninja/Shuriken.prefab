@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4750491935648884981}
   - component: {fileID: 4031898355258856954}
   - component: {fileID: 8873996309434267487}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Shuriken
   m_TagString: Shuriken
   m_Icon: {fileID: 0}
@@ -146,7 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Shuriken
   _ability: {fileID: 7985466707551815754}
-  _size: 1
+  _size: 3
   _timer: 0
   _cast: 1
   _cooldown: 1
+  _actualCooldown: 0
+  _cooldownActiveAbility: {fileID: 0}

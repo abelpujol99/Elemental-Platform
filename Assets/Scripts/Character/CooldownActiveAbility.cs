@@ -10,11 +10,16 @@ namespace Character
     {
         [SerializeField] private TextMeshProUGUI _TMP;
 
+        private float _actualTime;
+
         private int _timerNum;
+
+        private List<float> _cooldowns;
 
         private void Start()
         {
             StartCoroutine(WaitUntilTransitionEnd());
+            _cooldowns = new List<float>();
         }
 
         public void ShowAbilities(int powerNum, int size)
@@ -32,23 +37,46 @@ namespace Character
 
         }
 
-        public void UpdateCooldown(List<DateTime> cooldown, bool holded, float normalAbilityCooldown, float superAbilityCooldown)
+        public List<float> UpdateCooldown(List<float> cooldown, int abilityCapacity, float normalAbilityCooldown, float superAbilityCooldown, bool sameAbility)
         {
-            Debug.Log(cooldown[cooldown.Count - 1].Second);
+
+            _actualTime = Time.timeSinceLevelLoad;
             
-            if (holded)
+            _cooldowns.Clear();
+
+            for (int i = 0; i < abilityCapacity; i++)
             {
-                gameObject.transform.GetChild(4).gameObject.SetActive(true);
-                gameObject.transform.GetChild(4).GetComponent<UpdateTimer>().UpdateTimeRemaining(cooldown[cooldown.Count - 1].Second + superAbilityCooldown);
+                _cooldowns.Add(-((_actualTime - normalAbilityCooldown) - cooldown[i]));
             }
-            else
+
+            _cooldowns.Add(-((_actualTime - superAbilityCooldown) - cooldown[cooldown.Count - 1]));
+            
+            ShowCooldown(_cooldowns, normalAbilityCooldown, superAbilityCooldown, sameAbility);
+            
+            return _cooldowns;
+        }
+
+        public void ShowCooldown(List<float> cooldown, float normalAbilityCooldown, float superAbilityCooldown, bool sameAbility)
+        {
+            if (gameObject.transform.childCount == 5)
             {
+                if (!sameAbility)
+                {
+                    for (int i = 0; i < gameObject.transform.childCount - 2; i++)
+                    {
+                        gameObject.transform.GetChild(i + 1).gameObject.SetActive(false);
+                    }
+                }
+                
+                gameObject.transform.GetChild(4).gameObject.SetActive(true);
+                gameObject.transform.GetChild(4).GetComponent<UpdateTimer>().UpdateTimeRemaining(cooldown[cooldown.Count - 1]);
+            
                 for (int i = 0; i < gameObject.transform.childCount - 2; i++)
                 {
                     if (!gameObject.transform.GetChild(i + 1).gameObject.activeSelf)
                     {
                         gameObject.transform.GetChild(i + 1).gameObject.SetActive(true);
-                        gameObject.transform.GetChild(i + 1).GetComponent<UpdateTimer>().UpdateTimeRemaining(cooldown[i].Second + normalAbilityCooldown);
+                        gameObject.transform.GetChild(i + 1).GetComponent<UpdateTimer>().UpdateTimeRemaining(cooldown[i]);
                         return;
                     }
                 }

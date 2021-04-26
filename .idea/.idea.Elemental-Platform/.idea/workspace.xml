@@ -19,13 +19,14 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/da/67c8176a/GenericEqualityComparer`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/20/6f3a823d/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/dd/cc3b36ba/List`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Lightning.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Wind.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperWater.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperFire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperLightning.cs" />
@@ -73,8 +74,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWind.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Ability.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/UpdateTimer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/CooldownActiveAbility.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Turtle/HitTurtle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Turtle/Turtle.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ot86w0elpn1ezOGsdC11AqxwZ8" />
@@ -101,6 +104,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -185,6 +189,8 @@
       <workItem from="1619157206035" duration="15335000" />
       <workItem from="1619189343238" duration="603000" />
       <workItem from="1619248049867" duration="38722000" />
+      <workItem from="1619355481817" duration="23728000" />
+      <workItem from="1619423602932" duration="9680000" />
     </task>
     <task id="LOCAL-00001" summary="Fire with kill">
       <created>1614095592755</created>

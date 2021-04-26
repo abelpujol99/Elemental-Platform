@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3875787227445493330}
   - component: {fileID: 3335158636057452891}
   - component: {fileID: 7405558493121585001}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Wind Explosion
   m_TagString: SuperWind
   m_Icon: {fileID: 0}
@@ -122,9 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1561c78c8194979b059e21c0b68de97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
-  _ability: {fileID: 0}
-  _size: 0
-  _timer: 0
-  _cast: 0
-  _cooldown: 0
+  _tag: SuperWind
+  _ability: {fileID: 7197826234009722148}
+  _size: 1
+  _timer: 0.3
+  _cast: 1
+  _cooldown: 4.5
+  _actualCooldown: 0
+  _cooldownActiveAbility: {fileID: 0}

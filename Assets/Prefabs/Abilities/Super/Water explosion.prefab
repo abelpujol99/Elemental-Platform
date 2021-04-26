@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3113326780643817188}
   - component: {fileID: 2702013206203875597}
   - component: {fileID: 4125476051077368799}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Water explosion
   m_TagString: SuperWater
   m_Icon: {fileID: 0}
@@ -122,9 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27de9e7c6d504ff093d64671b323bf06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
-  _ability: {fileID: 0}
-  _size: 0
-  _timer: 0
-  _cast: 0
-  _cooldown: 0
+  _tag: SuperWater
+  _ability: {fileID: 4863971478294689691}
+  _size: 1
+  _timer: 0.3
+  _cast: 1
+  _cooldown: 4
+  _actualCooldown: 0
+  _cooldownActiveAbility: {fileID: 0}

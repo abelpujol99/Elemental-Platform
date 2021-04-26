@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7237352463337476284}
   - component: {fileID: 7237352463337476283}
   - component: {fileID: 6227951913604355481}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Fire explosion
   m_TagString: SuperFire
   m_Icon: {fileID: 0}
@@ -122,9 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506f21861e7f490e94e50e09b3d4562f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
-  _ability: {fileID: 0}
-  _size: 0
-  _timer: 0
-  _cast: 0
-  _cooldown: 0
+  _tag: SuperFire
+  _ability: {fileID: 7237352463337476282}
+  _size: 1
+  _timer: 0.3
+  _cast: 1
+  _cooldown: 5
+  _actualCooldown: 0
+  _cooldownActiveAbility: {fileID: 0}

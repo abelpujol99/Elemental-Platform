@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3531649309344025209}
   - component: {fileID: 8141468977278587919}
   - component: {fileID: 4950251887739736464}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lightning
   m_TagString: Lightning
   m_Icon: {fileID: 0}
@@ -146,7 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Lightning
   _ability: {fileID: 1936801452089805495}
-  _size: 1
+  _size: 3
   _timer: 0.5
   _cast: 1
   _cooldown: 2.5
+  _actualCooldown: 0
+  _cooldownActiveAbility: {fileID: 0}

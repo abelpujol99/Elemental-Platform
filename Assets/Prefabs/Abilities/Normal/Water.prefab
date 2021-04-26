@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8285452395178094454}
   - component: {fileID: 5790570450176305347}
   - component: {fileID: 5511415156049547078}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Water
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -146,7 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Water
   _ability: {fileID: 2472008848403422929}
-  _size: 1
+  _size: 3
   _timer: 1
   _cast: 1
   _cooldown: 2
+  _actualCooldown: 0
+  _cooldownActiveAbility: {fileID: 0}

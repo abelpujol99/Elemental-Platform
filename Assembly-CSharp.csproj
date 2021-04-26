@@ -88,12 +88,14 @@
      <Compile Include="Assets\Scripts\Enemy\Rino\Rino.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\DissapearText1.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Normal\Rock.cs" />
+     <Compile Include="Assets\Scripts\Character\CooldownActiveAbility.cs" />
+     <Compile Include="Assets\Scripts\Character\UpdateTimer.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Normal\Wind.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemySpike.cs" />
      <Compile Include="Assets\Scripts\Ability\MaxAbilityRange.cs" />
      <Compile Include="Assets\Scripts\Ability\Ability.cs" />
-     <Compile Include="Assets\Scripts\Character\CooldownActiveAbility.cs" />
-     <Compile Include="Assets\Scripts\Character\UpdateTimer.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Turtle\Turtle.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Turtle\HitTurtle.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

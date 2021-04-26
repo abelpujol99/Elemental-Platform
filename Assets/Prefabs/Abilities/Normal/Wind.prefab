@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1817880175926051596}
   - component: {fileID: 2297262479821503219}
   - component: {fileID: 1694284630984548031}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Wind
   m_TagString: Wind
   m_Icon: {fileID: 0}
@@ -146,7 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Wind
   _ability: {fileID: 1817880175926051597}
-  _size: 1
+  _size: 3
   _timer: 3
   _cast: 1
   _cooldown: 1
+  _actualCooldown: 0
+  _cooldownActiveAbility: {fileID: 0}
