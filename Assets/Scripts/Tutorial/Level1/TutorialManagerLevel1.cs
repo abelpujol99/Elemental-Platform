@@ -6,6 +6,8 @@ using Door;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 namespace Tutorial.Level1
 {

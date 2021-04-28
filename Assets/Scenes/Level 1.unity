@@ -814,7 +814,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &206350733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -938,10 +938,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34a0cf7703d433bbde09d1b95abbe33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterPosition: {fileID: 98665660}
+  _characterTransform: {fileID: 98665660}
   _health: 10
   _distance: -1
-  _speed: 0
+  _speed: 1
+  _camouflage: 1
   _rb2D: {fileID: 0}
   _animator: {fileID: 206350734}
   _spriteRenderer: {fileID: 206350735}

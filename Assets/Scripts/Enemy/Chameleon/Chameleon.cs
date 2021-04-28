@@ -10,9 +10,11 @@ namespace Enemy.Chameleon
 {
     public class Chameleon : MonoBehaviour
     {
-        [SerializeField] private Transform _characterPosition;
+        [SerializeField] private Transform _characterTransform;
 
         [SerializeField] private float _health, _distance, _speed;
+
+        [SerializeField] private bool _camouflage;
 
         [SerializeField] private Rigidbody2D _rb2D;
 
@@ -20,18 +22,20 @@ namespace Enemy.Chameleon
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
+        private Color _opacity;
+
         private Vector3 _targetPosition,
             _lastTargetPosition,
             _vectorToAvoidObstacles,
             _vectorToAvoidFall;
 
-        private RaycastHit2D _lookScenario, _foundPlayer, _avoidFall, _avoidObstacles;
+        private RaycastHit2D _lookScenario, _foundPlayer, _avoidFall, _avoidObstacles, _characterCloser;
 
         private Dictionary<string, Action> _onHitEffects;
 
-        private float _initialSpeed, _knockUp, _slow, _distanceToFloor, _distanceFront, _difference, _auxSpeed;
+        private float _initialSpeed, _knockUp, _slow, _distanceToFloor, _distanceFront, _difference;
 
-        private bool _onAir, _canMove, _knockedUp;
+        private bool _onAir, _knockedUp;
 
         private void Start()
         {
@@ -40,7 +44,7 @@ namespace Enemy.Chameleon
             _slow = 3;
             _distanceToFloor = 0.3f;
             _distanceFront = 0.38f;
-            _canMove = true;
+            _opacity = _spriteRenderer.color;
             CheckDirection();
             FillDictionary();
         }
@@ -65,6 +69,8 @@ namespace Enemy.Chameleon
         {
             Debug.DrawRay(transform.position, (Mathf.Sign(_distance) * Vector2.right) * 0.38f, Color.green);
 
+            Camouflage();
+
             CheckHealth();
 
             CheckDirection();
@@ -75,15 +81,51 @@ namespace Enemy.Chameleon
             
             CheckPlayer();
 
+            CheckAttack();
+
             Move();
 
         }
 
-        private void CheckDirection()
+        private void Camouflage()
         {
-            _spriteRenderer.flipX = _distance > 0;
-        }
+            if (_camouflage)
+            {
+                _speed = 0;
+                _characterCloser = Physics2D.Raycast(transform.position, _characterTransform.position - transform.position, 1f, LayerMask.GetMask("Player"));
+                
+                if (_characterCloser)
+                {
+                    _opacity.a = 0.2f;
+                }
+                else
+                {
+                    _opacity.a = 0f;
+                }
+                
+                _spriteRenderer.color = _opacity;
+                
+            }
+            else
+            {
+                _speed = _initialSpeed;
+                _opacity.a = 1f;
 
+                _spriteRenderer.color = _opacity;
+            }
+        }
+        
+        private void Move()
+        {
+            if (_speed == 0 && _camouflage)
+            {
+                return;
+            }
+            _animator.SetBool("Run", true);         
+            Debug.Log(_targetPosition);
+            transform.position = Vector3.MoveTowards(transform.position, _targetPosition, Time.deltaTime * _speed);
+        }
+        
         private void CheckHealth()
         {
             if (_health > 0)
@@ -94,6 +136,10 @@ namespace Enemy.Chameleon
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<Rigidbody2D>().isKinematic = true;
             StartCoroutine(DestroyChameleon());
+        }
+        private void CheckDirection()
+        {
+            _spriteRenderer.flipX = _distance > 0;
         }
 
         private void CheckObstacle()
@@ -117,38 +163,41 @@ namespace Enemy.Chameleon
 
             if (!_foundPlayer)
             {
+                _animator.SetBool("Attack", false);
                 return;
             }
             Attack();
 
         }
 
-        private void Move()
-        {
-            if (!_canMove)
-            {
-                return;
-            }
-            _animator.SetBool("Run", true);         
-            transform.position = Vector3.MoveTowards(transform.position, _targetPosition, Time.deltaTime * _speed);
-        }
-
         private void Hit()
         {
             _animator.SetBool("Hit", true);
-            _canMove = false;
+            _speed = 0;
             StartCoroutine(SetMove("Hit", 0.25f));
         }
 
         private void Attack()
         {
+            Debug.Log("ataca");
             _animator.SetBool("Attack", true);
+            _speed = 0;
+            _camouflage = false;
+        }
+
+        private void CheckAttack()
+        {
+            if (_camouflage || !_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            {
+                return;
+            }
+            _speed = 0;
         }
 
         private void Fall()
         {
             _animator.SetBool("Fall", true);
-            _canMove = false;
+            _speed = 0;
             StartCoroutine(SetMove("Fall", 0.65f));
         }
         
@@ -162,7 +211,7 @@ namespace Enemy.Chameleon
         {
             yield return new WaitForSeconds(time);
             _animator.SetBool(state, false);
-            _canMove = true;
+            _speed = _initialSpeed;
         }
 
         private IEnumerator DestroyChameleon()
@@ -173,6 +222,10 @@ namespace Enemy.Chameleon
 
         private void OnTriggerEnter2D(Collider2D trigger)
         {
+            if (trigger.transform.CompareTag("CheckGround"))
+            {
+                return;
+            }
             _onHitEffects[trigger.transform.tag]();
         }
 
@@ -221,7 +274,7 @@ namespace Enemy.Chameleon
 
         private void WindAction()
         {
-            if (_speed != _auxSpeed)
+            if (_speed != _initialSpeed)
             {
                 return;
             }
