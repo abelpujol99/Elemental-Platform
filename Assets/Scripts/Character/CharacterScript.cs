@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Ability.Abilities;
-using System.Reflection;
-using System.Security.Cryptography;
-using CameraController;
 using Ability;
 using Ability.Abilities.Ninja;
 using Ability.Abilities.Normal;
 using Ability.Abilities.Super;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 namespace Character
 {
     public class CharacterScript : MonoBehaviour
     {
-        public enum Abilities {JUMP_UPGRADE, DOUBLE_JUMP_UPGRADE, ROCK, WATER, FIRE, WIND, LIGHTNING, SUPER_ROCK, SUPER_WATER, SUPER_FIRE, SUPER_WIND, SUPER_LIGHTNING}
+        public enum Abilities {JUMP_UPGRADE, DOUBLE_JUMP_UPGRADE, ROCK, WATER, FIRE, WIND, LIGHTNING}
 
         public static bool isGround,
             shurikenUpgrade,
@@ -27,21 +21,16 @@ namespace Character
             waterUpgrade,
             fireUpgrade,
             windUpgrade,
-            lightningUpgrade,
-            superRockUpgrade,
-            superWaterUpgrade,
-            superFireUpgrade,
-            superWindUpgrade,
-            superLightningUpgrade;
+            lightningUpgrade;
         
         public static float _maxAbilityRange = 1;
 
         private static int _shurikenCapacity = 3, 
-            _rockCapacity = 3,
-            _waterCapacity = 3,
-            _fireCapacity = 3,
-            _windCapacity = 3,
-            _lightningCapacity = 3,
+            _rockCapacity = 2,
+            _waterCapacity = 1,
+            _fireCapacity = 1,
+            _windCapacity = 1,
+            _lightningCapacity = 1,
             _superAbilityCapacity = 1; 
 
         private static float holdTime = 0.75f;
@@ -865,30 +854,6 @@ namespace Character
                 
                 case Abilities.LIGHTNING:
                     lightningUpgrade = true;
-                    SetPowers();
-                    break;
-                
-                case Abilities.SUPER_ROCK:
-                    superRockUpgrade = true;
-                    break;
-                
-                case Abilities.SUPER_WATER:
-                    superWaterUpgrade = true;
-                    SetPowers();
-                    break;
-                
-                case Abilities.SUPER_FIRE:
-                    superFireUpgrade = true;
-                    SetPowers();
-                    break;
-                
-                case Abilities.SUPER_WIND:
-                    superWindUpgrade = true;
-                    SetPowers();
-                    break;
-                
-                case Abilities.SUPER_LIGHTNING:
-                    superLightningUpgrade = true;
                     SetPowers();
                     break;
             }

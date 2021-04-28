@@ -19,7 +19,7 @@ namespace Enemy.Turtle
 
         private bool _spikes;
         
-        private bool _onAir, _stuned;
+        private bool _onAir, _stuned, _destroy;
 
         private void Start()
         {
@@ -49,7 +49,7 @@ namespace Enemy.Turtle
                     _spriteRenderer.flipX = false;
                 }
             }
-            else
+            else if (!_destroy)
             {
                 _stuned = true;
                 _animator.Play("IdleWithOutSpikes");
@@ -57,9 +57,44 @@ namespace Enemy.Turtle
 
         }
 
+        public IEnumerator DestroyTurtle()
+        {
+            _destroy = true;
+            _animator.Play("Die");
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            yield return new WaitForSeconds(0.3f);
+            Destroy(gameObject);
+        }
+        
+        private IEnumerator DisableSpikes()
+        {
+            yield return new WaitForSeconds(2f);
+            _animator.SetBool("SpikesOut", false);
+            _animator.SetBool("SpikesIn", true);
+        }
+
+        private IEnumerator StunTime()
+        {
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            yield return new WaitForSeconds(2f);
+            gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            _stuned = false;
+        }
+        
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if(collision.transform.CompareTag("Tilemap1"))
+            if (collision.transform.CompareTag("Player") && _animator.GetCurrentAnimatorStateInfo(0).IsName("IdleWithSpikes"))
+            {
+                collision.transform.GetComponent<PlayerRespawn>().PlayerDamage();
+            }
+            else if (collision.transform.CompareTag("Rock"))
+            {
+                _animator.SetBool("SpikesIn", false);
+                _animator.SetBool("SpikesOut", true);
+            }
+            else if(collision.transform.CompareTag("Tilemap1"))
             {
                 if (_onAir)
                 {
@@ -83,11 +118,6 @@ namespace Enemy.Turtle
             {
                 collision.transform.GetComponent<PlayerRespawn>().PlayerDamage();
             }
-            else if (collision.gameObject.CompareTag("Rock"))
-            {
-                _animator.SetBool("SpikesIn", false);
-                _animator.SetBool("SpikesOut", true);
-            }
         }
 
         private void OnTriggerEnter2D(Collider2D trigger)
@@ -99,10 +129,13 @@ namespace Enemy.Turtle
             }
             else if (trigger.transform.CompareTag("CheckGround"))
             {
-                CharacterScript.isGround = true;
-                _animator.SetBool("SpikesIn", false);
-                _animator.SetBool("SpikesOut", true);
-                StartCoroutine(DisableSpikes());
+                if (!_animator.GetCurrentAnimatorStateInfo(0).IsName("IdleWithSpikes"))
+                {
+                    CharacterScript.isGround = true;
+                    _animator.SetBool("SpikesIn", false);
+                    _animator.SetBool("SpikesOut", true);
+                    StartCoroutine(DisableSpikes());
+                }
             } 
             else if (trigger.gameObject.CompareTag("Shuriken") || trigger.gameObject.CompareTag("Water") || trigger.gameObject.CompareTag("Fire") || trigger.gameObject.CompareTag("Wind") || trigger.gameObject.CompareTag("Lightning"))
             {
@@ -120,17 +153,5 @@ namespace Enemy.Turtle
             }
         }
 
-        private IEnumerator DisableSpikes()
-        {
-            yield return new WaitForSeconds(2f);
-            _animator.SetBool("SpikesOut", false);
-            _animator.SetBool("SpikesIn", true);
-        }
-
-        private IEnumerator StunTime()
-        {
-            yield return new WaitForSeconds(2f);
-            _stuned = false;
-        }
     }
 }

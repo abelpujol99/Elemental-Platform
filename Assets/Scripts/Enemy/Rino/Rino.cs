@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Character;
 using UnityEngine;
@@ -18,7 +17,7 @@ namespace Enemy.Rino
         
         private Rigidbody2D _rb2D;
 
-        private Vector3 _targetPosition, _lastTargetPosition, _vectorToAvoidObstacles1 , _vectorToAvoidObstacles2, _vectorToAvoidFall1, _vectorToAvoidFall2;
+        private Vector3 _targetPosition, _lastTargetPosition, _vectorToAvoidObstacles, _vectorToAvoidFall;
 
         private RaycastHit2D _lookScenario;
         private RaycastHit2D _foundPlayer;
@@ -80,21 +79,19 @@ namespace Enemy.Rino
 
             //float distanceBetweenCharacterAndRino = Vector3.Distance(transform.position, _characterPosition.position);
 
-            _vectorToAvoidObstacles1 = new Vector3(transform.position.x + Mathf.Sign(_distance) * _distanceFront, transform.position.y - 0.1f, 0);
-            _vectorToAvoidObstacles2 = new Vector3(transform.position.x + 0.1f, transform.position.y, 0);
+            _vectorToAvoidObstacles = new Vector3(transform.position.x + Mathf.Sign(_distance) * _distanceFront, transform.position.y - 0.1f, 0);
 
-            _vectorToAvoidFall1 = new Vector3(transform.position.x + Mathf.Sign(_distance) *  _distanceToFloor, transform.position.y - 0.1f, 0);
-            _vectorToAvoidFall2 = new Vector3(transform.position.x + Mathf.Sign(_distance) *  _distanceToFloor / 4, transform.position.y, 0);
+            _vectorToAvoidFall = new Vector3(transform.position.x + Mathf.Sign(_distance) *  _distanceToFloor, transform.position.y - 0.1f, 0);
             
-            Debug.DrawRay(_vectorToAvoidFall1, (Mathf.Sign(_distance) * Vector2.right + Vector2.down).normalized * 0.14f, Color.green);
-            Debug.DrawRay(_vectorToAvoidObstacles1, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.1f , Color.green);
+            Debug.DrawRay(_vectorToAvoidFall, (Mathf.Sign(_distance) * Vector2.right + Vector2.down).normalized * 0.14f, Color.green);
+            Debug.DrawRay(_vectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.1f , Color.green);
 
 
-            _avoidObstacles = Physics2D.Raycast(_vectorToAvoidObstacles1, 
+            _avoidObstacles = Physics2D.Raycast(_vectorToAvoidObstacles, 
                 (Mathf.Sign(_distance) * Vector2.right).normalized,
                 0.1f, LayerMask.GetMask("Tilemap2", "Rock", "Enemy"));
 
-            _avoidFall = Physics2D.Raycast(_vectorToAvoidFall1, (Mathf.Sign(_distance) * Vector2.right + Vector2.down).normalized,
+            _avoidFall = Physics2D.Raycast(_vectorToAvoidFall, (Mathf.Sign(_distance) * Vector2.right + Vector2.down).normalized,
                 0.14f,
                 LayerMask.GetMask("Tilemap1"));
             

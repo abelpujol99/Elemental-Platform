@@ -27,9 +27,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperWater.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperFire.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperLightning.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperWind.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level4/TutorialManagerLevel4.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/ThrowableAbility.cs" />
@@ -39,7 +36,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/MaxAbilityRange.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/MaxAbilityRange.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Shuriken.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/SuperAbilityCastTime.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Bat.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Platform/PlatformUpDown.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino.cs" />
@@ -57,7 +53,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Ninja/Shuriken.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/PlayerRespawn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Plant.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/Rino.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/Cooldwon&amp;ActiveAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/Cooldown&amp;ActiveAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level1/TutorialManagerLevel1.cs" />
@@ -76,8 +71,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/UpdateTimer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/CooldownActiveAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Turtle/HitTurtle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/SuperAbilityCastTime.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Skull.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Turtle/Turtle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Skull/Skull.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Chameleon/Chameleon.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/Rino.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ot86w0elpn1ezOGsdC11AqxwZ8" />
@@ -191,6 +191,13 @@
       <workItem from="1619248049867" duration="38722000" />
       <workItem from="1619355481817" duration="23728000" />
       <workItem from="1619423602932" duration="9680000" />
+      <workItem from="1619439276038" duration="44000" />
+      <workItem from="1619439355409" duration="722000" />
+      <workItem from="1619458108325" duration="3814000" />
+      <workItem from="1619468515642" duration="1286000" />
+      <workItem from="1619495332755" duration="12163000" />
+      <workItem from="1619534421890" duration="1192000" />
+      <workItem from="1619551633682" duration="7471000" />
     </task>
     <task id="LOCAL-00001" summary="Fire with kill">
       <created>1614095592755</created>

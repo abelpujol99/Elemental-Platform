@@ -9,15 +9,10 @@ namespace Ability
     {
         private Vector3 _mousePosition;
         
-        private Image _image;
+        [SerializeField] private Image _image;
 
         private float _holdTime;
         private float _time;
-
-        private void Start()
-        {
-            _image = GetComponent<Image>();
-        }
 
         private void Update()
         {

@@ -58,11 +58,13 @@
      <Compile Include="Assets\Scripts\Trap\FireDamage.cs" />
      <Compile Include="Assets\Scripts\Upgrade\TakeUpgrade.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level2\TutorialManagerLevel2.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Turtle\HitTurtle.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterScript.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Normal\Lightning.cs" />
      <Compile Include="Assets\Scripts\Character\PlayerRespawn.cs" />
      <Compile Include="Assets\Scripts\CameraController\CameraMoves.cs" />
      <Compile Include="Assets\Scripts\Door\KeyCollected.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Skull\Skull.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Ninja\Shuriken.cs" />
      <Compile Include="Assets\Scripts\Platform\PlatformUpDown.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level1\TutorialManagerLevel1.cs" />
@@ -91,11 +93,11 @@
      <Compile Include="Assets\Scripts\Character\CooldownActiveAbility.cs" />
      <Compile Include="Assets\Scripts\Character\UpdateTimer.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Normal\Wind.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Turtle\Turtle.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemySpike.cs" />
      <Compile Include="Assets\Scripts\Ability\MaxAbilityRange.cs" />
      <Compile Include="Assets\Scripts\Ability\Ability.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Turtle\Turtle.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Turtle\HitTurtle.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Chameleon\Chameleon.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

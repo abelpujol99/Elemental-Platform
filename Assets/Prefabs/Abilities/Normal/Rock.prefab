@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6612403933795537812}
   - component: {fileID: 5867775096078014113}
   - component: {fileID: 4941944567517827236}
-  m_Layer: 15
+  m_Layer: 13
   m_Name: Rock
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Rock
   _ability: {fileID: 6995859749326785915}
-  _size: 3
+  _size: 2
   _timer: 0
   _cast: 1
   _cooldown: 2

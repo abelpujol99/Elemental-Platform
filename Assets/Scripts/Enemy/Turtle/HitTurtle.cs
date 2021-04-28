@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Character;
 using UnityEngine;
 
 namespace Enemy.Turtle
@@ -11,18 +12,15 @@ namespace Enemy.Turtle
         
         private void OnTriggerEnter2D(Collider2D trigger)
         {
-            if (trigger.transform.CompareTag("Fire") || trigger.transform.CompareTag("Lightning") || trigger.transform.CompareTag("Shuriken"))
+            if (trigger.gameObject.CompareTag("Player"))
             {
-                StartCoroutine(DestroyTurtle());
+                trigger.gameObject.GetComponent<PlayerRespawn>().PlayerDamage();
+            }
+            else if (trigger.transform.CompareTag("Fire") || trigger.transform.CompareTag("Lightning") || trigger.transform.CompareTag("Shuriken"))
+            {
+                GetComponent<BoxCollider2D>().enabled = false;
+                StartCoroutine(_turtle.GetComponent<Turtle>().DestroyTurtle());
             }
         }
-
-        private IEnumerator DestroyTurtle()
-        {
-            _turtleAnimator.Play("Die");
-            yield return new WaitForSeconds(0.35f);
-            Destroy(_turtle);
-        }
-        
     }
 }

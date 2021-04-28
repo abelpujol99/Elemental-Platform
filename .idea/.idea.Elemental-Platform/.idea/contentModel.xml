@@ -46,6 +46,9 @@
             <e p="Bat" t="Include">
               <e p="Bat.cs" t="Include" />
             </e>
+            <e p="Chameleon" t="Include">
+              <e p="Chameleon.cs" t="Include" />
+            </e>
             <e p="EnemySpike.cs" t="Include" />
             <e p="Plant" t="Include">
               <e p="Plant.cs" t="Include" />
@@ -54,6 +57,9 @@
             <e p="Rino" t="Include">
               <e p="Rino.cs" t="Include" />
               <e p="RinoCheckGround.cs" t="Include" />
+            </e>
+            <e p="Skull" t="Include">
+              <e p="Skull.cs" t="Include" />
             </e>
             <e p="Turtle" t="Include">
               <e p="HitTurtle.cs" t="Include" />

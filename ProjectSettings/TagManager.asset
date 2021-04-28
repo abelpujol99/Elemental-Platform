@@ -39,7 +39,7 @@ TagManager:
   - Grid
   - Tilemap1
   - Tilemap2
-  - Ability
+  - Key
   - Player
   - Rock
   - Enemy
