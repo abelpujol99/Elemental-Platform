@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Professor\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Professor\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Elemental-Platform.2027569520.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Professor\Desktop\Elemental-Platform" t="IncludeRecursive">
+    <e p="C:\REPOSITORI\Elemental-Platform" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
@@ -39,6 +37,9 @@
             <e p="CooldownActiveAbility.cs" t="Include" />
             <e p="PlayerRespawn.cs" t="Include" />
             <e p="UpdateTimer.cs" t="Include" />
+          </e>
+          <e p="CMath" t="Include">
+            <e p="CMath.cs" t="Include" />
           </e>
           <e p="Door" t="Include">
             <e p="KeyCollected.cs" t="Include" />
@@ -136,5 +137,7 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\Abel Pujol\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Abel Pujol\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Elemental-Platform.1118278643.00" t="ExcludeRecursive" />
   </component>
 </project>

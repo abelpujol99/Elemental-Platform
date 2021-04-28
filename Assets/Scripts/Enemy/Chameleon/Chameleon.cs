@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Character;
+using CMath;
 using Enemy.Turtle;
 using UnityEngine;
 using UnityEngine.Timeline;
@@ -33,18 +34,22 @@ namespace Enemy.Chameleon
 
         private Dictionary<string, Action> _onHitEffects;
 
-        private float _initialSpeed, _knockUp, _slow, _distanceToFloor, _distanceFront, _difference;
+        private float _auxSpeed, _knockUp, _slow, _distanceToFloor, _distanceFront, _difference, _delayOfCamouflage, _timerCamouflage, _distanceBetweenChameleonCharacter;
 
         private bool _onAir, _knockedUp;
 
         private void Start()
         {
-            _initialSpeed = _speed;
+            _auxSpeed = _speed;
             _knockUp = 3;
             _slow = 3;
             _distanceToFloor = 0.3f;
             _distanceFront = 0.38f;
             _opacity = _spriteRenderer.color;
+            _opacity.a = 0;
+            _spriteRenderer.color = _opacity;
+            _timerCamouflage = _delayOfCamouflage;
+            _delayOfCamouflage = 3;
             CheckDirection();
             FillDictionary();
         }
@@ -83,35 +88,76 @@ namespace Enemy.Chameleon
 
             CheckAttack();
 
+            CheckTarget();
+
             Move();
 
         }
 
         private void Camouflage()
         {
+            _distanceBetweenChameleonCharacter = Vector3.Distance(transform.position, _characterTransform.position);
+            
             if (_camouflage)
             {
-                _speed = 0;
-                _characterCloser = Physics2D.Raycast(transform.position, _characterTransform.position - transform.position, 1f, LayerMask.GetMask("Player"));
+
                 
-                if (_characterCloser)
-                {
-                    _opacity.a = 0.2f;
-                }
-                else
+                Debug.Log(_distanceBetweenChameleonCharacter);
+                
+                _speed = 0;
+
+                if (_distanceBetweenChameleonCharacter >= 1)
                 {
                     _opacity.a = 0f;
                 }
+                else
+                {
+                    _opacity.a = CMath.CMath.Map(_distanceBetweenChameleonCharacter, 0.42f, 1f, 1, 0);
+                }
                 
                 _spriteRenderer.color = _opacity;
+                
+                /*_characterCloser = Physics2D.Raycast(transform.position, _characterTransform.position - transform.position, 1f, LayerMask.GetMask("Player"));
+
+                if (_characterCloser.distance == 0)
+                {
+                    return;
+                }*/
+                
                 
             }
             else
             {
-                _speed = _initialSpeed;
-                _opacity.a = 1f;
+                if (_timerCamouflage <= 0)
+                {
+                    _camouflage = true;
+                }
+                else
+                {
+                    _timerCamouflage -= Time.deltaTime;
+                    _speed = _auxSpeed;
 
-                _spriteRenderer.color = _opacity;
+                    if (_distanceBetweenChameleonCharacter >= 1)
+                    {
+                        _opacity.a = CMath.CMath.Map(_timerCamouflage, _delayOfCamouflage, _delayOfCamouflage - 2, 1, 0);
+                    }
+                    else
+                    {
+                        _opacity.a = CMath.CMath.Map(_distanceBetweenChameleonCharacter, 0.42f, 1f, 1, 0);
+                    }
+
+                    _spriteRenderer.color = _opacity;
+                }
+            }
+        }
+
+        private void CheckTarget()
+        {
+            if (_targetPosition == transform.position)
+            {
+                _distance *= -1f;
+                _targetPosition = _lastTargetPosition;
+                _lastTargetPosition = transform.position;
             }
         }
         
@@ -181,6 +227,7 @@ namespace Enemy.Chameleon
         {
             Debug.Log("ataca");
             _animator.SetBool("Attack", true);
+            _timerCamouflage = _delayOfCamouflage;
             _speed = 0;
             _camouflage = false;
         }
@@ -204,14 +251,14 @@ namespace Enemy.Chameleon
         private IEnumerator ReturnSpeed()
         {
             yield return new WaitForSeconds(2);
-            _speed += _initialSpeed / _slow;
+            _speed += _auxSpeed / _slow;
         }
         
         private IEnumerator SetMove(string state, float time)
         {
             yield return new WaitForSeconds(time);
             _animator.SetBool(state, false);
-            _speed = _initialSpeed;
+            _speed = _auxSpeed;
         }
 
         private IEnumerator DestroyChameleon()
@@ -222,7 +269,7 @@ namespace Enemy.Chameleon
 
         private void OnTriggerEnter2D(Collider2D trigger)
         {
-            if (trigger.transform.CompareTag("CheckGround"))
+            if (!_onHitEffects.ContainsKey(trigger.transform.tag))
             {
                 return;
             }
@@ -274,7 +321,7 @@ namespace Enemy.Chameleon
 
         private void WindAction()
         {
-            if (_speed != _initialSpeed)
+            if (_speed != _auxSpeed)
             {
                 return;
             }

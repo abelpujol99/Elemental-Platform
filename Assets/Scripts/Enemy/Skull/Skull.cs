@@ -13,9 +13,9 @@ namespace Enemy
         
         [SerializeField] private SpriteRenderer _spriteRenderer;
         
-        private RaycastHit2D _avoidObstacles;
+        private RaycastHit2D _avoidUpObstacles, _avoidMidObstacles, _avoidDownObstacles;
 
-        private Vector3 _targetPosition, _lastTargetPosition, _vectorToAvoidObstacles;
+        private Vector3 _targetPosition, _lastTargetPosition, _upVectorToAvoidObstacles, _midVectorToAvoidObstacles, _downVectorToAvoidObstacles;
 
         private float _auxSpeed, _timeToRestoreFire, _auxTimeToRestoreFire, _timeToRestoreSpeed, _distanceFront, _difference;
 
@@ -75,11 +75,24 @@ namespace Enemy
                 }
             }
             
-            _vectorToAvoidObstacles = new Vector3(transform.position.x + Mathf.Sign(_distance) * _distanceFront, transform.position.y - 0.1f, 0);
+            _upVectorToAvoidObstacles = new Vector3(transform.position.x , transform.position.y + _distanceFront, 0);
+            _midVectorToAvoidObstacles = new Vector3(transform.position.x + Mathf.Sign(_distance) * _distanceFront, transform.position.y, 0);
+            _downVectorToAvoidObstacles = new Vector3(transform.position.x, transform.position.y - _distanceFront, 0);
 
-            Debug.DrawRay(_vectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.1f , Color.green);
+            Debug.DrawRay(_upVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.3f , Color.green);
+            Debug.DrawRay(_midVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.1f , Color.green);
+            Debug.DrawRay(_downVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.3f , Color.green);
 
-            _avoidObstacles = Physics2D.Raycast(_vectorToAvoidObstacles, 
+            
+            _avoidUpObstacles = Physics2D.Raycast(_upVectorToAvoidObstacles, 
+                (Mathf.Sign(_distance) * Vector2.right).normalized,
+                0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "Enemy"));
+            
+            _avoidMidObstacles = Physics2D.Raycast(_midVectorToAvoidObstacles, 
+                (Mathf.Sign(_distance) * Vector2.right).normalized,
+                0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "Enemy"));
+
+            _avoidDownObstacles = Physics2D.Raycast(_downVectorToAvoidObstacles, 
                 (Mathf.Sign(_distance) * Vector2.right).normalized,
                 0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "Enemy"));
 
@@ -89,7 +102,7 @@ namespace Enemy
                 _lastTargetPosition = transform.position;
                 _distance *= -1;
             }
-            else if (_avoidObstacles)
+            else if (_avoidUpObstacles || _avoidMidObstacles || _avoidDownObstacles)
             {
                 if (!_spriteRenderer.flipX)
                 {
