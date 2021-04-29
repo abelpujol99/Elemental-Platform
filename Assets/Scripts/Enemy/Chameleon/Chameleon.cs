@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Character;
-using CMath;
+using CustomMath;
 using Enemy.Turtle;
 using UnityEngine;
 using UnityEngine.Timeline;
@@ -36,7 +36,7 @@ namespace Enemy.Chameleon
 
         private float _auxSpeed, _knockUp, _slow, _distanceToFloor, _distanceFront, _difference, _delayOfCamouflage, _timerCamouflage, _distanceBetweenChameleonCharacter;
 
-        private bool _onAir, _knockedUp;
+        private bool _onAir, _knockedUp, _canMove;
 
         private void Start()
         {
@@ -100,10 +100,6 @@ namespace Enemy.Chameleon
             
             if (_camouflage)
             {
-
-                
-                Debug.Log(_distanceBetweenChameleonCharacter);
-                
                 _speed = 0;
 
                 if (_distanceBetweenChameleonCharacter >= 1)
@@ -112,22 +108,15 @@ namespace Enemy.Chameleon
                 }
                 else
                 {
-                    _opacity.a = CMath.CMath.Map(_distanceBetweenChameleonCharacter, 0.42f, 1f, 1, 0);
+                    _opacity.a = CustomMath.CustomMath.Map(_distanceBetweenChameleonCharacter, 0.42f, 1f, 1, 0);
                 }
                 
                 _spriteRenderer.color = _opacity;
-                
-                /*_characterCloser = Physics2D.Raycast(transform.position, _characterTransform.position - transform.position, 1f, LayerMask.GetMask("Player"));
 
-                if (_characterCloser.distance == 0)
-                {
-                    return;
-                }*/
-                
-                
             }
             else
             {
+                Debug.Log("despues");
                 if (_timerCamouflage <= 0)
                 {
                     _camouflage = true;
@@ -139,11 +128,11 @@ namespace Enemy.Chameleon
 
                     if (_distanceBetweenChameleonCharacter >= 1)
                     {
-                        _opacity.a = CMath.CMath.Map(_timerCamouflage, _delayOfCamouflage, _delayOfCamouflage - 2, 1, 0);
+                        _opacity.a = CustomMath.CustomMath.Map(_timerCamouflage, _delayOfCamouflage, _delayOfCamouflage - 1.5f, 1, 0);
                     }
                     else
                     {
-                        _opacity.a = CMath.CMath.Map(_distanceBetweenChameleonCharacter, 0.42f, 1f, 1, 0);
+                        _opacity.a = CustomMath.CustomMath.Map(_distanceBetweenChameleonCharacter, 0.42f, 1f, 1, 0);
                     }
 
                     _spriteRenderer.color = _opacity;
@@ -163,12 +152,12 @@ namespace Enemy.Chameleon
         
         private void Move()
         {
-            if (_speed == 0 && _camouflage)
+            if (_speed == 0 && _camouflage || !_canMove)
             {
+                _animator.SetBool("Run", false);      
                 return;
             }
-            _animator.SetBool("Run", true);         
-            Debug.Log(_targetPosition);
+            _animator.SetBool("Run", true);  
             transform.position = Vector3.MoveTowards(transform.position, _targetPosition, Time.deltaTime * _speed);
         }
         
@@ -220,12 +209,14 @@ namespace Enemy.Chameleon
         {
             _animator.SetBool("Hit", true);
             _speed = 0;
-            StartCoroutine(SetMove("Hit", 0.25f));
+            _camouflage = false;
+            _canMove = false;
+            _timerCamouflage = _delayOfCamouflage;
+            StartCoroutine(SetMove("Hit", 0.35f));
         }
 
         private void Attack()
         {
-            Debug.Log("ataca");
             _animator.SetBool("Attack", true);
             _timerCamouflage = _delayOfCamouflage;
             _speed = 0;
@@ -245,6 +236,7 @@ namespace Enemy.Chameleon
         {
             _animator.SetBool("Fall", true);
             _speed = 0;
+            _canMove = false;
             StartCoroutine(SetMove("Fall", 0.65f));
         }
         
@@ -259,6 +251,8 @@ namespace Enemy.Chameleon
             yield return new WaitForSeconds(time);
             _animator.SetBool(state, false);
             _speed = _auxSpeed;
+            _canMove = true;
+            Debug.Log("antes");
         }
 
         private IEnumerator DestroyChameleon()

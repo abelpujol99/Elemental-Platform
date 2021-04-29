@@ -61,7 +61,6 @@ namespace Character
             _fire,
             _wind,
             _lightning,
-            _superShuriken,
             _superRock,
             _superWater,
             _superFire,
@@ -117,6 +116,7 @@ namespace Character
         private float _fallMultiplier = 0.5f;
         private float _lowJumpMultiplier = 1f;
         private float _abilityRange;
+        private float _superRockTimer = 2f;
         private float _superAbilityTimer = 0.3f;
         private float _auxHoldTime;
 
@@ -371,7 +371,7 @@ namespace Character
                     superRockAux.setTag("SuperRock");
                     superRockAux.setAbility(_superRock);
                     superRockAux.setSize(_superAbilityCapacity);
-                    superRockAux.setTimer(_superAbilityTimer);
+                    superRockAux.setTimer(_superRockTimer);
                     superRockAux.setCast(true);
                     superRockAux.setCoolDown(_superRockCooldown);
 

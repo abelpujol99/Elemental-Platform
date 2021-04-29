@@ -224,7 +224,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6495553445316830735}
-  isGround: 0
   _shuriken: {fileID: 7985466707551815754, guid: c2ae0875152eaa04ca6798c56840a529, type: 3}
   _rock: {fileID: 6995859749326785915, guid: 171a53fcdb7d2944aabce12fbfd13fec, type: 3}
   _water: {fileID: 2472008848403422929, guid: c6cedc4fd180c3f4ba53cdfdbdeb5e6a, type: 3}
@@ -232,13 +231,14 @@ MonoBehaviour:
   _wind: {fileID: 1817880175926051597, guid: ac79534a255073a4bb20799d9418ce1f, type: 3}
   _lightning: {fileID: 1936801452089805495, guid: a738622e7d7df3e4a8be15831a1dc9bd, type: 3}
   _superShuriken: {fileID: 6555462460817181520, guid: bdae7eac496d916489bd7df2f28556b6, type: 3}
-  _superRock: {fileID: 6995859749326785915, guid: 171a53fcdb7d2944aabce12fbfd13fec, type: 3}
+  _superRock: {fileID: 7467035811356797, guid: 5ce2f8dd572142d4782b6cba3a989a6f, type: 3}
   _superWater: {fileID: 4863971478294689691, guid: 0fbbca2e2b97a5749aa07f1ff1994aed, type: 3}
   _superFire: {fileID: 7237352463337476282, guid: 66116be31d1c28d40b9cbb7f90613cf3, type: 3}
   _superWind: {fileID: 7197826234009722148, guid: 80761808471002f4c9369732d67d8075, type: 3}
   _superLightning: {fileID: 5627498613830955818, guid: d7955294775a00448945ba9a03bcc6ee, type: 3}
   _visualTimer: {fileID: 728823345003628659, guid: 7aa13b4379d62904cb8445bac7b29a45, type: 3}
   _abilityRangeCircle: {fileID: 0}
+  _cooldownActiveAbility: {fileID: 0}
 --- !u!114 &2893565387989735555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,3 +251,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a9c1d314f81744ca7a77120ca4394a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transition: {fileID: 0}

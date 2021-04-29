@@ -29,11 +29,9 @@ namespace Character
             {
                 _TMP.text += "<sprite index=[" + powerNum + "]>  ";
             }
-
-            if (powerNum != 1)
-            {
-                _TMP.text += "\n \n<sprite index=[" + (powerNum + 4) + "]>";
-            }
+            
+            _TMP.text += "\n \n<sprite index=[" + (powerNum + 5) + "]>";
+            
 
         }
 

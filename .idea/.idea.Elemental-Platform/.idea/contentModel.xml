@@ -38,8 +38,8 @@
             <e p="PlayerRespawn.cs" t="Include" />
             <e p="UpdateTimer.cs" t="Include" />
           </e>
-          <e p="CMath" t="Include">
-            <e p="CMath.cs" t="Include" />
+          <e p="CustomMath" t="Include">
+            <e p="CustomMath.cs" t="Include" />
           </e>
           <e p="Door" t="Include">
             <e p="KeyCollected.cs" t="Include" />

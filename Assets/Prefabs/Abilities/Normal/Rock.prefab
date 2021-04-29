@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6995859749326785913}
   - component: {fileID: 6995859749326785918}
-  - component: {fileID: 6995859749326785919}
+  - component: {fileID: 6818322691106846589}
   - component: {fileID: 6995859749326785912}
   - component: {fileID: -6612403933795537812}
   - component: {fileID: 5867775096078014113}
-  - component: {fileID: 4941944567517827236}
   m_Layer: 13
   m_Name: Rock
   m_TagString: Rock
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 5bdf42e0902940044a70b69d133e44f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93bf5473a4bfe8b498498bd9233936d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,8 +86,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6995859749326785919
-BoxCollider2D:
+--- !u!58 &6818322691106846589
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -100,19 +99,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009511411, y: 0.026354164}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.7, y: 2.6}
-    newSize: {x: 2.7, y: 2.6}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.5995384, y: 1.477351}
-  m_EdgeRadius: 0
+  m_Radius: 0.69
 --- !u!50 &6995859749326785912
 Rigidbody2D:
   serializedVersion: 4
@@ -133,7 +122,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &-6612403933795537812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,25 +153,5 @@ MonoBehaviour:
   _timer: 0
   _cast: 1
   _cooldown: 2
-  _actualCooldown: 0
-  _cooldownActiveAbility: {fileID: 0}
---- !u!114 &4941944567517827236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6995859749326785915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2568a22c851c421ab110da004792cf5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: SuperRock
-  _ability: {fileID: 6995859749326785915}
-  _size: 1
-  _timer: 0.3
-  _cast: 1
-  _cooldown: 5
   _actualCooldown: 0
   _cooldownActiveAbility: {fileID: 0}
