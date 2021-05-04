@@ -1,17 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Ability.Abilities;
 using Ability;
 using Ability.Abilities.Ninja;
 using Ability.Abilities.Normal;
 using Ability.Abilities.Super;
+using Ability.Abilities.Super.SuperRock;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Character
 {
     public class CharacterScript : MonoBehaviour
     {
-        public enum Abilities {JUMP_UPGRADE, DOUBLE_JUMP_UPGRADE, ROCK, WATER, FIRE, WIND, LIGHTNING}
+        public enum Abilities {JUMP_UPGRADE, DOUBLE_JUMP_UPGRADE, SHURIKEN, ROCK, WATER, FIRE, WIND, LIGHTNING}
 
         public static bool isGround,
             shurikenUpgrade,
@@ -47,7 +50,7 @@ namespace Character
             _fireCooldown = 3f,
             _windCooldown = 1f,
             _lightningCooldown = 2.5f,
-            _superRockCooldown = 5f,
+            _superRockCooldown = 10f,
             _superWaterCooldown = 4f,
             _superFireCooldown = 5f,
             _superWindCooldown = 4.5f,
@@ -99,6 +102,8 @@ namespace Character
             _superWindList,
             _superLightningList;
 
+        private Dictionary<bool, Action> _setAllPowers;
+
         private Dictionary<int, List<float>> _allAbilitiesCooldowns;
 
         private List<float> _shurikenCooldownList,
@@ -143,14 +148,78 @@ namespace Character
             _auxHoldTime = holdTime;
             _powerNum = 1;
             _auxPowerNum = 0;
+            //FillDictionarySetAllPowers();
             SetPowers();
             jumpUpgrade = true;
-            //doubleJumpUpgrade = true;
+            doubleJumpUpgrade = true;
             _initialTime = Time.timeSinceLevelLoad - 30;
         }
 
+        private void FillDictionarySetAllPowers()
+        {
+            _setAllPowers = new Dictionary<bool, Action>()
+            {
+                {shurikenUpgrade, SetShurikenAction},
+                {rockUpgrade, SetRockAction},
+                {waterUpgrade, SetWaterAction},
+                {fireUpgrade, SetFireAction},
+                {windUpgrade, SetWindAction},
+                {lightningUpgrade, SetLightningAction},
+            };
+        }
+        
+        #region PowersSet
+
+        private void SetShurikenAction()
+        {
+            _abilities = new List<List<Ability.Ability>>();
+
+            _allAbilitiesCooldowns = new Dictionary<int, List<float>>();
+
+            SetUniquePower(0, _shurikenList, _shurikenCooldownList, "Shuriken", _shuriken, _shurikenCapacity,
+                _shurikenTimer, _shurikenCooldown);
+        }
+
+        private void SetRockAction()
+        {
+            SetDualPower(1, _rockList, _rockCooldownList, "Rock", _rock, _rockCapacity, _rockTimer,
+                _rockCooldown, "SuperRock", _superRock, _superRockTimer, _superRockCooldown);
+        }
+
+        private void SetWaterAction()
+        {
+            SetDualPower(2, _waterList, _waterCooldownList, "Water", _water, _waterCapacity, _waterTimer,
+                _waterCooldown, "SuperWater", _superWater, _superAbilityTimer, _superWaterCooldown);
+        }
+
+        private void SetFireAction()
+        {
+            SetDualPower(3, _fireList, _fireCooldownList, "Fire", _fire, _fireCapacity, _fireTimer,
+                _fireCooldown, "SuperFire", _superFire, _superAbilityTimer, _superFireCooldown);
+        }
+
+        private void SetWindAction()
+        {
+            SetDualPower(4, _windList, _windCooldownList, "Wind", _wind, _windCapacity, _windTimer,
+                _windCooldown, "SuperWind", _superWind, _superAbilityTimer, _superWindCooldown); 
+        }
+
+        private void SetLightningAction()
+        {
+            SetDualPower(5, _lightningList, _lightningCooldownList, "Lightning", _lightning,
+                _lightningCapacity, _lightningTimer, _lightningCooldown, "SuperLightning",
+                _superLightning, _superAbilityTimer, _superLightningCooldown);
+        }
+        
+        #endregion PowersSet
+
         void Update()
         {
+
+            if (Input.GetKey(KeyCode.T))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
             
             if (_powerNum != _auxPowerNum)
             {
@@ -322,240 +391,130 @@ namespace Character
         
         private void SetPowers()
         {
+
+            /*for (int i = 0; i < _setAllPowers.Count; i++)
+            {
+                
+            }*/
+            
             if (shurikenUpgrade)
             {
+
                 _abilities = new List<List<Ability.Ability>>();
 
                 _allAbilitiesCooldowns = new Dictionary<int, List<float>>();
 
-                _shurikenCooldownList = new List<float>();
+                SetUniquePower(0, _shurikenList, _shurikenCooldownList, "Shuriken", _shuriken, _shurikenCapacity,
+                    _shurikenTimer, _shurikenCooldown);
                 
-                _shurikenList = new List<Ability.Ability>();
+                if (rockUpgrade)
+                {
+                    SetDualPower(1, _rockList, _rockCooldownList, "Rock", _rock, _rockCapacity, _rockTimer,
+                        _rockCooldown, "SuperRock", _superRock, _superRockTimer, _superRockCooldown);
+                
+                    if (waterUpgrade)
+                    {
+                        SetDualPower(2, _waterList, _waterCooldownList, "Water", _water, _waterCapacity, _waterTimer,
+                            _waterCooldown, "SuperWater", _superWater, _superAbilityTimer, _superWaterCooldown);
+                
+                        if (fireUpgrade)
+                        {
+                            SetDualPower(3, _fireList, _fireCooldownList, "Fire", _fire, _fireCapacity, _fireTimer,
+                                _fireCooldown, "SuperFire", _superFire, _superAbilityTimer, _superFireCooldown);
+                    
+                            if (windUpgrade)
+                            {
+                                SetDualPower(4, _windList, _windCooldownList, "Wind", _wind, _windCapacity, _windTimer,
+                                    _windCooldown, "SuperWind", _superWind, _superAbilityTimer, _superWindCooldown);
+                        
+                                if (lightningUpgrade)
+                                {
+                                    SetDualPower(5, _lightningList, _lightningCooldownList, "Lightning", _lightning,
+                                        _lightningCapacity, _lightningTimer, _lightningCooldown, "SuperLightning",
+                                        _superLightning, _superAbilityTimer, _superLightningCooldown);
+                                }
+                            }
+                        }
+                    }
+                } 
+                
+                SetAbilityDictionary();
+            }
+        }
 
-                Shuriken shurikenAux = _shuriken.GetComponent<Shuriken>();
-                shurikenAux.setTag("Shuriken");
-                shurikenAux.setAbility(_shuriken);
-                shurikenAux.setSize(_shurikenCapacity);
-                shurikenAux.setTimer(_shurikenTimer);
-                shurikenAux.setCast(true);
-                shurikenAux.setCoolDown(_shurikenCooldown);
-                
-                _shurikenList.Add(shurikenAux);
-                
-                _abilities.Add(_shurikenList);
+        private void SetUniquePower(int num, List<Ability.Ability> powerList, List<float> cooldownPowerList, string tag , GameObject power, int capacity, float timer, float cooldown)
+        {
 
-                for (int i = 0; i < _shurikenCapacity; i++)
+            powerList = new List<Ability.Ability>();
+
+            //cooldownPowerList = new List<float>();
+            
+            powerList.Add(SetEachPower(tag, power, capacity, timer, cooldown));
+            
+            _abilities.Add(powerList);
+            
+            /*for (int i = 0; i < _shurikenCapacity; i++)
                 {
                     _shurikenCooldownList.Add(_initialTime);
                 }
                 
-                _allAbilitiesCooldowns.Add(0, _shurikenCooldownList);
+                _allAbilitiesCooldowns.Add(num, _shurikenCooldownList);*/
 
+        }
 
-                if (rockUpgrade)
+        private void SetDualPower(int num, List<Ability.Ability> powerList, List<float> cooldownPowerList, string tag , GameObject power, int capacity, float timer, float cooldown, string superTag, GameObject superPower, float superTimer, float superCooldown)
+        {
+            powerList = new List<Ability.Ability>();
+
+            cooldownPowerList = new List<float>();
+            
+            powerList.Add(SetEachPower(tag, power, capacity, timer, cooldown));
+            powerList.Add(SetEachPower(superTag, superPower, _superAbilityCapacity, superTimer, superCooldown));
+            
+            _abilities.Add(powerList);
+                    
+            /*for (int i = 0; i <= capacity; i++)
+            {
+                cooldownPowerList.Add(_initialTime);
+            }
+
+            _allAbilitiesCooldowns.Add(num, cooldownPowerList);*/
+                    
+            _maxPowers += 1;
+
+        }
+
+        private Ability.Ability SetEachPower(string tag , GameObject power, int capacity, float timer, float cooldown)
+        {
+            Ability.Ability abilityAux = power.GetComponent<Ability.Ability>();
+            abilityAux.setTag(tag);
+            abilityAux.setAbility(power);
+            abilityAux.setSize(capacity);
+            abilityAux.setTimer(timer);
+            abilityAux.setCast(true);
+            abilityAux.setCoolDown(cooldown);
+
+            return abilityAux;
+        }
+
+        private void SetAbilityDictionary()
+        {
+            _abilityDictionary = new Dictionary<string, Queue<GameObject>>();
+            
+            foreach (List<Ability.Ability> ability in _abilities)
+            {
+                foreach (Ability.Ability specificAbility in ability)
                 {
+                    Queue<GameObject> abilityPool = new Queue<GameObject>();
 
-                    _rockList = new List<Ability.Ability>();
-
-                    _rockCooldownList = new List<float>();
-
-                    Rock rockAux = _rock.GetComponent<Rock>();
-                    rockAux.setTag("Rock");
-                    rockAux.setAbility(_rock);
-                    rockAux.setSize(_rockCapacity);
-                    rockAux.setTimer(_rockTimer);
-                    rockAux.setCast(true);
-                    rockAux.setCoolDown(_rockCooldown);
-
-                    SuperRock superRockAux = _superRock.GetComponent<SuperRock>();
-                    superRockAux.setTag("SuperRock");
-                    superRockAux.setAbility(_superRock);
-                    superRockAux.setSize(_superAbilityCapacity);
-                    superRockAux.setTimer(_superRockTimer);
-                    superRockAux.setCast(true);
-                    superRockAux.setCoolDown(_superRockCooldown);
-
-                    _rockList.Add(rockAux);
-                    _rockList.Add(superRockAux);
-
-                    _abilities.Add(_rockList);
-
-                    for (int i = 0; i <= _rockCapacity; i++)
+                    for (int i = 0; i < specificAbility.getSize(); i++)
                     {
-                        _rockCooldownList.Add(_initialTime);
+                        GameObject obj = Instantiate(specificAbility.getAbility());
+                        obj.SetActive(false);
+                        abilityPool.Enqueue(obj);
                     }
-
-                    _allAbilitiesCooldowns.Add(1, _rockCooldownList);
-
-                    _maxPowers += 1;
-
-                    if (waterUpgrade)
-                    {
-                        _waterList = new List<Ability.Ability>();
-
-                        _waterCooldownList = new List<float>();
-
-                        Water waterAux = _water.GetComponent<Water>();
-                        waterAux.setTag("Water");
-                        waterAux.setAbility(_water);
-                        waterAux.setSize(_waterCapacity);
-                        waterAux.setTimer(_waterTimer);
-                        waterAux.setCast(true);
-                        waterAux.setCoolDown(_waterCooldown);
-
-                        SuperWater superWaterAux = _superWater.GetComponent<SuperWater>();
-                        superWaterAux.setTag("SuperWater");
-                        superWaterAux.setAbility(_superWater);
-                        superWaterAux.setSize(_superAbilityCapacity);
-                        superWaterAux.setTimer(_superAbilityTimer);
-                        superWaterAux.setCast(true);
-                        superWaterAux.setCoolDown(_superWaterCooldown);
-
-                        _waterList.Add(waterAux);
-                        _waterList.Add(superWaterAux);
-
-                        _abilities.Add(_waterList);
-
-                        for (int i = 0; i <= _waterCapacity; i++)
-                        {
-                            _waterCooldownList.Add(_initialTime);
-                        }
-
-                        _allAbilitiesCooldowns.Add(2, _waterCooldownList);
-
-                        _maxPowers += 1;
-
-                        if (fireUpgrade)
-                        {
-                            _fireList = new List<Ability.Ability>();
-
-                            _fireCooldownList = new List<float>();
-
-                            Fire fireAux = _fire.GetComponent<Fire>();
-                            fireAux.setTag("Fire");
-                            fireAux.setAbility(_fire);
-                            fireAux.setSize(_fireCapacity);
-                            fireAux.setTimer(_fireTimer);
-                            fireAux.setCast(true);
-                            fireAux.setCoolDown(_fireCooldown);
-
-                            SuperFire superFireAux = _superFire.GetComponent<SuperFire>();
-                            superFireAux.setTag("SuperFire");
-                            superFireAux.setAbility(_superFire);
-                            superFireAux.setSize(_superAbilityCapacity);
-                            superFireAux.setTimer(_superAbilityTimer);
-                            superFireAux.setCast(true);
-                            superFireAux.setCoolDown(_superFireCooldown);
-
-                            _fireList.Add(fireAux);
-                            _fireList.Add(superFireAux);
-
-                            _abilities.Add(_fireList);
-
-                            for (int i = 0; i <= _fireCapacity; i++)
-                            {
-                                _fireCooldownList.Add(_initialTime);
-                            }
-
-                            _allAbilitiesCooldowns.Add(3, _fireCooldownList);
-
-                            _maxPowers += 1;
-
-                            if (windUpgrade)
-                            {
-
-                                _windList = new List<Ability.Ability>();
-
-                                _windCooldownList = new List<float>();
-
-                                Wind windAux = _wind.GetComponent<Wind>();
-                                windAux.setTag("Wind");
-                                windAux.setAbility(_wind);
-                                windAux.setSize(_windCapacity);
-                                windAux.setTimer(_windTimer);
-                                windAux.setCast(true);
-                                windAux.setCoolDown(_windCooldown);
-
-                                SuperWind superWindAux = _superWind.GetComponent<SuperWind>();
-                                superWindAux.setTag("SuperWind");
-                                superWindAux.setAbility(_superWind);
-                                superWindAux.setSize(_superAbilityCapacity);
-                                superWindAux.setTimer(_superAbilityTimer);
-                                superWindAux.setCast(true);
-                                superWindAux.setCoolDown(_superWindCooldown);
-
-                                _windList.Add(windAux);
-                                _windList.Add(superWindAux);
-
-                                _abilities.Add(_windList);
-                                for (int i = 0; i <= _windCapacity; i++)
-                                {
-                                    _windCooldownList.Add(_initialTime);
-                                }
-
-                                _allAbilitiesCooldowns.Add(4, _windCooldownList);
-
-                                _maxPowers += 1;
-
-                                if (lightningUpgrade)
-                                {
-                                    _lightningList = new List<Ability.Ability>();
-
-                                    _lightningCooldownList = new List<float>();
-
-                                    Lightning lightningAux = _lightning.GetComponent<Lightning>();
-                                    lightningAux.setTag("Lightning");
-                                    lightningAux.setAbility(_lightning);
-                                    lightningAux.setSize(_lightningCapacity);
-                                    lightningAux.setTimer(_lightningTimer);
-                                    lightningAux.setCast(true);
-                                    lightningAux.setCoolDown(_lightningCooldown);
-
-                                    SuperLightning superLightningAux =
-                                        _superLightning.GetComponent<SuperLightning>();
-                                    superLightningAux.setTag("SuperLightning");
-                                    superLightningAux.setAbility(_superLightning);
-                                    superLightningAux.setSize(_superAbilityCapacity);
-                                    superLightningAux.setTimer(_superAbilityTimer);
-                                    superLightningAux.setCast(true);
-                                    superLightningAux.setCoolDown(_superLightningCooldown);
-
-                                    _lightningList.Add(lightningAux);
-                                    _lightningList.Add(superLightningAux);
-
-                                    _abilities.Add(_lightningList);
-                                    
-                                    for (int i = 0; i <= _lightningCapacity; i++)
-                                    {
-                                        _lightningCooldownList.Add(_initialTime);
-                                    }
-
-                                    _allAbilitiesCooldowns.Add(5, _lightningCooldownList);
-
-                                    _maxPowers += 1;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                _abilityDictionary = new Dictionary<string, Queue<GameObject>>();
-                
-                foreach (List<Ability.Ability> ability in _abilities)
-                {
-                    foreach (Ability.Ability specificAbility in ability)
-                    {
-                        Queue<GameObject> abilityPool = new Queue<GameObject>();
-
-                        for (int i = 0; i < specificAbility.getSize(); i++)
-                        {
-                            GameObject obj = Instantiate(specificAbility.getAbility());
-                            obj.SetActive(false);
-                            abilityPool.Enqueue(obj);
-                        }
                         
-                        _abilityDictionary.Add(specificAbility.getTag(), abilityPool);
-                    }
+                    _abilityDictionary.Add(specificAbility.getTag(), abilityPool);
                 }
             }
         }
@@ -671,17 +630,8 @@ namespace Character
         private void UsePower(bool holded)
         {
             List<Ability.Ability> ability = new List<Ability.Ability>();
-
-            int num;
             
-            if (holded)
-            {
-                num = 1;
-            }
-            else
-            {
-                num = 0;
-            }
+            int num = holded ? 1 : 0;
             
             string tag = "";
             
@@ -753,7 +703,7 @@ namespace Character
                     abilityComponent.abilityUtility(abilityToSpawn, _abilityPos, transform.position, _maxAbilityRange);
                 }
 
-                _actualTime = Time.timeSinceLevelLoad;
+                /*_actualTime = Time.timeSinceLevelLoad;
 
                 _auxList = _allAbilitiesCooldowns[_powerNum];
 
@@ -780,7 +730,7 @@ namespace Character
                     _auxList[_auxList.Count - 1] = _actualTime;
                 }
 
-                /*_auxSpecificAbilityList = _cooldownActiveAbility.UpdateCooldown(
+                _auxSpecificAbilityList = _cooldownActiveAbility.UpdateCooldown(
                     _allAbilitiesCooldowns[_powerNum], _abilities[_powerNum][0].getSize(),
                     _abilities[_powerNum][0].getCooldown(), _abilities[_powerNum][1].getCooldown(), true);
 
@@ -789,7 +739,7 @@ namespace Character
                     _allAbilitiesCooldowns[_powerNum][i] = _auxSpecificAbilityList[i];
                 }*/
 
-                if (abilityComponent.getTimer() > 0)
+                if (abilityComponent.getTimer() > 0 && !tag.Equals("SuperRock"))
                 {
                     StartCoroutine(AbilityDisappear(abilityComponent.getTimer(), abilityToSpawn));
                 }
@@ -830,6 +780,11 @@ namespace Character
                     
                 case Abilities.DOUBLE_JUMP_UPGRADE:
                     doubleJumpUpgrade = true;
+                    break;
+                
+                case Abilities.SHURIKEN:
+                    shurikenUpgrade = true;
+                    SetPowers();
                     break;
                 
                 case Abilities.ROCK:

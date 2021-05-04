@@ -16,10 +16,12 @@ namespace Character
 
         private List<float> _cooldowns;
 
+        private Color _color;
         private void Start()
         {
             StartCoroutine(WaitUntilTransitionEnd());
             _cooldowns = new List<float>();
+            _color = _TMP.color;
         }
 
         public void ShowAbilities(int powerNum, int size)
@@ -85,6 +87,30 @@ namespace Character
         {
             yield return new WaitForSeconds(0.85f);
             _TMP.enabled = true;
+        }
+
+        private void OnTriggerEnter2D(Collider2D trigger)
+        {
+            if (trigger.transform.CompareTag("Tilemap1") || trigger.transform.CompareTag("Tilemap2"))
+            {
+                return;
+            }
+
+            _color.a = 0.6f;
+
+            _TMP.color = _color;
+        }
+
+        private void OnTriggerExit2D(Collider2D trigger)
+        {
+            if (trigger.transform.CompareTag("Tilemap1") || trigger.transform.CompareTag("Tilemap2"))
+            {
+                return;
+            }
+
+            _color.a = 1f;
+
+            _TMP.color = _color;
         }
     }
 }

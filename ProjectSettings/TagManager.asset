@@ -27,6 +27,9 @@ TagManager:
   - Door
   - Key
   - Upgrade
+  - Tilemap3
+  - SuperRock
+  - Canvas
   layers:
   - Default
   - TransparentFX
@@ -45,7 +48,7 @@ TagManager:
   - Enemy
   - Ability
   - SuperAbility
-  - 
+  - SuperRock
   - 
   - 
   - 

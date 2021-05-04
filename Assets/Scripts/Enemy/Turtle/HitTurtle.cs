@@ -16,7 +16,7 @@ namespace Enemy.Turtle
             {
                 trigger.gameObject.GetComponent<PlayerRespawn>().PlayerDamage();
             }
-            else if (trigger.transform.CompareTag("Fire") || trigger.transform.CompareTag("Lightning") || trigger.transform.CompareTag("Shuriken"))
+            else if (trigger.transform.CompareTag("Fire") || trigger.transform.CompareTag("Lightning") || trigger.transform.CompareTag("Shuriken") || trigger.transform.CompareTag("GreenProjectile"))
             {
                 GetComponent<BoxCollider2D>().enabled = false;
                 StartCoroutine(_turtle.GetComponent<Turtle>().DestroyTurtle());

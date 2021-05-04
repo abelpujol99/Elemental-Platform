@@ -28,63 +28,10 @@ namespace Ability.Abilities.Ninja
 
         private void OnTriggerEnter2D(Collider2D trigger)
         {
-            if (trigger.transform.CompareTag("GreenProjectile"))
-            {
-                trigger.gameObject.SetActive(false);
-            }else if (!(trigger.transform.CompareTag("Door") || trigger.transform.CompareTag("Key") || trigger.transform.CompareTag("Upgrade")))
+            if (!(trigger.transform.CompareTag("Door") || trigger.transform.CompareTag("Key") || trigger.transform.CompareTag("Upgrade") || trigger.transform.CompareTag("Canvas")))
             {
                 gameObject.SetActive(false);
             }
-        }
-        
-        public string getTag()
-        {
-            return _tag;
-        }
-
-        public GameObject getAbility()
-        {
-            return _ability;
-        }
-
-        public int getSize()
-        {
-            return _size;
-        }
-
-        public float getTimer()
-        {
-            return _timer;
-        }
-
-        public bool isCast()
-        {
-            return _cast;
-        }
-
-        public float getCooldown()
-        {
-            return _cooldown;
-        }
-
-        public void setSize(int size)
-        {
-            _size = size;
-        }
-
-        public void setTimer(float timer)
-        {
-            _timer = timer;
-        }
-
-        public void setCast(bool cast)
-        {
-            _cast = cast;
-        }
-
-        public void setCoolDown(float cooldown)
-        {
-            _cooldown = cooldown;
         }
     }
 }

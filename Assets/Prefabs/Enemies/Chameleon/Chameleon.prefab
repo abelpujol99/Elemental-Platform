@@ -165,12 +165,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34a0cf7703d433bbde09d1b95abbe33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterTransform: {fileID: 0}
   _health: 10
+  _characterTransform: {fileID: 0}
   _distance: -1
   _speed: 1
   _camouflage: 1
-  _rb2D: {fileID: 0}
+  _rb2D: {fileID: 3465371687767629239}
   _animator: {fileID: 3465371687767629237}
   _spriteRenderer: {fileID: 3465371687767629236}
 --- !u!1 &3465371689491214552

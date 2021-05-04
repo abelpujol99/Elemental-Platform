@@ -1,3 +1,4 @@
+using System;
 using Character;
 using UnityEngine;
 
@@ -97,6 +98,5 @@ namespace Ability
                 //_cooldownActiveAbility.UpdateCooldown(getCooldown(), false);
             }
         }
-        
     }
 }

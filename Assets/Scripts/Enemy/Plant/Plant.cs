@@ -9,14 +9,13 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Enemy.Plant
 {
-    public class Plant : MonoBehaviour
+    public class Plant : EnemyWithHealth
     {
         [SerializeField] private Transform _target;
 
         [SerializeField] private int _projectilesNum;
         
-        [SerializeField] private float _health;
-        [SerializeField] private float _cadence;
+        [SerializeField] private float _cadence, _startTime;
 
         [SerializeField] private bool _fixedPosition;
 
@@ -60,7 +59,6 @@ namespace Enemy.Plant
 
         private void Update()
         {
-
             if (_health <= 0)
             {
                 _animator.Play("Die");
@@ -84,13 +82,19 @@ namespace Enemy.Plant
                     _projectilePositionXSpawn = Mathf.Abs(_projectilePositionXSpawn) * -1;
                 }
             }
-
-            if (_canAttack && _cadence <= 0)
+            
+            if (_startTime > 0)
             {
-                StartToAttack();
-                Attack("Projectile");
-                _cadence = _cadenceAux;
+                _startTime -= Time.deltaTime;
+                return;
             }
+
+            if (!_canAttack || !(_cadence <= 0))
+            {
+                return;
+            }
+            StartToAttack();
+            _cadence = _cadenceAux;
 
         }
 
@@ -125,6 +129,7 @@ namespace Enemy.Plant
 
         private void StartToAttack()
         {
+            
             StartCoroutine(Attack("Projectile"));
             _animator.SetBool("Attack", true);
         }

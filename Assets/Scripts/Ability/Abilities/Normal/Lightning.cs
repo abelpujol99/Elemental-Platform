@@ -22,7 +22,7 @@ namespace Ability.Abilities.Normal
 
         private void OnTriggerEnter2D(Collider2D trigger)
         {
-            if (!(trigger.transform.CompareTag("Door") || trigger.transform.CompareTag("Key") || trigger.transform.CompareTag("Upgrade")))
+            if (!(trigger.transform.CompareTag("Door") || trigger.transform.CompareTag("Key") || trigger.transform.CompareTag("Upgrade") || trigger.transform.CompareTag("Canvas")))
             {
                 gameObject.SetActive(false);
             }

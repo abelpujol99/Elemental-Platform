@@ -21,38 +21,37 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/53/15cd03c1/Rect.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7F90ED7B-2CD3-4BC5-95F5-E9D084F29FE3/93/e18926bc/Animator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/345A1D9B-2AAB-40B5-B636-2D7FA1668943/4f/a22c5188/SendMouseEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Water.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/31/68c25c92/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/a4/e79e0c6b/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/345A1D9B-2AAB-40B5-B636-2D7FA1668943/bf/98f77c35/Input.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/86/3af80617/Ray.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Lightning.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/3b/835b9dea/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/cf/9f81116f/Camera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Wind.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/c7/04de34a7/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/bb/acda1c7d/IntPtr.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/43/8631ba1a/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ability/Ability.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/345A1D9B-2AAB-40B5-B636-2D7FA1668943/28/38bdfd80/CameraRaycastHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/98/4f4d63ff/WaitForSeconds.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Fire.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Ninja/Shuriken.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB6717C6-1301-4D2A-BA16-A3363B50FCDD/34/9cbfe68c/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/345A1D9B-2AAB-40B5-B636-2D7FA1668943/4f/a22c5188/SendMouseEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Rock.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/345A1D9B-2AAB-40B5-B636-2D7FA1668943/bf/98f77c35/Input.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/cf/9f81116f/Camera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scenario/Ground.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/43/8631ba1a/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Turtle/HitTurtle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/f3/a575d775/Display.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/21/6f13e692/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB6717C6-1301-4D2A-BA16-A3363B50FCDD/34/9cbfe68c/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/ThrowableAbility.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/StaticAbility.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/SuperRock.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Upgrade/TakeUpgrade.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/MaxAbilityRange.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/MaxAbilityRange.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Shuriken.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Bat.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Platform/PlatformUpDown.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CameraController/CameraMoves.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Fire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Water.cs" />
@@ -60,39 +59,47 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/ThrowableAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Bat/Bat.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Projectile.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Ground.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Door/LevelComplete.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/RinoCheckGround.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Ninja/Shuriken.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/PlayerRespawn.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Plant.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/Cooldwon&amp;ActiveAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/Cooldown&amp;ActiveAbility.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/CooldownActiveSuperAbility.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperFire.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperLightning.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWater.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWind.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/UpdateTimer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/SuperAbilityCastTime.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Skull.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level1/TutorialManagerLevel1.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CMath/CMath.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CMath/CustomMath.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Rock.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperRock.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Turtle/Turtle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyWithHealth.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CameraController/CameraMoves.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CooldownActiveAbility.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperRock/CheckEnemies.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperRock/SuperRock.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpike/EnemyWithHealth.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Plant/Plant.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/HideScenario.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpike/EnemySpike.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameController/GameController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Chameleon/Chameleon.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/Rino.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Skull/Skull.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Fire.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Lightning.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Water.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Wind.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperFire.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperLightning.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperRock.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWater.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Super/SuperWind.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Ninja/Shuriken.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Ability.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/UpdateTimer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Scenario/Ground.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Turtle/HitTurtle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/SuperAbilityCastTime.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Skull.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Turtle/Turtle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Rino/Rino.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/Level1/TutorialManagerLevel1.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CMath/CMath.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Skull/Skull.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CMath/CustomMath.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Chameleon/Chameleon.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CooldownActiveAbility.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Ability/Abilities/Normal/Rock.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ot86w0elpn1ezOGsdC11AqxwZ8" />
@@ -133,10 +140,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3604">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="3604" />
+      <option name="pid" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -217,6 +224,13 @@
       <workItem from="1619616789625" duration="4653000" />
       <workItem from="1619633906686" duration="9283000" />
       <workItem from="1619682441796" duration="16567000" />
+      <workItem from="1619718738842" duration="10330000" />
+      <workItem from="1619758535930" duration="19082000" />
+      <workItem from="1619808696649" duration="3159000" />
+      <workItem from="1619863143285" duration="6873000" />
+      <workItem from="1619939651522" duration="3778000" />
+      <workItem from="1620069321446" duration="795000" />
+      <workItem from="1620122035042" duration="6305000" />
     </task>
     <task id="LOCAL-00001" summary="Fire with kill">
       <created>1614095592755</created>

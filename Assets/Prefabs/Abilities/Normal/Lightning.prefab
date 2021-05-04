@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1936801452089805493}
   - component: {fileID: 1936801452089805492}
-  - component: {fileID: 3531649309344025209}
+  - component: {fileID: 1171123831852479391}
   - component: {fileID: 8141468977278587919}
   - component: {fileID: 4950251887739736464}
   m_Layer: 15
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3531649309344025209
-BoxCollider2D:
+--- !u!58 &1171123831852479391
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,19 +98,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04656732, y: 0.081492186}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.59, y: 5.5}
-    newSize: {x: 5.59, y: 5.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 3.960139, y: 4.172829}
-  m_EdgeRadius: 0
+  m_Radius: 1.58
 --- !u!50 &8141468977278587919
 Rigidbody2D:
   serializedVersion: 4
@@ -146,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Lightning
   _ability: {fileID: 1936801452089805495}
-  _size: 3
+  _size: 1
   _timer: 0.5
   _cast: 1
   _cooldown: 2.5

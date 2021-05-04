@@ -4,9 +4,8 @@ using UnityEngine;
 
 namespace Enemy.Rino
 {
-    public class Rino : MonoBehaviour
+    public class Rino : EnemyWithHealth
     {
-        [SerializeField] private float _health;
         [SerializeField] private float _speed;
         [SerializeField] private float _distance;
         [SerializeField] private Transform _characterPosition;
@@ -89,7 +88,7 @@ namespace Enemy.Rino
 
             _avoidObstacles = Physics2D.Raycast(_vectorToAvoidObstacles, 
                 (Mathf.Sign(_distance) * Vector2.right).normalized,
-                0.1f, LayerMask.GetMask("Tilemap2", "Rock", "Enemy"));
+                0.1f, LayerMask.GetMask("Tilemap2", "Rock", "SuperRock", "Enemy"));
 
             _avoidFall = Physics2D.Raycast(_vectorToAvoidFall, (Mathf.Sign(_distance) * Vector2.right + Vector2.down).normalized,
                 0.14f,

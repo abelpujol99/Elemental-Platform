@@ -5,17 +5,19 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class Skull : MonoBehaviour
+    public class Skull : EnemyWithHealth
     {
-        [SerializeField] private float _health, _speed, _distance;
+        [SerializeField] private float _speed, _distance;
         
         [SerializeField] private Animator _animator;
         
         [SerializeField] private SpriteRenderer _spriteRenderer;
+
+        [SerializeField] private Rigidbody2D _rb2D;
         
         private RaycastHit2D _avoidUpObstacles, _avoidMidObstacles, _avoidDownObstacles;
 
-        private Vector3 _targetPosition, _lastTargetPosition, _upVectorToAvoidObstacles, _midVectorToAvoidObstacles, _downVectorToAvoidObstacles;
+        private Vector3 _targetPosition, _lastTargetPosition, _firstVectorToAvoidObstacles, _secondVectorToAvoidObstacles, _thirdVectorToAvoidObstacles;
 
         private float _auxSpeed, _timeToRestoreFire, _auxTimeToRestoreFire, _timeToRestoreSpeed, _distanceFront, _difference;
 
@@ -25,15 +27,8 @@ namespace Enemy
             _timeToRestoreFire = 5;
             _auxTimeToRestoreFire = _timeToRestoreFire;
             _distanceFront = 0.25f;
-            if (_distance > 0)
-            {
-                _spriteRenderer.flipX = false;
-            }
-            else
-            {
-                _spriteRenderer.flipX = true;
-            }
-            _targetPosition = new Vector3(transform.position.x + _distance, transform.position.y, 0);
+            SetDirection();
+            //SetTarget();
             _lastTargetPosition = transform.position;
         }
 
@@ -44,15 +39,26 @@ namespace Enemy
                 StartCoroutine(DestroySkull());
             }
             
-            if (_distance > 0)
+            SetDirection();
+
+            RestoreSpeed();
+
+            CheckRestoreFire();
+
+            if (_rb2D.constraints == RigidbodyConstraints2D.FreezePositionY)
             {
-                _spriteRenderer.flipX = false;
+                FreezeYActions();
             }
-            else
+            else if (_rb2D.constraints == RigidbodyConstraints2D.FreezePositionX)
             {
-                _spriteRenderer.flipX = true;
+                FreezeXActions();
             }
 
+            Move();
+        }
+
+        private void RestoreSpeed()
+        {
             if (_timeToRestoreSpeed > 0)
             {
                 _timeToRestoreSpeed -= Time.deltaTime;
@@ -61,75 +67,199 @@ namespace Enemy
             {
                 _speed = _auxSpeed;
             }
-            
-            if (!_animator.GetCurrentAnimatorStateInfo(0).IsName("IdleWithFire"))
+        }
+
+        private void CheckRestoreFire()
+        {
+            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("IdleWithFire"))
             {
-                if (_timeToRestoreFire > 0)
-                {
-                    _timeToRestoreFire -= Time.deltaTime;
-                }
-                else
-                {
-                    RestoreFire();
-                    _timeToRestoreFire = _auxTimeToRestoreFire;
-                }
+                return;
             }
-            
-            _upVectorToAvoidObstacles = new Vector3(transform.position.x , transform.position.y + _distanceFront, 0);
-            _midVectorToAvoidObstacles = new Vector3(transform.position.x + Mathf.Sign(_distance) * _distanceFront, transform.position.y, 0);
-            _downVectorToAvoidObstacles = new Vector3(transform.position.x, transform.position.y - _distanceFront, 0);
+            if (_timeToRestoreFire > 0)
+            {
+                _timeToRestoreFire -= Time.deltaTime;
+            }
+            else
+            {
+                RestoreFire();
+                _timeToRestoreFire = _auxTimeToRestoreFire;
+            }
+        }
 
-            Debug.DrawRay(_upVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.3f , Color.green);
-            Debug.DrawRay(_midVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.1f , Color.green);
-            Debug.DrawRay(_downVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.3f , Color.green);
+        #region FreezeYActions
 
+        private void FreezeYActions()
+        {
             
-            _avoidUpObstacles = Physics2D.Raycast(_upVectorToAvoidObstacles, 
-                (Mathf.Sign(_distance) * Vector2.right).normalized,
-                0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "Enemy"));
+            _targetPosition = new Vector3(transform.position.x + _distance, transform.position.y, 0);
             
-            _avoidMidObstacles = Physics2D.Raycast(_midVectorToAvoidObstacles, 
-                (Mathf.Sign(_distance) * Vector2.right).normalized,
-                0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "Enemy"));
+            YVectorsToAvoidObstacles();
 
-            _avoidDownObstacles = Physics2D.Raycast(_downVectorToAvoidObstacles, 
-                (Mathf.Sign(_distance) * Vector2.right).normalized,
-                0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "Enemy"));
+            Debug.DrawRay(_firstVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.3f , Color.green);
+            Debug.DrawRay(_secondVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.1f , Color.green);
+            Debug.DrawRay(_thirdVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right).normalized * 0.3f , Color.green);
+            
+            YRaycastsToAvoidObstacles();
+
+            CalculateYDifference();
 
             if (transform.position == _targetPosition)
             {
-                _targetPosition = _lastTargetPosition;
-                _lastTargetPosition = transform.position;
-                _distance *= -1;
+                TargetReached();
             }
             else if (_avoidUpObstacles || _avoidMidObstacles || _avoidDownObstacles)
             {
-                if (!_spriteRenderer.flipX)
-                {
-                    _spriteRenderer.flipX = false;
-                    _distance = Mathf.Abs(_distance) * -1;
-                }
-                else
-                {
-                    _spriteRenderer.flipX = true;
-                    _distance = Mathf.Abs(_distance);
-                }
-                    
-                if (_lastTargetPosition.x > transform.position.x)
-                {
-                    _difference = transform.position.x - _lastTargetPosition.x;
-                }
-                else
-                {
-                    _difference = transform.position.x - _lastTargetPosition.x;
-                }
-                _difference = -(-_distance - _difference);
-                _lastTargetPosition = new Vector3(_lastTargetPosition.x + _distance + _difference, _lastTargetPosition.y, 0);
+                FlipSpriteAndDistance();
+                
+                CalculateYDifference();
+                
                 _targetPosition = _lastTargetPosition;
                 _lastTargetPosition = transform.position;
+            
+                _difference = -(-_distance - _difference);
+                _lastTargetPosition = new Vector3(_lastTargetPosition.x + _distance + _difference, _lastTargetPosition.y, 0);
+            }
+        }
+
+        private void YVectorsToAvoidObstacles()
+        {
+            _firstVectorToAvoidObstacles = new Vector3(transform.position.x , transform.position.y + _distanceFront, 0);
+            _secondVectorToAvoidObstacles = new Vector3(transform.position.x + Mathf.Sign(_distance) * _distanceFront, transform.position.y, 0);
+            _thirdVectorToAvoidObstacles = new Vector3(transform.position.x, transform.position.y - _distanceFront, 0);
+        }
+
+        private void YRaycastsToAvoidObstacles()
+        {
+            _avoidUpObstacles = Physics2D.Raycast(_firstVectorToAvoidObstacles, 
+                (Mathf.Sign(_distance) * Vector2.right).normalized,
+                0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "Enemy"));
+            
+            _avoidMidObstacles = Physics2D.Raycast(_secondVectorToAvoidObstacles, 
+                (Mathf.Sign(_distance) * Vector2.right).normalized,
+                0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "Enemy"));
+
+            _avoidDownObstacles = Physics2D.Raycast(_thirdVectorToAvoidObstacles, 
+                (Mathf.Sign(_distance) * Vector2.right).normalized,
+                0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "Enemy"));
+        }
+
+        private void CalculateYDifference()
+        {
+            if (_lastTargetPosition.x > transform.position.x)
+            {
+                _difference = transform.position.x - _lastTargetPosition.x;
+            }
+            else
+            {
+                _difference = transform.position.x - _lastTargetPosition.x;
+            }
+        }
+
+
+        #endregion FreezeYActions
+
+        #region FreezeXActions
+
+        private void FreezeXActions()
+        {
+            _targetPosition = new Vector3(transform.position.x, transform.position.y + _distance, 0);
+            
+            XVectorsToAvoidObstacles();
+
+            Debug.DrawRay(_firstVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.up).normalized * 0.3f , Color.green);
+            Debug.DrawRay(_secondVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.up).normalized * 0.1f , Color.green);
+            Debug.DrawRay(_thirdVectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.up).normalized * 0.3f , Color.green);
+
+            XRaycastsToAvoidObstacles();
+
+            if (transform.position == _targetPosition)
+            {
+                TargetReached();
+            }
+            else if (_avoidUpObstacles || _avoidMidObstacles || _avoidDownObstacles)
+            {
+                FlipSpriteAndDistance();
+                
+                CalculateXDifference();
+                
+                _targetPosition = _lastTargetPosition;
+                _lastTargetPosition = transform.position;
+                
+                _difference = -(-_distance - _difference);
+                _lastTargetPosition = new Vector3(_lastTargetPosition.x, _lastTargetPosition.y + _distance + _difference, 0);
             }
             
-            Move();
+        }
+
+        private void XVectorsToAvoidObstacles()
+        {
+            _firstVectorToAvoidObstacles = new Vector3(transform.position.x + _distanceFront , transform.position.y, 0);
+            _secondVectorToAvoidObstacles = new Vector3(transform.position.x, transform.position.y + Mathf.Sign(_distance) * _distanceFront, 0);
+            _thirdVectorToAvoidObstacles = new Vector3(transform.position.x - _distanceFront, transform.position.y, 0);
+        }
+
+        private void XRaycastsToAvoidObstacles()
+        {
+            _avoidUpObstacles = Physics2D.Raycast(_firstVectorToAvoidObstacles, 
+                (Mathf.Sign(_distance) * Vector2.up).normalized,
+                0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "SuperRock", "Enemy"));
+            
+            _avoidMidObstacles = Physics2D.Raycast(_secondVectorToAvoidObstacles, 
+                (Mathf.Sign(_distance) * Vector2.up).normalized,
+                0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "SuperRock", "Enemy"));
+
+            _avoidDownObstacles = Physics2D.Raycast(_thirdVectorToAvoidObstacles, 
+                (Mathf.Sign(_distance) * Vector2.up).normalized,
+                0.1f, LayerMask.GetMask("Tilemap1" ,"Tilemap2", "Rock", "SuperRock", "Enemy"));
+        }
+
+        #endregion FreezeXActions
+
+        private void CalculateXDifference()
+        {
+            if (_lastTargetPosition.y > transform.position.y)
+            {
+                _difference = transform.position.y - _lastTargetPosition.y;
+            }
+            else
+            {
+                _difference = transform.position.y - _lastTargetPosition.y;
+            }
+        }
+
+        private void SetDirection()
+        {
+            _spriteRenderer.flipX = !(_distance > 0);
+
+            if (_rb2D.constraints == RigidbodyConstraints2D.FreezePositionY)
+            {
+                _targetPosition = new Vector3(transform.position.x + _distance, transform.position.y, 0);
+            }
+            else if (_rb2D.constraints == RigidbodyConstraints2D.FreezePositionX)
+            {
+                _targetPosition = new Vector3(transform.position.x, transform.position.y + _distance, 0);
+            }
+        }
+
+        private void TargetReached()
+        {
+            _targetPosition = _lastTargetPosition;
+            _lastTargetPosition = transform.position;
+            _distance *= -1;
+        }
+
+        private void FlipSpriteAndDistance()
+        {
+            if (!_spriteRenderer.flipX)
+            {
+                _spriteRenderer.flipX = false;
+                _distance = Mathf.Abs(_distance) * -1;
+            }
+            else
+            {
+                _spriteRenderer.flipX = true;
+                _distance = Mathf.Abs(_distance);
+            }
         }
 
         private void Move()
@@ -155,6 +285,7 @@ namespace Enemy
 
         private IEnumerator DestroySkull()
         {
+            _animator.Play("Die");
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             yield return new WaitForSeconds(0.38f);
             Destroy(gameObject);

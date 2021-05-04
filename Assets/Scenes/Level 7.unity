@@ -9269,6 +9269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8145461425893496460, guid: 449c130b1d5b45344ab00af298d8a3a3, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 142921216}
     - target: {fileID: 8145461425893496461, guid: 449c130b1d5b45344ab00af298d8a3a3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9315,7 +9319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145461425893496461, guid: 449c130b1d5b45344ab00af298d8a3a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8145461425893496461, guid: 449c130b1d5b45344ab00af298d8a3a3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9335,11 +9339,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145461425893496461, guid: 449c130b1d5b45344ab00af298d8a3a3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 266
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8145461425893496461, guid: 449c130b1d5b45344ab00af298d8a3a3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 149.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8145461425893496461, guid: 449c130b1d5b45344ab00af298d8a3a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9898,7 +9902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4356640592994592796, guid: a3a24299d276f5043b04d2c88ca74984, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4356640592994592799, guid: a3a24299d276f5043b04d2c88ca74984, type: 3}
       propertyPath: m_RootOrder

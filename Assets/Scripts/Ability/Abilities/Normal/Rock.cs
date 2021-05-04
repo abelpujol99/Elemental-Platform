@@ -25,6 +25,7 @@ namespace Ability.Abilities.Normal
             _rotationZ = 0;
             _maxSpeed = 0.5f;
             _stopTime = 1;
+            _rockRigidbody2D.freezeRotation = true;
             FillDictionary();
         }
         
@@ -64,15 +65,6 @@ namespace Ability.Abilities.Normal
                 }
                 
                 _rockRigidbody2D.velocity = new Vector2(_velocity, _rockRigidbody2D.velocity.y);
-                if (!(Mathf.Abs(_velocity) < 0.01f))
-                {
-                    return;
-                }
-                _rockRigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
-            }
-            else
-            {
-                _rockRigidbody2D.constraints = RigidbodyConstraints2D.None;
             }
 
         }

@@ -19,7 +19,7 @@ namespace Enemy.Turtle
 
         private bool _spikes;
         
-        private bool _onAir, _stuned, _destroy;
+        private bool _onAir, _stunned, _destroy;
 
         private void Start()
         {
@@ -37,7 +37,7 @@ namespace Enemy.Turtle
 
         private void Update()
         {
-            if (!_onAir && !_stuned)
+            if (!_onAir && !_stunned)
             {
                 
                 if (_characterPosition.position.x > transform.position.x)
@@ -51,7 +51,7 @@ namespace Enemy.Turtle
             }
             else if (!_destroy)
             {
-                _stuned = true;
+                _stunned = true;
                 _animator.Play("IdleWithOutSpikes");
             }
 
@@ -79,7 +79,7 @@ namespace Enemy.Turtle
             gameObject.transform.GetChild(1).gameObject.SetActive(true);
             yield return new WaitForSeconds(2f);
             gameObject.transform.GetChild(1).gameObject.SetActive(false);
-            _stuned = false;
+            _stunned = false;
         }
         
 

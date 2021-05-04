@@ -20,7 +20,10 @@
               <e p="Super" t="Include">
                 <e p="SuperFire.cs" t="Include" />
                 <e p="SuperLightning.cs" t="Include" />
-                <e p="SuperRock.cs" t="Include" />
+                <e p="SuperRock" t="Include">
+                  <e p="CheckEnemies.cs" t="Include" />
+                  <e p="SuperRock.cs" t="Include" />
+                </e>
                 <e p="SuperWater.cs" t="Include" />
                 <e p="SuperWind.cs" t="Include" />
               </e>
@@ -52,7 +55,10 @@
             <e p="Chameleon" t="Include">
               <e p="Chameleon.cs" t="Include" />
             </e>
-            <e p="EnemySpike.cs" t="Include" />
+            <e p="EnemySpike" t="Include">
+              <e p="EnemySpike.cs" t="Include" />
+            </e>
+            <e p="EnemyWithHealth.cs" t="Include" />
             <e p="Plant" t="Include">
               <e p="Plant.cs" t="Include" />
               <e p="Projectile.cs" t="Include" />
@@ -69,11 +75,15 @@
               <e p="Turtle.cs" t="Include" />
             </e>
           </e>
+          <e p="GameController" t="Include">
+            <e p="GameController.cs" t="Include" />
+          </e>
           <e p="Platform" t="Include">
             <e p="PlatformUpDown.cs" t="Include" />
           </e>
           <e p="Scenario" t="Include">
             <e p="Ground.cs" t="Include" />
+            <e p="HideScenario.cs" t="Include" />
           </e>
           <e p="Trap" t="Include">
             <e p="CheckPlayer.cs" t="Include" />

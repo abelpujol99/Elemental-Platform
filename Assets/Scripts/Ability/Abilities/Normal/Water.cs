@@ -26,7 +26,7 @@ namespace Ability.Abilities.Normal
                 trigger.gameObject.SetActive(false);
             }
             else if (!(trigger.transform.CompareTag("Door") || trigger.transform.CompareTag("Key") ||
-                       trigger.transform.CompareTag("Upgrade")))
+                       trigger.transform.CompareTag("Upgrade") || trigger.transform.CompareTag("Canvas")))
             {
                 gameObject.SetActive(false);
             }

@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\Ability\Abilities\Normal\Water.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Super\SuperWind.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\AppearText1.cs" />
+     <Compile Include="Assets\Scripts\GameController\GameController.cs" />
      <Compile Include="Assets\Scripts\Enemy\Plant\Projectile.cs" />
      <Compile Include="Assets\Scripts\Scenario\Ground.cs" />
      <Compile Include="Assets\Scripts\CustomMath\CustomMath.cs" />
@@ -82,7 +83,7 @@
      <Compile Include="Assets\Scripts\Enemy\Rino\RinoCheckGround.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Normal\Fire.cs" />
      <Compile Include="Assets\Scripts\Enemy\Bat\Bat.cs" />
-     <Compile Include="Assets\Scripts\Ability\Abilities\Super\SuperRock.cs" />
+     <Compile Include="Assets\Scripts\Ability\Abilities\Super\SuperRock\SuperRock.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Super\SuperWater.cs" />
      <Compile Include="Assets\Scripts\Enemy\Rino\Rino.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Level3\DissapearText1.cs" />
@@ -91,9 +92,12 @@
      <Compile Include="Assets\Scripts\Character\UpdateTimer.cs" />
      <Compile Include="Assets\Scripts\Ability\Abilities\Normal\Wind.cs" />
      <Compile Include="Assets\Scripts\Enemy\Turtle\Turtle.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemySpike.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemySpike\EnemySpike.cs" />
      <Compile Include="Assets\Scripts\Ability\MaxAbilityRange.cs" />
      <Compile Include="Assets\Scripts\Ability\Ability.cs" />
+     <Compile Include="Assets\Scripts\Ability\Abilities\Super\SuperRock\CheckEnemies.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyWithHealth.cs" />
+     <Compile Include="Assets\Scripts\Scenario\HideScenario.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

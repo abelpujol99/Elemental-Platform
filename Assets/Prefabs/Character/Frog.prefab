@@ -230,8 +230,7 @@ MonoBehaviour:
   _fire: {fileID: 9076930295393282881, guid: 04faa956100d0d7488cc54d8eab136b0, type: 3}
   _wind: {fileID: 1817880175926051597, guid: ac79534a255073a4bb20799d9418ce1f, type: 3}
   _lightning: {fileID: 1936801452089805495, guid: a738622e7d7df3e4a8be15831a1dc9bd, type: 3}
-  _superShuriken: {fileID: 6555462460817181520, guid: bdae7eac496d916489bd7df2f28556b6, type: 3}
-  _superRock: {fileID: 7467035811356797, guid: 5ce2f8dd572142d4782b6cba3a989a6f, type: 3}
+  _superRock: {fileID: 7728962625370578414, guid: 0f84054def9d17a4185873b35822f756, type: 3}
   _superWater: {fileID: 4863971478294689691, guid: 0fbbca2e2b97a5749aa07f1ff1994aed, type: 3}
   _superFire: {fileID: 7237352463337476282, guid: 66116be31d1c28d40b9cbb7f90613cf3, type: 3}
   _superWind: {fileID: 7197826234009722148, guid: 80761808471002f4c9369732d67d8075, type: 3}

@@ -21,7 +21,5 @@ namespace Scenario
                 CharacterScript.isGround = false;
             }
         }
-        
     }
-
 }

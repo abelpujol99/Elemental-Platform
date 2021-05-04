@@ -9,11 +9,11 @@ using UnityEngine.Timeline;
 
 namespace Enemy.Chameleon
 {
-    public class Chameleon : MonoBehaviour
+    public class Chameleon : EnemyWithHealth
     {
         [SerializeField] private Transform _characterTransform;
 
-        [SerializeField] private float _health, _distance, _speed;
+        [SerializeField] private float _distance, _speed;
 
         [SerializeField] private bool _camouflage;
 
@@ -50,6 +50,7 @@ namespace Enemy.Chameleon
             _spriteRenderer.color = _opacity;
             _timerCamouflage = _delayOfCamouflage;
             _delayOfCamouflage = 3;
+            _canMove = true;
             CheckDirection();
             FillDictionary();
         }
@@ -116,7 +117,6 @@ namespace Enemy.Chameleon
             }
             else
             {
-                Debug.Log("despues");
                 if (_timerCamouflage <= 0)
                 {
                     _camouflage = true;
@@ -126,13 +126,13 @@ namespace Enemy.Chameleon
                     _timerCamouflage -= Time.deltaTime;
                     _speed = _auxSpeed;
 
-                    if (_distanceBetweenChameleonCharacter >= 1)
+                    if (_distanceBetweenChameleonCharacter >= 2)
                     {
                         _opacity.a = CustomMath.CustomMath.Map(_timerCamouflage, _delayOfCamouflage, _delayOfCamouflage - 1.5f, 1, 0);
                     }
                     else
                     {
-                        _opacity.a = CustomMath.CustomMath.Map(_distanceBetweenChameleonCharacter, 0.42f, 1f, 1, 0);
+                        _opacity.a = CustomMath.CustomMath.Map(_distanceBetweenChameleonCharacter, 0.42f, 2f, 1, 0);
                     }
 
                     _spriteRenderer.color = _opacity;
@@ -168,6 +168,8 @@ namespace Enemy.Chameleon
                 return;
             }
             _animator.Play("Die");
+            _opacity.a = 1;
+            _spriteRenderer.color = _opacity;
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<Rigidbody2D>().isKinematic = true;
             StartCoroutine(DestroyChameleon());
@@ -181,7 +183,7 @@ namespace Enemy.Chameleon
         {
             _avoidObstacles = Physics2D.Raycast(_vectorToAvoidObstacles, 
                 (Mathf.Sign(_distance) * Vector2.right).normalized,
-                0.1f, LayerMask.GetMask("Tilemap2", "Rock", "Enemy"));
+                0.1f, LayerMask.GetMask("Tilemap2", "Rock", "SuperRock", "Enemy"));
         }
 
         private void CheckFall()
@@ -234,7 +236,6 @@ namespace Enemy.Chameleon
 
         private void Fall()
         {
-            _animator.SetBool("Fall", true);
             _speed = 0;
             _canMove = false;
             StartCoroutine(SetMove("Fall", 0.65f));
@@ -252,7 +253,6 @@ namespace Enemy.Chameleon
             _animator.SetBool(state, false);
             _speed = _auxSpeed;
             _canMove = true;
-            Debug.Log("antes");
         }
 
         private IEnumerator DestroyChameleon()
