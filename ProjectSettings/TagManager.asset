@@ -30,6 +30,7 @@ TagManager:
   - Tilemap3
   - SuperRock
   - Canvas
+  - Boss
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ namespace Enemy
 {
     public class EnemyWithHealth : MonoBehaviour
     {
-        [SerializeField] protected float _health;
+        protected float _health;
 
         public float getHealth()
         {
@@ -13,7 +13,7 @@ namespace Enemy
 
         public void setHealth(float health)
         {
-            this._health = health;
+            _health = health;
         }
     }
 }

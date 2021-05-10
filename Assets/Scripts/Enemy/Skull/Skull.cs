@@ -23,6 +23,7 @@ namespace Enemy
 
         private void Start()
         {
+            _health = 10;
             _auxSpeed = _speed;
             _timeToRestoreFire = 5;
             _auxTimeToRestoreFire = _timeToRestoreFire;

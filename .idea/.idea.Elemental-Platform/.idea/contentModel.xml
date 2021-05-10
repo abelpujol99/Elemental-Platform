@@ -59,6 +59,9 @@
               <e p="EnemySpike.cs" t="Include" />
             </e>
             <e p="EnemyWithHealth.cs" t="Include" />
+            <e p="Ghost" t="Include">
+              <e p="Ghost.cs" t="Include" />
+            </e>
             <e p="Plant" t="Include">
               <e p="Plant.cs" t="Include" />
               <e p="Projectile.cs" t="Include" />

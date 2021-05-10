@@ -39,6 +39,7 @@ namespace Enemy.Plant
 
         private void Start()
         {
+            _health = 5;
             _projectilePositionXSpawn = 1f;
             _knockUp = 3;
             _cadenceAux = _cadence;

@@ -40,11 +40,12 @@ namespace Enemy.Chameleon
 
         private void Start()
         {
+            _health = 7;
             _auxSpeed = _speed;
             _knockUp = 3;
             _slow = 3;
             _distanceToFloor = 0.3f;
-            _distanceFront = 0.38f;
+            _distanceFront = 0.2f;
             _opacity = _spriteRenderer.color;
             _opacity.a = 0;
             _spriteRenderer.color = _opacity;
@@ -73,7 +74,9 @@ namespace Enemy.Chameleon
         
         private void Update()
         {
-            Debug.DrawRay(transform.position, (Mathf.Sign(_distance) * Vector2.right) * 0.38f, Color.green);
+            Debug.DrawRay(_vectorToAvoidObstacles, (Mathf.Sign(_distance) * Vector2.right) * 0.1f, Color.green);
+            
+            Debug.DrawRay(_vectorToAvoidFall, (Mathf.Sign(_distance) * Vector2.right + Vector2.down).normalized * 0.24f, Color.green);
 
             Camouflage();
 
@@ -85,11 +88,13 @@ namespace Enemy.Chameleon
             
             CheckFall();
             
+            CheckTarget();
+            
+            TurnAround();
+            
             CheckPlayer();
 
             CheckAttack();
-
-            CheckTarget();
 
             Move();
 
@@ -142,12 +147,13 @@ namespace Enemy.Chameleon
 
         private void CheckTarget()
         {
-            if (_targetPosition == transform.position)
+            if (_targetPosition != transform.position)
             {
-                _distance *= -1f;
-                _targetPosition = _lastTargetPosition;
-                _lastTargetPosition = transform.position;
+                return;
             }
+            _distance *= -1f;
+            _targetPosition = _lastTargetPosition;
+            _lastTargetPosition = transform.position;
         }
         
         private void Move()
@@ -176,11 +182,13 @@ namespace Enemy.Chameleon
         }
         private void CheckDirection()
         {
-            _spriteRenderer.flipX = _distance > 0;
+            transform.localScale = _distance > 0 ? new Vector3(-1,1,1) : new Vector3(1,1,1);
         }
 
         private void CheckObstacle()
         {
+            _vectorToAvoidObstacles = new Vector3(transform.position.x + Mathf.Sign(_distance) * _distanceFront, transform.position.y - 0.1f, 0);
+            
             _avoidObstacles = Physics2D.Raycast(_vectorToAvoidObstacles, 
                 (Mathf.Sign(_distance) * Vector2.right).normalized,
                 0.1f, LayerMask.GetMask("Tilemap2", "Rock", "SuperRock", "Enemy"));
@@ -188,9 +196,41 @@ namespace Enemy.Chameleon
 
         private void CheckFall()
         {
+            _vectorToAvoidFall = new Vector3(transform.position.x + Mathf.Sign(_distance) *  _distanceToFloor, transform.position.y - 0.1f, 0);
+            
             _avoidFall = Physics2D.Raycast(_vectorToAvoidFall, (Mathf.Sign(_distance) * Vector2.right + Vector2.down).normalized,
-                0.14f,
+                0.24f,
                 LayerMask.GetMask("Tilemap1"));
+        }
+
+        private void TurnAround()
+        {
+            if (!(_avoidObstacles || !_avoidFall))
+            {
+                return;
+            }
+
+            if (_spriteRenderer.flipX)
+            {
+                _distance = Mathf.Abs(_distance) * -1;
+            }
+            else
+            {
+                _distance = Mathf.Abs(_distance);
+            }
+                    
+            if (_lastTargetPosition.x > transform.position.x)
+            {
+                _difference = transform.position.x - _lastTargetPosition.x;
+            }
+            else
+            {
+                _difference = transform.position.x - _lastTargetPosition.x;
+            }
+            _difference = -(-_distance - _difference);
+            _lastTargetPosition = new Vector3(_lastTargetPosition.x + _distance + _difference, _lastTargetPosition.y, 0);
+            _targetPosition = _lastTargetPosition;
+            
         }
 
         private void CheckPlayer()

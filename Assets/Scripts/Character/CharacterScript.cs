@@ -17,9 +17,9 @@ namespace Character
         public enum Abilities {JUMP_UPGRADE, DOUBLE_JUMP_UPGRADE, SHURIKEN, ROCK, WATER, FIRE, WIND, LIGHTNING}
 
         public static bool isGround,
-            shurikenUpgrade,
             jumpUpgrade,
             doubleJumpUpgrade,
+            shurikenUpgrade,
             rockUpgrade,
             waterUpgrade,
             fireUpgrade,
@@ -102,8 +102,6 @@ namespace Character
             _superWindList,
             _superLightningList;
 
-        private Dictionary<bool, Action> _setAllPowers;
-
         private Dictionary<int, List<float>> _allAbilitiesCooldowns;
 
         private List<float> _shurikenCooldownList,
@@ -134,12 +132,6 @@ namespace Character
 
         void Start()
         {
-            shurikenUpgrade = true;
-            rockUpgrade = true;
-            waterUpgrade = true;
-            fireUpgrade = true;
-            windUpgrade = true;
-            lightningUpgrade = true;
             _abilityRangeCircle.GetComponent<MaxAbilityRange>().SetScale();
             _abilityRangeCircleSprite = _abilityRangeCircle.GetComponent<SpriteRenderer>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -148,24 +140,8 @@ namespace Character
             _auxHoldTime = holdTime;
             _powerNum = 1;
             _auxPowerNum = 0;
-            //FillDictionarySetAllPowers();
             SetPowers();
-            jumpUpgrade = true;
-            doubleJumpUpgrade = true;
-            _initialTime = Time.timeSinceLevelLoad - 30;
-        }
-
-        private void FillDictionarySetAllPowers()
-        {
-            _setAllPowers = new Dictionary<bool, Action>()
-            {
-                {shurikenUpgrade, SetShurikenAction},
-                {rockUpgrade, SetRockAction},
-                {waterUpgrade, SetWaterAction},
-                {fireUpgrade, SetFireAction},
-                {windUpgrade, SetWindAction},
-                {lightningUpgrade, SetLightningAction},
-            };
+            //_initialTime = Time.timeSinceLevelLoad - 30;
         }
         
         #region PowersSet
@@ -216,23 +192,18 @@ namespace Character
         void Update()
         {
 
-            if (Input.GetKey(KeyCode.T))
+            if (Input.GetKey(KeyCode.R))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                GetComponent<PlayerRespawn>().RestartLevel();
             }
-            
-            if (_powerNum != _auxPowerNum)
+
+            if (_powerNum != _auxPowerNum && _maxPowers > 0)
             {
                 _cooldownActiveAbility.ShowAbilities(_powerNum, _abilities[_powerNum][0].getSize());
                 /*_cooldownActiveAbility.ShowCooldown(_allAbilitiesCooldowns[_powerNum], _abilities[_powerNum][0].getCooldown(), _abilities[_powerNum][1].getCooldown(), false);*/
             }
             
             _auxPowerNum = _powerNum;
-
-            if (Input.GetKey(KeyCode.R))
-            {
-                GetComponent<PlayerRespawn>().RestartLevel();
-            }
             
             Jump();
             
@@ -241,14 +212,16 @@ namespace Character
             if (!Input.GetMouseButton(1))
             {
                 _abilityRangeCircleSprite.enabled = false;
-                
-                if (Input.GetMouseButtonDown(0))
+
+                if (!Input.GetMouseButtonDown(0) || !shurikenUpgrade)
                 {
-                    _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    _abilityPos.z = 0f;
-                    
-                    CastAbility("Shuriken", 0);
+                    return;
                 }
+                
+                _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                _abilityPos.z = 0f;
+                    
+                CastAbility("Shuriken", 0);
             }
             else
             {
@@ -391,18 +364,11 @@ namespace Character
         
         private void SetPowers()
         {
-
-            /*for (int i = 0; i < _setAllPowers.Count; i++)
-            {
-                
-            }*/
-            
             if (shurikenUpgrade)
             {
-
                 _abilities = new List<List<Ability.Ability>>();
 
-                _allAbilitiesCooldowns = new Dictionary<int, List<float>>();
+                //_allAbilitiesCooldowns = new Dictionary<int, List<float>>();
 
                 SetUniquePower(0, _shurikenList, _shurikenCooldownList, "Shuriken", _shuriken, _shurikenCapacity,
                     _shurikenTimer, _shurikenCooldown);
@@ -458,15 +424,16 @@ namespace Character
                     _shurikenCooldownList.Add(_initialTime);
                 }
                 
-                _allAbilitiesCooldowns.Add(num, _shurikenCooldownList);*/
+            _allAbilitiesCooldowns.Add(num, _shurikenCooldownList);*/
 
         }
 
-        private void SetDualPower(int num, List<Ability.Ability> powerList, List<float> cooldownPowerList, string tag , GameObject power, int capacity, float timer, float cooldown, string superTag, GameObject superPower, float superTimer, float superCooldown)
+        private void SetDualPower(int num, List<Ability.Ability> powerList, List<float> cooldownPowerList, string tag , 
+            GameObject power, int capacity, float timer, float cooldown, string superTag, GameObject superPower, float superTimer, float superCooldown)
         {
             powerList = new List<Ability.Ability>();
 
-            cooldownPowerList = new List<float>();
+            //cooldownPowerList = new List<float>();
             
             powerList.Add(SetEachPower(tag, power, capacity, timer, cooldown));
             powerList.Add(SetEachPower(superTag, superPower, _superAbilityCapacity, superTimer, superCooldown));
@@ -517,27 +484,33 @@ namespace Character
                     _abilityDictionary.Add(specificAbility.getTag(), abilityPool);
                 }
             }
+
+            if (_maxPowers <= 0)
+            {
+                return;
+            }
+            _cooldownActiveAbility.ShowAbilities(_powerNum, _abilities[_powerNum][0].getSize());
         }
 
         private void ChoosePowerWithButton()
         {
-            if (Input.GetKey(KeyCode.Alpha1))
+            if (Input.GetKey(KeyCode.Alpha1) && rockUpgrade)
             {
                 _powerNum = 1;
             }
-            else if (Input.GetKey(KeyCode.Alpha2))
+            else if (Input.GetKey(KeyCode.Alpha2) && waterUpgrade)
             {
                 _powerNum = 2;
             }
-            else if (Input.GetKey(KeyCode.Alpha3))
+            else if (Input.GetKey(KeyCode.Alpha3) && fireUpgrade)
             {
                 _powerNum = 3;
             }
-            else if (Input.GetKey(KeyCode.Alpha4))
+            else if (Input.GetKey(KeyCode.Alpha4) && windUpgrade)
             {
                 _powerNum = 4;
             }
-            else if (Input.GetKey(KeyCode.Alpha5))
+            else if (Input.GetKey(KeyCode.Alpha5) && lightningUpgrade)
             {
                 _powerNum = 5;
             }
@@ -568,63 +541,67 @@ namespace Character
         
         private void UseNormalOrSuperAbility()
         {
-            if (_maxPowers > 0)
+            if (_maxPowers <= 0)
             {
-                SuperAbilityCastTime visualComponent = _visualTimer.GetComponent<SuperAbilityCastTime>();
+                return;
+            }
+            
+            SuperAbilityCastTime visualComponent = _visualTimer.GetComponent<SuperAbilityCastTime>();
 
-                _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                _abilityPos.z = 0f;
+            _abilityPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _abilityPos.z = 0f;
                     
-                _abilityRange = (_abilityPos - transform.position).magnitude;
+            _abilityRange = (_abilityPos - transform.position).magnitude;
                 
-                if (Input.GetMouseButton(0) && _useSuperAbility)
-                {
+            if (Input.GetMouseButton(0) && _useSuperAbility)
+            {
                     
-                    _hit = Physics2D.Raycast(transform.position, _abilityPos - transform.position, _abilityRange, LayerMask.GetMask("Tilemap1", "Tilemap2"));
+                _hit = Physics2D.Raycast(transform.position, _abilityPos - transform.position, _abilityRange, LayerMask.GetMask("Tilemap1", "Tilemap2"));
 
-                    if (_hit)
-                    {
-                        visualComponent.ResetFillAmount();
-                        _visualTimer.SetActive(false);
-                    }
-                    else if (holdTime == _auxHoldTime && _maxAbilityRange >= _abilityRange && !_hit)
-                    {
-                        _visualTimer.SetActive(true);
-                        visualComponent.HoldedTime(holdTime);
-                    }
-                    else if (_maxAbilityRange <= _abilityRange)
-                    {
-                        visualComponent.ResetFillAmount();
-                        _visualTimer.SetActive(false);
-                        
-                    }
-                    holdTime -= Time.deltaTime;
-
-                    if (holdTime <= 0 && _maxAbilityRange >= _abilityRange && !_hit)
-                    {
-                        _useSuperAbility = false;
-                        UsePower(true);
-                        visualComponent.ResetFillAmount();
-                        _visualTimer.SetActive(false);
-                    }
-                        
-                }
-                else if (Input.GetMouseButtonUp(0) && holdTime > 0)
+                if (_hit)
                 {
                     visualComponent.ResetFillAmount();
                     _visualTimer.SetActive(false);
-                    
-                    if (!(_maxAbilityRange < _abilityRange && _powerNum == 1))
-                    {
-                        UsePower(false);
-                    }
                 }
-                if (!Input.GetMouseButton(0))
+                else if (holdTime == _auxHoldTime && _maxAbilityRange >= _abilityRange && !_hit)
                 {
-                    _useSuperAbility = true;
-                    holdTime = _auxHoldTime;
+                    _visualTimer.SetActive(true);
+                    visualComponent.HoldedTime(holdTime);
+                }
+                else if (_maxAbilityRange <= _abilityRange)
+                {
+                    visualComponent.ResetFillAmount();
+                    _visualTimer.SetActive(false);
+                        
+                }
+                holdTime -= Time.deltaTime;
+
+                if (holdTime <= 0 && _maxAbilityRange >= _abilityRange && !_hit)
+                {
+                    _useSuperAbility = false;
+                    UsePower(true);
+                    visualComponent.ResetFillAmount();
+                    _visualTimer.SetActive(false);
+                }
+                        
+            }
+            else if (Input.GetMouseButtonUp(0) && holdTime > 0)
+            {
+                visualComponent.ResetFillAmount();
+                _visualTimer.SetActive(false);
+                    
+                if (!(_maxAbilityRange < _abilityRange && _powerNum == 1))
+                {
+                    UsePower(false);
                 }
             }
+
+            if (Input.GetMouseButton(0))
+            {
+                return;
+            }
+            _useSuperAbility = true;
+            holdTime = _auxHoldTime;
         }
         
         private void UsePower(bool holded)
@@ -809,6 +786,51 @@ namespace Character
                 
                 case Abilities.LIGHTNING:
                     lightningUpgrade = true;
+                    SetPowers();
+                    break;
+            }
+        }
+        
+        
+        public void DeactivateAbility(Abilities ability)
+        {
+            switch (ability)
+            {
+                case Abilities.JUMP_UPGRADE:
+                    jumpUpgrade = false;
+                    break;
+                    
+                case Abilities.DOUBLE_JUMP_UPGRADE:
+                    doubleJumpUpgrade = false;
+                    break;
+                
+                case Abilities.SHURIKEN:
+                    shurikenUpgrade = false;
+                    SetPowers();
+                    break;
+                
+                case Abilities.ROCK:
+                    rockUpgrade = false;
+                    SetPowers();
+                    break;
+                
+                case Abilities.WATER:
+                    waterUpgrade = false;
+                    SetPowers();
+                    break;
+                
+                case Abilities.FIRE:
+                    fireUpgrade = false;
+                    SetPowers();
+                    break;
+                
+                case Abilities.WIND:
+                    windUpgrade = false;
+                    SetPowers();
+                    break;
+                
+                case Abilities.LIGHTNING:
+                    lightningUpgrade = false;
                     SetPowers();
                     break;
             }

@@ -28,7 +28,8 @@ namespace Ability.Abilities.Ninja
 
         private void OnTriggerEnter2D(Collider2D trigger)
         {
-            if (!(trigger.transform.CompareTag("Door") || trigger.transform.CompareTag("Key") || trigger.transform.CompareTag("Upgrade") || trigger.transform.CompareTag("Canvas")))
+            if (!(trigger.transform.CompareTag("Door") || trigger.transform.CompareTag("Key") || trigger.transform.CompareTag("Upgrade")
+                  || trigger.transform.CompareTag("Canvas") || trigger.transform.CompareTag("Platform")))
             {
                 gameObject.SetActive(false);
             }

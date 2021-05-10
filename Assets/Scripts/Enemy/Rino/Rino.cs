@@ -29,6 +29,7 @@ namespace Enemy.Rino
         private float _distanceToFloor;
         private float _distanceFront;
         private float _difference;
+        private float _distanceBetweenCharacterAndRino;
         
         public bool _onAir;
         public bool _canMove;
@@ -40,6 +41,7 @@ namespace Enemy.Rino
             _animator = GetComponent<Animator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _rb2D = GetComponent<Rigidbody2D>();
+            _health = 10;
             _initialSpeed = _speed;
             _knockUp = 3;
             _slow = 3;
@@ -76,7 +78,7 @@ namespace Enemy.Rino
                 _spriteRenderer.flipX = false;
             }
 
-            //float distanceBetweenCharacterAndRino = Vector3.Distance(transform.position, _characterPosition.position);
+            //_distanceBetweenCharacterAndRino = Vector3.Distance(transform.position, _characterPosition.position);
 
             _vectorToAvoidObstacles = new Vector3(transform.position.x + Mathf.Sign(_distance) * _distanceFront, transform.position.y - 0.1f, 0);
 
@@ -140,14 +142,8 @@ namespace Enemy.Rino
             {
                 if (_targetPosition == transform.position)
                 {
-                    if (_spriteRenderer.flipX)
-                    {
-                        _spriteRenderer.flipX = false;
-                    }
-                    else
-                    {
-                        _spriteRenderer.flipX = true;
-                    }
+                    _spriteRenderer.flipX = !_spriteRenderer.flipX;
+                    
                     _distance *= -1;
                     _lastTargetPosition = transform.position;
                     _targetPosition = new Vector3(_lastTargetPosition.x + _distance, _lastTargetPosition.y, 0);
@@ -156,14 +152,7 @@ namespace Enemy.Rino
                 else if ((_avoidObstacles || !_avoidFall) && !_knockedUp)
                 {
                     
-                    if (_spriteRenderer.flipX)
-                    {
-                        _spriteRenderer.flipX = false;
-                    }
-                    else
-                    {
-                        _spriteRenderer.flipX = true;
-                    }
+                    _spriteRenderer.flipX = !_spriteRenderer.flipX;
                     
                     if (_lastTargetPosition.x > transform.position.x)
                     {

@@ -542,6 +542,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.000019073
       objectReference: {fileID: 0}
+    - target: {fileID: 8145461426055202207, guid: 449c130b1d5b45344ab00af298d8a3a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8145461426793819715, guid: 449c130b1d5b45344ab00af298d8a3a3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -67235,6 +67239,10 @@ PrefabInstance:
       value: Upgrade
       objectReference: {fileID: 0}
     - target: {fileID: 6624464261736074173, guid: f5b68b59dde3b154d984648603512404, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1173565772}
+    - target: {fileID: 6624464261736074173, guid: f5b68b59dde3b154d984648603512404, type: 3}
       propertyPath: ability
       value: 3
       objectReference: {fileID: 0}
@@ -67995,7 +68003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1816209009
 Transform:
   m_ObjectHideFlags: 0

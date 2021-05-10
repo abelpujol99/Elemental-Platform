@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Character;
@@ -10,14 +11,20 @@ namespace Upgrade
     {
         [SerializeField] private CharacterScript.Abilities ability;
         [SerializeField] private CharacterScript player;
+
+        private void Start()
+        {
+            player.DeactivateAbility(ability);
+        }
+
         private void OnTriggerEnter2D(Collider2D trigger)
         {
-            if (trigger.CompareTag("Player"))
+            if (!trigger.CompareTag("Player"))
             {
-                Destroy(gameObject);
-                player.ActiveAbility(ability);
+                return;
             }
-
+            Destroy(gameObject);
+            player.ActiveAbility(ability);
         }
     }
 }
